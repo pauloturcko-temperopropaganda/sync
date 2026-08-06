@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Ambiente/segredos
+.env
+*.env.local
+
+# Docker
+docker/data/
+
+# Obsidian
+vault/.obsidian/workspace*.json
+vault/.obsidian/cache
+
+# SO
+.DS_Store
+Thumbs.db
