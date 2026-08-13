@@ -1,0 +1,237 @@
+{
+  "main": {
+    "id": "8e4be829b52f22af",
+    "type": "split",
+    "children": [
+      {
+        "id": "6c8bf75056a128eb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "917b424e5d47ce18",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "clientes/hospital-de-olhos-videira/reunioes/15-07-2026.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "15-07-2026"
+            }
+          }
+        ]
+      },
+      {
+        "id": "31d72a8653acfc08",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7387e91c015eddc4",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8c4f035dff6a55d3",
+    "type": "split",
+    "children": [
+      {
+        "id": "770e72236bb0bf04",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1ac348ea268157d5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f84c3f1e42a10cb5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "4022808c75b0b6c5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1bfd25dcb21f7bd3",
+    "type": "split",
+    "children": [
+      {
+        "id": "6bfa06404d7601aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e87aaaeb80989f69",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "clientes/hospital-de-olhos/estilo-visual.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "a195cb8aab63672b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "clientes/hospital-de-olhos/estilo-visual.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "d4be4a3c1f4ef07b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "076169b22f6eaafe",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "d30465e778e19eb8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "clientes/hospital-de-olhos/estilo-visual.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 283.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "7387e91c015eddc4",
+  "lastOpenFiles": [
+    "clientes/vigor-studio/cliente.md",
+    "clientes/hospital-de-olhos-videira/reunioes/15-07-2026.md",
+    "clientes/cantina-toscana/cliente.md",
+    "clientes/hospital-de-olhos-videira/cliente.md",
+    "clientes/hospital-de-olhos-videira/reunioes/06-07-2026.md",
+    "clientes/cardoso-empreendimentos/cliente.md",
+    "clientes/hospital-de-olhos/reunioes/15-07-2026.md",
+    "clientes/hospital-de-olhos/equipe-medica.md",
+    "clientes/hospital-de-olhos/cliente.md",
+    "clientes/hospital-de-olhos/reunioes/29-07-2026.md",
+    "clientes/hospital-de-olhos/reunioes/22-07-2026.md",
+    "clientes/hospital-de-olhos/reunioes/06-07-2026.md",
+    "clientes/hospital-de-olhos/produtos.md",
+    "clientes/hospital-de-olhos/posicionamento-e-marca.md",
+    "clientes/hospital-de-olhos/gatilhos-mentais.md",
+    "clientes/hospital-de-olhos/estilo-visual.md",
+    "clientes/hospital-de-olhos/reunioes",
+    "clientes/hospital-de-olhos/publico-alvo/persona-dependente-de-oculos.md",
+    "clientes/hospital-de-olhos/publico-alvo/persona-familiar-decisor.md",
+    "clientes/hospital-de-olhos/publico-alvo/persona-catarata.md",
+    "clientes/hospital-de-olhos/publico-alvo",
+    "clientes/hospital-de-olhos/canais/instagram.md",
+    "clientes/hospital-de-olhos/canais",
+    "clientes/hospital-de-olhos/tom-de-voz.md",
+    "Welcome.md",
+    "clientes/hospital-de-olhos",
+    "clientes"
+  ]
+}
