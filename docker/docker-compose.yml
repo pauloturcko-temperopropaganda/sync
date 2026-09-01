@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: sync_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      # Consumida apenas pelo script em initdb/ para criar o papel
+      # de leitura usado pelas ferramentas de IA (src/ai_tools/).
+      SYNC_AI_PASSWORD: ${SYNC_AI_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      # Volume nomeado (fica no filesystem nativo do WSL2/Docker).
+      # Não usar bind mount para o PGDATA: o Postgres é sensível a
+      # permissões/fsync quando o data directory fica em /mnt/c (DrvFs).
+      - sync_postgres_data:/var/lib/postgresql/data
+      # Scripts executados uma única vez, apenas quando o volume
+      # acima está vazio (primeira inicialização).
+      - ./initdb:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  sync_postgres_data:
+    name: sync_postgres_data

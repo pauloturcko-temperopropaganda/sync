@@ -1,4 +1,4 @@
-"""Camada de acesso ao MariaDB para ferramentas da IA.
+"""Camada de acesso ao PostgreSQL para ferramentas da IA.
 
 IMPORTANTE:
 
@@ -14,9 +14,9 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Generator
 
-import pymysql
+import psycopg
 from dotenv import load_dotenv
-from pymysql.cursors import DictCursor
+from psycopg.rows import dict_row
 
 
 # Carrega exclusivamente as credenciais destinadas à IA.
@@ -38,21 +38,19 @@ def _required_env(name: str) -> str:
 
 
 @contextmanager
-def get_connection() -> Generator[pymysql.connections.Connection, None, None]:
+def get_connection() -> Generator[psycopg.Connection, None, None]:
     """Abre uma conexão somente para uso das ferramentas autorizadas."""
 
-    connection = pymysql.connect(
+    connection = psycopg.connect(
         host=_required_env("SYNC_DB_HOST"),
-        port=int(os.getenv("SYNC_DB_PORT", "3306")),
+        port=int(os.getenv("SYNC_DB_PORT", "5432")),
         user=_required_env("SYNC_DB_USER"),
         password=_required_env("SYNC_DB_PASSWORD"),
-        database=os.getenv("SYNC_DB_NAME", "sync_db"),
-        cursorclass=DictCursor,
+        dbname=os.getenv("SYNC_DB_NAME", "sync_db"),
+        row_factory=dict_row,
         connect_timeout=5,
-        read_timeout=10,
-        write_timeout=10,
         autocommit=True,
-        charset="utf8mb4",
+        options="-c statement_timeout=10000",
     )
 
     try:
@@ -62,7 +60,7 @@ def get_connection() -> Generator[pymysql.connections.Connection, None, None]:
 
 
 def fetch_one(
-    connection: pymysql.connections.Connection,
+    connection: psycopg.Connection,
     query: str,
     params: tuple[Any, ...] = (),
 ) -> dict[str, Any] | None:
@@ -74,7 +72,7 @@ def fetch_one(
 
 
 def fetch_all(
-    connection: pymysql.connections.Connection,
+    connection: psycopg.Connection,
     query: str,
     params: tuple[Any, ...] = (),
 ) -> list[dict[str, Any]]:

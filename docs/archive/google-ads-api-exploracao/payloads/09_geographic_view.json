@@ -1,0 +1,232 @@
+[
+  {
+    "date": "2026-08-03",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 52,
+    "clicks": 0,
+    "cost_micros": 231938,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-03",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 4,
+    "clicks": 0,
+    "cost_micros": 27937,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-04",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 29,
+    "clicks": 0,
+    "cost_micros": 164918,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-04",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 2321,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-05",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 3,
+    "clicks": 0,
+    "cost_micros": 18042,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-05",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 2,
+    "clicks": 0,
+    "cost_micros": 4091,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-08",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 23,
+    "clicks": 0,
+    "cost_micros": 196421,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-08",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 4,
+    "clicks": 0,
+    "cost_micros": 23514,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-11",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 5,
+    "clicks": 0,
+    "cost_micros": 25582,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-11",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 10000,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-12",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 28,
+    "clicks": 0,
+    "cost_micros": 378720,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-12",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 4,
+    "clicks": 0,
+    "cost_micros": 22523,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-13",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 6,
+    "clicks": 0,
+    "cost_micros": 17521,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-15",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 4,
+    "clicks": 0,
+    "cost_micros": 32558,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-15",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 8877,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-21",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 10,
+    "clicks": 0,
+    "cost_micros": 65357,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-21",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 2,
+    "clicks": 0,
+    "cost_micros": 14729,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-22",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 23,
+    "clicks": 0,
+    "cost_micros": 426469,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-22",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 5,
+    "clicks": 0,
+    "cost_micros": 60073,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-23",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 4,
+    "clicks": 0,
+    "cost_micros": 46714,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-23",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 3379,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-26",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2600,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 14,
+    "clicks": 0,
+    "cost_micros": 113740,
+    "conversions": 0.0
+  },
+  {
+    "date": "2026-08-26",
+    "campaign_id": 22682629376,
+    "country_criterion_id": 2858,
+    "location_type": "LOCATION_OF_PRESENCE",
+    "impressions": 2,
+    "clicks": 0,
+    "cost_micros": 4191,
+    "conversions": 0.0
+  }
+]

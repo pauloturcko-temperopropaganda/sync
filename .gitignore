@@ -11,6 +11,7 @@ venv/
 
 # Docker
 docker/data/
+docker/.env
 
 # Obsidian
 vault/.obsidian/workspace*.json

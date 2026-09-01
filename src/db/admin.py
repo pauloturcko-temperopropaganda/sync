@@ -1,4 +1,4 @@
-"""Camada de acesso administrativo ao MariaDB.
+"""Camada de acesso administrativo ao PostgreSQL.
 
 Este módulo é destinado exclusivamente a operações administrativas
 executadas pelo desenvolvedor/administrador do sistema.
@@ -14,9 +14,9 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Generator
 
-import pymysql
+import psycopg
 from dotenv import load_dotenv
-from pymysql.cursors import DictCursor
+from psycopg.rows import dict_row
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -37,21 +37,19 @@ def _required_env(name: str) -> str:
 
 
 @contextmanager
-def get_connection() -> Generator[pymysql.connections.Connection, None, None]:
+def get_connection() -> Generator[psycopg.Connection, None, None]:
     """Abre uma conexão administrativa com o banco."""
 
-    connection = pymysql.connect(
+    connection = psycopg.connect(
         host=_required_env("DB_HOST"),
-        port=int(os.getenv("DB_PORT", "3306")),
+        port=int(os.getenv("DB_PORT", "5432")),
         user=_required_env("DB_USER"),
         password=_required_env("DB_PASSWORD"),
-        database=os.getenv("DB_NAME", "sync_db"),
-        cursorclass=DictCursor,
+        dbname=os.getenv("DB_NAME", "sync_db"),
+        row_factory=dict_row,
         connect_timeout=5,
-        read_timeout=30,
-        write_timeout=30,
         autocommit=False,
-        charset="utf8mb4",
+        options="-c statement_timeout=30000",
     )
 
     try:
@@ -61,7 +59,7 @@ def get_connection() -> Generator[pymysql.connections.Connection, None, None]:
 
 
 def execute(
-    connection: pymysql.connections.Connection,
+    connection: psycopg.Connection,
     query: str,
     params: tuple[Any, ...] = (),
 ) -> int:

@@ -1,0 +1,882 @@
+[
+  {
+    "campaign_id": 9543615488,
+    "campaign_name": "Guararapes",
+    "channel_type": "SMART",
+    "device": "DESKTOP",
+    "impressions": 77403,
+    "clicks": 27286,
+    "cost_micros": 1412530000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 12517408922,
+    "campaign_name": "MDF anticovid de verdade",
+    "channel_type": "SMART",
+    "device": "DESKTOP",
+    "impressions": 4515,
+    "clicks": 270,
+    "cost_micros": 154900000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15423042705,
+    "campaign_name": "Tour Recepção Studio M...",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15423051585,
+    "campaign_name": "Tour Escritório Avila ...",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15425727325,
+    "campaign_name": "Tour Escritório Kumode...",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 5,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15429029027,
+    "campaign_name": "Funil de vendas da Mar...",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15429226457,
+    "campaign_name": "Design Store Guararape...",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15443079577,
+    "campaign_name": "Tour pela Casa Lobby |...",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15522724516,
+    "campaign_name": "Planilha para otimizar...",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16011276691,
+    "campaign_name": "Casa Guararapes - Sales-Search-1",
+    "channel_type": "SEARCH",
+    "device": "DESKTOP",
+    "impressions": 2997,
+    "clicks": 543,
+    "cost_micros": 76950000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16022344798,
+    "campaign_name": "Fita de Borda",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 57,
+    "clicks": 0,
+    "cost_micros": 1844132,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16558315671,
+    "campaign_name": "Veja os lançamentos de...",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 295,
+    "clicks": 0,
+    "cost_micros": 3626266,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17459805533,
+    "campaign_name": "[GUARA] SEARCH BRANDED",
+    "channel_type": "SEARCH",
+    "device": "DESKTOP",
+    "impressions": 139546,
+    "clicks": 38511,
+    "cost_micros": 4152821510,
+    "conversions": 6.0
+  },
+  {
+    "campaign_id": 17460428129,
+    "campaign_name": "[GUARA] PRODUTOS | MDF",
+    "channel_type": "SEARCH",
+    "device": "DESKTOP",
+    "impressions": 93624,
+    "clicks": 15803,
+    "cost_micros": 3511953021,
+    "conversions": 2.0
+  },
+  {
+    "campaign_id": 17672650734,
+    "campaign_name": "[GUARA] [01.22] [ DISPLAY] Onde Encontrar",
+    "channel_type": "DISPLAY",
+    "device": "DESKTOP",
+    "impressions": 68114,
+    "clicks": 86,
+    "cost_micros": 96473520,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17673031584,
+    "campaign_name": "[GUARA] [01.22] [P.MAX] Onde Encontrar",
+    "channel_type": "PERFORMANCE_MAX",
+    "device": "DESKTOP",
+    "impressions": 356,
+    "clicks": 7,
+    "cost_micros": 4106097,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18132641499,
+    "campaign_name": "[GUARA] Lançamentos - 2022",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 22082,
+    "clicks": 18,
+    "cost_micros": 364896708,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18522878340,
+    "campaign_name": "[GUARA] Marcenaria Guararapes",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 109,
+    "clicks": 0,
+    "cost_micros": 60000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18570768474,
+    "campaign_name": "[GUARA] Obras da 3ª Linha de Produção de MDF Guararapes",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 232,
+    "clicks": 0,
+    "cost_micros": 1589882,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 19119296762,
+    "campaign_name": "MDF Antivírus, fungos e bactérias da Guararapes",
+    "channel_type": "VIDEO",
+    "device": "DESKTOP",
+    "impressions": 10628,
+    "clicks": 1,
+    "cost_micros": 177157687,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 22682629376,
+    "campaign_name": "[Av] YT Inscritos [International]",
+    "channel_type": "DEMAND_GEN",
+    "device": "DESKTOP",
+    "impressions": 29,
+    "clicks": 2,
+    "cost_micros": 98691,
+    "conversions": 1.0
+  },
+  {
+    "campaign_id": 9543615488,
+    "campaign_name": "Guararapes",
+    "channel_type": "SMART",
+    "device": "MOBILE",
+    "impressions": 70056,
+    "clicks": 10978,
+    "cost_micros": 436830000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 12517408922,
+    "campaign_name": "MDF anticovid de verdade",
+    "channel_type": "SMART",
+    "device": "MOBILE",
+    "impressions": 9683,
+    "clicks": 301,
+    "cost_micros": 200059820,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15422983143,
+    "campaign_name": "Tour Escritório Vivian...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 17529,
+    "clicks": 0,
+    "cost_micros": 40970000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15423042705,
+    "campaign_name": "Tour Recepção Studio M...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 21599,
+    "clicks": 0,
+    "cost_micros": 42580000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15423051585,
+    "campaign_name": "Tour Escritório Avila ...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 21850,
+    "clicks": 0,
+    "cost_micros": 41940000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15425727325,
+    "campaign_name": "Tour Escritório Kumode...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 20364,
+    "clicks": 0,
+    "cost_micros": 41670000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15429029027,
+    "campaign_name": "Funil de vendas da Mar...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 38006,
+    "clicks": 0,
+    "cost_micros": 75560000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15429154469,
+    "campaign_name": "Tour pela Casa Jacaran...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 18147,
+    "clicks": 0,
+    "cost_micros": 40140000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15429224819,
+    "campaign_name": "Tour Escritório VoLar ...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 20507,
+    "clicks": 0,
+    "cost_micros": 41010000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15429226457,
+    "campaign_name": "Design Store Guararape...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 20409,
+    "clicks": 0,
+    "cost_micros": 40820000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15443079577,
+    "campaign_name": "Tour pela Casa Lobby |...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 33023,
+    "clicks": 0,
+    "cost_micros": 80960000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15508626163,
+    "campaign_name": "6 Gatilhos para se tor...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 36582,
+    "clicks": 0,
+    "cost_micros": 67990000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15522724516,
+    "campaign_name": "Planilha para otimizar...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 32205,
+    "clicks": 0,
+    "cost_micros": 65290000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16004851812,
+    "campaign_name": "Como apresentar um pro...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 90330,
+    "clicks": 0,
+    "cost_micros": 134280000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16011276691,
+    "campaign_name": "Casa Guararapes - Sales-Search-1",
+    "channel_type": "SEARCH",
+    "device": "MOBILE",
+    "impressions": 106108,
+    "clicks": 1231,
+    "cost_micros": 242530000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16022344798,
+    "campaign_name": "Fita de Borda",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 890,
+    "clicks": 9,
+    "cost_micros": 28073374,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16171131518,
+    "campaign_name": "Como fazer os puxadore...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 115060,
+    "clicks": 0,
+    "cost_micros": 238510000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16267430795,
+    "campaign_name": "Nova Linha Perspectiva...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 212698,
+    "clicks": 0,
+    "cost_micros": 441200000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16558315671,
+    "campaign_name": "Veja os lançamentos de...",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 3586,
+    "clicks": 15,
+    "cost_micros": 46466002,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17459805533,
+    "campaign_name": "[GUARA] SEARCH BRANDED",
+    "channel_type": "SEARCH",
+    "device": "MOBILE",
+    "impressions": 268792,
+    "clicks": 18076,
+    "cost_micros": 4765416524,
+    "conversions": 8.0
+  },
+  {
+    "campaign_id": 17460428129,
+    "campaign_name": "[GUARA] PRODUTOS | MDF",
+    "channel_type": "SEARCH",
+    "device": "MOBILE",
+    "impressions": 269801,
+    "clicks": 14434,
+    "cost_micros": 4323043343,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17672650734,
+    "campaign_name": "[GUARA] [01.22] [ DISPLAY] Onde Encontrar",
+    "channel_type": "DISPLAY",
+    "device": "MOBILE",
+    "impressions": 707836,
+    "clicks": 13187,
+    "cost_micros": 4385212960,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17673031584,
+    "campaign_name": "[GUARA] [01.22] [P.MAX] Onde Encontrar",
+    "channel_type": "PERFORMANCE_MAX",
+    "device": "MOBILE",
+    "impressions": 59102,
+    "clicks": 502,
+    "cost_micros": 140914100,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18132641499,
+    "campaign_name": "[GUARA] Lançamentos - 2022",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 80947,
+    "clicks": 687,
+    "cost_micros": 738381933,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18522878340,
+    "campaign_name": "[GUARA] Marcenaria Guararapes",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 77444,
+    "clicks": 0,
+    "cost_micros": 141080000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18570768474,
+    "campaign_name": "[GUARA] Obras da 3ª Linha de Produção de MDF Guararapes",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 510,
+    "clicks": 4,
+    "cost_micros": 4338160,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 19119296762,
+    "campaign_name": "MDF Antivírus, fungos e bactérias da Guararapes",
+    "channel_type": "VIDEO",
+    "device": "MOBILE",
+    "impressions": 130404,
+    "clicks": 402,
+    "cost_micros": 2035765140,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 22682629376,
+    "campaign_name": "[Av] YT Inscritos [International]",
+    "channel_type": "DEMAND_GEN",
+    "device": "MOBILE",
+    "impressions": 6845058,
+    "clicks": 50101,
+    "cost_micros": 9097772600,
+    "conversions": 41615.0
+  },
+  {
+    "campaign_id": 9543615488,
+    "campaign_name": "Guararapes",
+    "channel_type": "SMART",
+    "device": "TABLET",
+    "impressions": 1029,
+    "clicks": 177,
+    "cost_micros": 9720000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 12517408922,
+    "campaign_name": "MDF anticovid de verdade",
+    "channel_type": "SMART",
+    "device": "TABLET",
+    "impressions": 189,
+    "clicks": 2,
+    "cost_micros": 220000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15422983143,
+    "campaign_name": "Tour Escritório Vivian...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 414,
+    "clicks": 0,
+    "cost_micros": 290000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15423042705,
+    "campaign_name": "Tour Recepção Studio M...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 621,
+    "clicks": 0,
+    "cost_micros": 500000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15423051585,
+    "campaign_name": "Tour Escritório Avila ...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 554,
+    "clicks": 0,
+    "cost_micros": 460000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15425727325,
+    "campaign_name": "Tour Escritório Kumode...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 614,
+    "clicks": 0,
+    "cost_micros": 550000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15429029027,
+    "campaign_name": "Funil de vendas da Mar...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 1255,
+    "clicks": 0,
+    "cost_micros": 1280000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15429154469,
+    "campaign_name": "Tour pela Casa Jacaran...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 576,
+    "clicks": 0,
+    "cost_micros": 800000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15429224819,
+    "campaign_name": "Tour Escritório VoLar ...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 589,
+    "clicks": 0,
+    "cost_micros": 960000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15429226457,
+    "campaign_name": "Design Store Guararape...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 581,
+    "clicks": 0,
+    "cost_micros": 890000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15443079577,
+    "campaign_name": "Tour pela Casa Lobby |...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 1241,
+    "clicks": 0,
+    "cost_micros": 1210000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15508626163,
+    "campaign_name": "6 Gatilhos para se tor...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 605,
+    "clicks": 0,
+    "cost_micros": 410000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 15522724516,
+    "campaign_name": "Planilha para otimizar...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 847,
+    "clicks": 0,
+    "cost_micros": 1560000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16004851812,
+    "campaign_name": "Como apresentar um pro...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 2999,
+    "clicks": 0,
+    "cost_micros": 3990000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16011276691,
+    "campaign_name": "Casa Guararapes - Sales-Search-1",
+    "channel_type": "SEARCH",
+    "device": "TABLET",
+    "impressions": 133,
+    "clicks": 5,
+    "cost_micros": 570000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16022344798,
+    "campaign_name": "Fita de Borda",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 4,
+    "clicks": 0,
+    "cost_micros": 141190,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16171131518,
+    "campaign_name": "Como fazer os puxadore...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 5521,
+    "clicks": 0,
+    "cost_micros": 8480000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16267430795,
+    "campaign_name": "Nova Linha Perspectiva...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 8598,
+    "clicks": 0,
+    "cost_micros": 12870000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16558315671,
+    "campaign_name": "Veja os lançamentos de...",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 76,
+    "clicks": 0,
+    "cost_micros": 990840,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17459805533,
+    "campaign_name": "[GUARA] SEARCH BRANDED",
+    "channel_type": "SEARCH",
+    "device": "TABLET",
+    "impressions": 2368,
+    "clicks": 151,
+    "cost_micros": 40850000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17460428129,
+    "campaign_name": "[GUARA] PRODUTOS | MDF",
+    "channel_type": "SEARCH",
+    "device": "TABLET",
+    "impressions": 4161,
+    "clicks": 164,
+    "cost_micros": 50591477,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17672650734,
+    "campaign_name": "[GUARA] [01.22] [ DISPLAY] Onde Encontrar",
+    "channel_type": "DISPLAY",
+    "device": "TABLET",
+    "impressions": 7458,
+    "clicks": 158,
+    "cost_micros": 49475905,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17673031584,
+    "campaign_name": "[GUARA] [01.22] [P.MAX] Onde Encontrar",
+    "channel_type": "PERFORMANCE_MAX",
+    "device": "TABLET",
+    "impressions": 261,
+    "clicks": 2,
+    "cost_micros": 601209,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18132641499,
+    "campaign_name": "[GUARA] Lançamentos - 2022",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 2580,
+    "clicks": 5,
+    "cost_micros": 25053268,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18522878340,
+    "campaign_name": "[GUARA] Marcenaria Guararapes",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 2218,
+    "clicks": 0,
+    "cost_micros": 2230000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18570768474,
+    "campaign_name": "[GUARA] Obras da 3ª Linha de Produção de MDF Guararapes",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 32,
+    "clicks": 0,
+    "cost_micros": 257254,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 19119296762,
+    "campaign_name": "MDF Antivírus, fungos e bactérias da Guararapes",
+    "channel_type": "VIDEO",
+    "device": "TABLET",
+    "impressions": 2762,
+    "clicks": 4,
+    "cost_micros": 37618787,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 12517408922,
+    "campaign_name": "MDF anticovid de verdade",
+    "channel_type": "SMART",
+    "device": "CONNECTED_TV",
+    "impressions": 1,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16004851812,
+    "campaign_name": "Como apresentar um pro...",
+    "channel_type": "VIDEO",
+    "device": "CONNECTED_TV",
+    "impressions": 5,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16022344798,
+    "campaign_name": "Fita de Borda",
+    "channel_type": "VIDEO",
+    "device": "CONNECTED_TV",
+    "impressions": 490,
+    "clicks": 0,
+    "cost_micros": 14925767,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16171131518,
+    "campaign_name": "Como fazer os puxadore...",
+    "channel_type": "VIDEO",
+    "device": "CONNECTED_TV",
+    "impressions": 20,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 16558315671,
+    "campaign_name": "Veja os lançamentos de...",
+    "channel_type": "VIDEO",
+    "device": "CONNECTED_TV",
+    "impressions": 4060,
+    "clicks": 0,
+    "cost_micros": 39254983,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17460428129,
+    "campaign_name": "[GUARA] PRODUTOS | MDF",
+    "channel_type": "SEARCH",
+    "device": "CONNECTED_TV",
+    "impressions": 3,
+    "clicks": 0,
+    "cost_micros": 0,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17672650734,
+    "campaign_name": "[GUARA] [01.22] [ DISPLAY] Onde Encontrar",
+    "channel_type": "DISPLAY",
+    "device": "CONNECTED_TV",
+    "impressions": 509,
+    "clicks": 3,
+    "cost_micros": 622247,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 17673031584,
+    "campaign_name": "[GUARA] [01.22] [P.MAX] Onde Encontrar",
+    "channel_type": "PERFORMANCE_MAX",
+    "device": "CONNECTED_TV",
+    "impressions": 24,
+    "clicks": 0,
+    "cost_micros": 168305,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18132641499,
+    "campaign_name": "[GUARA] Lançamentos - 2022",
+    "channel_type": "VIDEO",
+    "device": "CONNECTED_TV",
+    "impressions": 141692,
+    "clicks": 44,
+    "cost_micros": 1357970528,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18522878340,
+    "campaign_name": "[GUARA] Marcenaria Guararapes",
+    "channel_type": "VIDEO",
+    "device": "CONNECTED_TV",
+    "impressions": 3,
+    "clicks": 0,
+    "cost_micros": 10000,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 18570768474,
+    "campaign_name": "[GUARA] Obras da 3ª Linha de Produção de MDF Guararapes",
+    "channel_type": "VIDEO",
+    "device": "CONNECTED_TV",
+    "impressions": 3278,
+    "clicks": 0,
+    "cost_micros": 20672216,
+    "conversions": 0.0
+  },
+  {
+    "campaign_id": 19119296762,
+    "campaign_name": "MDF Antivírus, fungos e bactérias da Guararapes",
+    "channel_type": "VIDEO",
+    "device": "CONNECTED_TV",
+    "impressions": 89375,
+    "clicks": 0,
+    "cost_micros": 1261438090,
+    "conversions": 0.0
+  }
+]
