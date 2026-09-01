@@ -1,0 +1,142 @@
+[
+  {
+    "id": 96562059103,
+    "name": "Smart Campaign Managed AdGroup",
+    "status": "ENABLED",
+    "type": "SMART_CAMPAIGN_ADS",
+    "campaign_resource": "customers/4378571170/campaigns/9543615488"
+  },
+  {
+    "id": 125936344544,
+    "name": "Smart Campaign Managed AdGroup",
+    "status": "ENABLED",
+    "type": "SMART_CAMPAIGN_ADS",
+    "campaign_resource": "customers/4378571170/campaigns/12517408922"
+  },
+  {
+    "id": 130049250422,
+    "name": "Vídeo Alcance eficiente – 2022-01-28",
+    "status": "PAUSED",
+    "type": "VIDEO_EFFICIENT_REACH",
+    "campaign_resource": "customers/4378571170/campaigns/16030853033"
+  },
+  {
+    "id": 132283643003,
+    "name": "Grupo de anúncios 1",
+    "status": "ENABLED",
+    "type": "SEARCH_STANDARD",
+    "campaign_resource": "customers/4378571170/campaigns/16011276691"
+  },
+  {
+    "id": 137191770363,
+    "name": "[GUARA] MDF - SEARCH BRANDED.1",
+    "status": "ENABLED",
+    "type": "SEARCH_STANDARD",
+    "campaign_resource": "customers/4378571170/campaigns/17459805533"
+  },
+  {
+    "id": 137196968143,
+    "name": "[GUARA] [01.22] [ DISPLAY] Onde Encontrar.1",
+    "status": "ENABLED",
+    "type": "DISPLAY_STANDARD",
+    "campaign_resource": "customers/4378571170/campaigns/17672650734"
+  },
+  {
+    "id": 137332983723,
+    "name": "[GUARA] PRODUTOS | MDF - Savana",
+    "status": "ENABLED",
+    "type": "SEARCH_STANDARD",
+    "campaign_resource": "customers/4378571170/campaigns/17460428129"
+  },
+  {
+    "id": 137587838797,
+    "name": "[GUARA] MDF - SEARCH BRANDED.2",
+    "status": "ENABLED",
+    "type": "SEARCH_STANDARD",
+    "campaign_resource": "customers/4378571170/campaigns/17459805533"
+  },
+  {
+    "id": 137920977095,
+    "name": "[GUARA] PRODUTOS | MDF - Areia",
+    "status": "ENABLED",
+    "type": "SEARCH_STANDARD",
+    "campaign_resource": "customers/4378571170/campaigns/17460428129"
+  },
+  {
+    "id": 139135160126,
+    "name": "[GUARA] Lançamentos - 2022  | Perspectivas",
+    "status": "ENABLED",
+    "type": "VIDEO_TRUE_VIEW_IN_STREAM",
+    "campaign_resource": "customers/4378571170/campaigns/18132641499"
+  },
+  {
+    "id": 139512875904,
+    "name": "Fita de Borda",
+    "status": "ENABLED",
+    "type": "VIDEO_EFFICIENT_REACH",
+    "campaign_resource": "customers/4378571170/campaigns/16022344798"
+  },
+  {
+    "id": 140742622925,
+    "name": "[GUARA] Obras da 3ª Linha de Produção de MDF Guararapes",
+    "status": "ENABLED",
+    "type": "VIDEO_EFFICIENT_REACH",
+    "campaign_resource": "customers/4378571170/campaigns/18570768474"
+  },
+  {
+    "id": 141377008022,
+    "name": "[GUARA] PRODUTOS | MDF (grupo de anúncios dinâmicos)",
+    "status": "ENABLED",
+    "type": "SEARCH_DYNAMIC_ADS",
+    "campaign_resource": "customers/4378571170/campaigns/17460428129"
+  },
+  {
+    "id": 142507263255,
+    "name": "[GUARA] Marcenaria Guararapes",
+    "status": "ENABLED",
+    "type": "VIDEO_TRUE_VIEW_IN_DISPLAY",
+    "campaign_resource": "customers/4378571170/campaigns/18522878340"
+  },
+  {
+    "id": 142807864252,
+    "name": "[GUARA] PRODUTOS | MDF - Freijó",
+    "status": "ENABLED",
+    "type": "SEARCH_STANDARD",
+    "campaign_resource": "customers/4378571170/campaigns/17460428129"
+  },
+  {
+    "id": 144859621835,
+    "name": "[GUARA] SEARCH BRANDED (grupo de anúncios dinâmicos)",
+    "status": "ENABLED",
+    "type": "SEARCH_DYNAMIC_ADS",
+    "campaign_resource": "customers/4378571170/campaigns/17459805533"
+  },
+  {
+    "id": 145200816898,
+    "name": "MDF Antivírus, fungos e bactérias da Guararapes",
+    "status": "ENABLED",
+    "type": "VIDEO_TRUE_VIEW_IN_STREAM",
+    "campaign_resource": "customers/4378571170/campaigns/19119296762"
+  },
+  {
+    "id": 145200816938,
+    "name": "Áris Guararapes: MDF com resistência a microrriscos e marcas de dedo",
+    "status": "ENABLED",
+    "type": "VIDEO_TRUE_VIEW_IN_STREAM",
+    "campaign_resource": "customers/4378571170/campaigns/19119296762"
+  },
+  {
+    "id": 145612786732,
+    "name": "[GUARA] Lançamentos - 2022  | Áris",
+    "status": "ENABLED",
+    "type": "VIDEO_TRUE_VIEW_IN_STREAM",
+    "campaign_resource": "customers/4378571170/campaigns/18132641499"
+  },
+  {
+    "id": 181650306472,
+    "name": "01 - Interesses/Profissões",
+    "status": "ENABLED",
+    "type": "UNSPECIFIED",
+    "campaign_resource": "customers/4378571170/campaigns/22682629376"
+  }
+]

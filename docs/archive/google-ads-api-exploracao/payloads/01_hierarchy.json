@@ -1,0 +1,155 @@
+[
+  {
+    "id": 4378571170,
+    "descriptive_name": "Guararapes Internacional",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "ENABLED"
+  },
+  {
+    "id": 8934723647,
+    "descriptive_name": "Tempero Propaganda",
+    "level": 0,
+    "manager": true,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "ENABLED"
+  },
+  {
+    "id": 5900659191,
+    "descriptive_name": "Be Health",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 5514296045,
+    "descriptive_name": "Clínica de Olhos Videira",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 5393007166,
+    "descriptive_name": "Dona Lola Cafeteria",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 2473569144,
+    "descriptive_name": "Dr. Flávio Burg",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 7281887846,
+    "descriptive_name": "Herdina & Langaro",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 6982899941,
+    "descriptive_name": "Ice Paletas",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 7079535398,
+    "descriptive_name": "Ice Paletas (2)",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 2989096993,
+    "descriptive_name": "Infopasa",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 2906551543,
+    "descriptive_name": "Pioneiro Baterias",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 3788042695,
+    "descriptive_name": "Pladisa Itajaí",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 5734041899,
+    "descriptive_name": "Tempero Propaganda",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 8494920742,
+    "descriptive_name": "Unimed Videira",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CANCELED"
+  },
+  {
+    "id": 3809989601,
+    "descriptive_name": "Conta Testes",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CLOSED"
+  },
+  {
+    "id": 8152581084,
+    "descriptive_name": "Ecológica",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "status": "CLOSED"
+  },
+  {
+    "id": 5872701407,
+    "descriptive_name": "PCN Papel e Embalagem",
+    "level": 1,
+    "manager": false,
+    "currency_code": "BRL",
+    "time_zone": "America/Noronha",
+    "status": "CLOSED"
+  }
+]

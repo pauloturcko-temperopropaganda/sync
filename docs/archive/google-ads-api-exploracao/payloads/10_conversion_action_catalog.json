@@ -1,0 +1,386 @@
+[
+  {
+    "id": 464950261,
+    "name": "Onde encontrar (Todos os dados do website)",
+    "category": "DEFAULT",
+    "type": "UNIVERSAL_ANALYTICS_GOAL",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 464950264,
+    "name": "Blog Guararapes (Todos os dados do website)",
+    "category": "DEFAULT",
+    "type": "UNIVERSAL_ANALYTICS_GOAL",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 464950267,
+    "name": "Newsletter (Todos os dados do website)",
+    "category": "DEFAULT",
+    "type": "UNIVERSAL_ANALYTICS_GOAL",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 464950270,
+    "name": "Produtos (Todos os dados do website)",
+    "category": "DEFAULT",
+    "type": "UNIVERSAL_ANALYTICS_GOAL",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 464950273,
+    "name": "Pedidos de mostruario (Todos os dados do website)",
+    "category": "DEFAULT",
+    "type": "UNIVERSAL_ANALYTICS_GOAL",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 464950276,
+    "name": "Redes Sociais - Rodapé (Todos os dados do website)",
+    "category": "DEFAULT",
+    "type": "UNIVERSAL_ANALYTICS_GOAL",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 464950279,
+    "name": "Pedidos de Fale Conosco (Todos os dados do website)",
+    "category": "DEFAULT",
+    "type": "UNIVERSAL_ANALYTICS_GOAL",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 464950690,
+    "name": "Calls from Smart Campaign Ads",
+    "category": "PHONE_CALL_LEAD",
+    "type": "SMART_CAMPAIGN_TRACKED_CALLS",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 563405985,
+    "name": "Clicks to call",
+    "category": "CONTACT",
+    "type": "GOOGLE_HOSTED",
+    "status": "REMOVED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 563406147,
+    "name": "Local actions - Directions",
+    "category": "GET_DIRECTIONS",
+    "type": "GOOGLE_HOSTED",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 563466424,
+    "name": "Smart campaign map clicks to call",
+    "category": "CONTACT",
+    "type": "SMART_CAMPAIGN_MAP_CLICKS_TO_CALL",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 563466427,
+    "name": "Smart campaign map directions",
+    "category": "GET_DIRECTIONS",
+    "type": "SMART_CAMPAIGN_MAP_DIRECTIONS",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 563466433,
+    "name": "Smart campaign ad clicks to call",
+    "category": "CONTACT",
+    "type": "SMART_CAMPAIGN_AD_CLICKS_TO_CALL",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 848705447,
+    "name": "RD Station Universal – GA4 (web) purchase",
+    "category": "PURCHASE",
+    "type": "GOOGLE_ANALYTICS_4_PURCHASE",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 849467911,
+    "name": "Guararapes Institucional - G4 (web) purchase",
+    "category": "PURCHASE",
+    "type": "GOOGLE_ANALYTICS_4_PURCHASE",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 935229758,
+    "name": "Transactions (Todos os dados do website)",
+    "category": "PURCHASE",
+    "type": "UNIVERSAL_ANALYTICS_TRANSACTION",
+    "status": "REMOVED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 936764841,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) app_store_subs",
+    "category": "PURCHASE",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 936764844,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) app_store_subs",
+    "category": "PURCHASE",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 936764847,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) First open",
+    "category": "DOWNLOAD",
+    "type": "FIREBASE_ANDROID_FIRST_OPEN",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 936764850,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) In-app purchas",
+    "category": "PURCHASE",
+    "type": "FIREBASE_ANDROID_IN_APP_PURCHASE",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 936764853,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) purchase",
+    "category": "PURCHASE",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 936764856,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) add_to_cart",
+    "category": "ADD_TO_CART",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 936764859,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) add_to_wishlis",
+    "category": "ADD_TO_CART",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 936764862,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) begin_checkout",
+    "category": "BEGIN_CHECKOUT",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 936764865,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) session_start",
+    "category": "PAGE_VIEW",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 936764868,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) view_item",
+    "category": "PAGE_VIEW",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 936764871,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) view_item_list",
+    "category": "PAGE_VIEW",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 936764874,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) view_search_re",
+    "category": "PAGE_VIEW",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 942113674,
+    "name": "Casa Guararapes – GA4 (web) purchase",
+    "category": "PURCHASE",
+    "type": "GOOGLE_ANALYTICS_4_PURCHASE",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 949493986,
+    "name": "Meu Ambiente Guararapes – GA4 (web) purchase",
+    "category": "PURCHASE",
+    "type": "GOOGLE_ANALYTICS_4_PURCHASE",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 954740820,
+    "name": "Local actions - Other engagements",
+    "category": "ENGAGEMENT",
+    "type": "GOOGLE_HOSTED",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 954969599,
+    "name": "Casa Guararapes – GA4 (web) cartLoaded",
+    "category": "DEFAULT",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 955801116,
+    "name": "Casa Guararapes – GA4 (web) orderConfirmation",
+    "category": "DEFAULT",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 956604671,
+    "name": "Local actions - Website visits",
+    "category": "PAGE_VIEW",
+    "type": "GOOGLE_HOSTED",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 1014891298,
+    "name": "YouTube channel subscriptions",
+    "category": "ENGAGEMENT",
+    "type": "UNKNOWN",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 6450318200,
+    "name": "Casa Guararapes – GA4 (web) Abriu_carrinho",
+    "category": "PURCHASE",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 6758061354,
+    "name": "Casa Guararapes – GA4 (web) add_to_cart",
+    "category": "ADD_TO_CART",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 7168091264,
+    "name": "Casa Guararapes – GA4 (web) begin_checkout",
+    "category": "BEGIN_CHECKOUT",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 7168091267,
+    "name": "Casa Guararapes – GA4 (web) add_shipping_info",
+    "category": "ADD_TO_CART",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 7168291108,
+    "name": "Guararapes Institucional - G4 (web) page_view",
+    "category": "PAGE_VIEW",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 7168291111,
+    "name": "Guararapes Institucional - G4 (web) whatsappTotal",
+    "category": "PAGE_VIEW",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 7168291114,
+    "name": "Guararapes Institucional - G4 (web) escolherLocalizacao",
+    "category": "PAGE_VIEW",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 7168291117,
+    "name": "Guararapes Institucional - G4 (web) selecionarProduto",
+    "category": "PAGE_VIEW",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 7168291570,
+    "name": "Guararapes Institucional - G4 (web) buscaProduto",
+    "category": "PAGE_VIEW",
+    "type": "GOOGLE_ANALYTICS_4_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": false
+  },
+  {
+    "id": 7168427409,
+    "name": "YouTube follow-on views",
+    "category": "YOUTUBE_FOLLOW_ON_VIEWS",
+    "type": "UNKNOWN",
+    "status": "ENABLED",
+    "primary_for_goal": true
+  },
+  {
+    "id": 7196287606,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) close_convert_",
+    "category": "DEFAULT",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 7196287609,
+    "name": "Guararapes - Bússola de Combinações - br.com.housecricket.bussolaguararapes (Android) qualify_lead",
+    "category": "PAGE_VIEW",
+    "type": "FIREBASE_ANDROID_CUSTOM",
+    "status": "HIDDEN",
+    "primary_for_goal": true
+  },
+  {
+    "id": 7512790013,
+    "name": "Android installs (all other apps)",
+    "category": "DOWNLOAD",
+    "type": "ANDROID_INSTALLS_ALL_OTHER_APPS",
+    "status": "ENABLED",
+    "primary_for_goal": false
+  }
+]

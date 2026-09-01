@@ -1,0 +1,182 @@
+[
+  {
+    "campaign_id": 17459805533,
+    "campaign_name": "[GUARA] SEARCH BRANDED",
+    "conversion_action_name": "Casa Guararapes – GA4 (web) orderConfirmation",
+    "conversion_action_category": "DEFAULT",
+    "conversions": 14.0,
+    "conversions_value": 14.0,
+    "all_conversions": 14.0,
+    "all_conversions_value": 14.0
+  },
+  {
+    "campaign_id": 17459805533,
+    "campaign_name": "[GUARA] SEARCH BRANDED",
+    "conversion_action_name": "Local actions - Website visits",
+    "conversion_action_category": "PAGE_VIEW",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 47.0,
+    "all_conversions_value": 39.0
+  },
+  {
+    "campaign_id": 17459805533,
+    "campaign_name": "[GUARA] SEARCH BRANDED",
+    "conversion_action_name": "Local actions - Directions",
+    "conversion_action_category": "GET_DIRECTIONS",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 70.0,
+    "all_conversions_value": 59.0
+  },
+  {
+    "campaign_id": 17459805533,
+    "campaign_name": "[GUARA] SEARCH BRANDED",
+    "conversion_action_name": "Local actions - Other engagements",
+    "conversion_action_category": "ENGAGEMENT",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 145.0,
+    "all_conversions_value": 131.0
+  },
+  {
+    "campaign_id": 17460428129,
+    "campaign_name": "[GUARA] PRODUTOS | MDF",
+    "conversion_action_name": "Casa Guararapes – GA4 (web) orderConfirmation",
+    "conversion_action_category": "DEFAULT",
+    "conversions": 2.0,
+    "conversions_value": 2.0,
+    "all_conversions": 2.0,
+    "all_conversions_value": 2.0
+  },
+  {
+    "campaign_id": 17460428129,
+    "campaign_name": "[GUARA] PRODUTOS | MDF",
+    "conversion_action_name": "Local actions - Website visits",
+    "conversion_action_category": "PAGE_VIEW",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 10.0,
+    "all_conversions_value": 9.0
+  },
+  {
+    "campaign_id": 17460428129,
+    "campaign_name": "[GUARA] PRODUTOS | MDF",
+    "conversion_action_name": "Local actions - Directions",
+    "conversion_action_category": "GET_DIRECTIONS",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 7.0,
+    "all_conversions_value": 7.0
+  },
+  {
+    "campaign_id": 17460428129,
+    "campaign_name": "[GUARA] PRODUTOS | MDF",
+    "conversion_action_name": "Local actions - Other engagements",
+    "conversion_action_category": "ENGAGEMENT",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 30.0,
+    "all_conversions_value": 28.0
+  },
+  {
+    "campaign_id": 17672650734,
+    "campaign_name": "[GUARA] [01.22] [ DISPLAY] Onde Encontrar",
+    "conversion_action_name": "Local actions - Directions",
+    "conversion_action_category": "GET_DIRECTIONS",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 2.0,
+    "all_conversions_value": 2.0
+  },
+  {
+    "campaign_id": 17672650734,
+    "campaign_name": "[GUARA] [01.22] [ DISPLAY] Onde Encontrar",
+    "conversion_action_name": "Local actions - Other engagements",
+    "conversion_action_category": "ENGAGEMENT",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 3.0,
+    "all_conversions_value": 3.0
+  },
+  {
+    "campaign_id": 18132641499,
+    "campaign_name": "[GUARA] Lançamentos - 2022",
+    "conversion_action_name": "Local actions - Directions",
+    "conversion_action_category": "GET_DIRECTIONS",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 1.0,
+    "all_conversions_value": 1.0
+  },
+  {
+    "campaign_id": 18132641499,
+    "campaign_name": "[GUARA] Lançamentos - 2022",
+    "conversion_action_name": "YouTube channel subscriptions",
+    "conversion_action_category": "ENGAGEMENT",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 1.0,
+    "all_conversions_value": 1.0
+  },
+  {
+    "campaign_id": 18522878340,
+    "campaign_name": "[GUARA] Marcenaria Guararapes",
+    "conversion_action_name": "YouTube channel subscriptions",
+    "conversion_action_category": "ENGAGEMENT",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 24.0,
+    "all_conversions_value": 24.0
+  },
+  {
+    "campaign_id": 18570768474,
+    "campaign_name": "[GUARA] Obras da 3ª Linha de Produção de MDF Guararapes",
+    "conversion_action_name": "YouTube channel subscriptions",
+    "conversion_action_category": "ENGAGEMENT",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 1.0,
+    "all_conversions_value": 1.0
+  },
+  {
+    "campaign_id": 19119296762,
+    "campaign_name": "MDF Antivírus, fungos e bactérias da Guararapes",
+    "conversion_action_name": "Local actions - Directions",
+    "conversion_action_category": "GET_DIRECTIONS",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 16.0,
+    "all_conversions_value": 6.0
+  },
+  {
+    "campaign_id": 19119296762,
+    "campaign_name": "MDF Antivírus, fungos e bactérias da Guararapes",
+    "conversion_action_name": "YouTube channel subscriptions",
+    "conversion_action_category": "ENGAGEMENT",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 16.0,
+    "all_conversions_value": 9.0
+  },
+  {
+    "campaign_id": 22682629376,
+    "campaign_name": "[Av] YT Inscritos [International]",
+    "conversion_action_name": "YouTube channel subscriptions",
+    "conversion_action_category": "ENGAGEMENT",
+    "conversions": 41616.0,
+    "conversions_value": 0.0,
+    "all_conversions": 41616.0,
+    "all_conversions_value": 0.0
+  },
+  {
+    "campaign_id": 22682629376,
+    "campaign_name": "[Av] YT Inscritos [International]",
+    "conversion_action_name": "YouTube follow-on views",
+    "conversion_action_category": "YOUTUBE_FOLLOW_ON_VIEWS",
+    "conversions": 0.0,
+    "conversions_value": 0.0,
+    "all_conversions": 1191.0,
+    "all_conversions_value": 1191.0
+  }
+]

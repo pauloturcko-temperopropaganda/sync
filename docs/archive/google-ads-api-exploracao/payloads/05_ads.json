@@ -1,0 +1,430 @@
+[
+  {
+    "id": 422686535709,
+    "name": "",
+    "type": "SMART_CAMPAIGN_AD",
+    "status": "ENABLED",
+    "final_urls": [],
+    "ad_group_resource": "customers/4378571170/adGroups/96562059103",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 505181099683,
+    "name": "",
+    "type": "SMART_CAMPAIGN_AD",
+    "status": "ENABLED",
+    "final_urls": [],
+    "ad_group_resource": "customers/4378571170/adGroups/125936344544",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 578140027607,
+    "name": "",
+    "type": "RESPONSIVE_SEARCH_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "https://casa.guararapes.com.br"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/132283643003",
+    "responsive_search_headlines": [
+      "Organizadores de escritório",
+      "Relógio redondo de parede",
+      "Objetos de Design para decorar",
+      "Cabides com Design",
+      "Amostras de MDF Guararapes",
+      "Espelho redondo de parede",
+      "Porta-Objetos e Porta-Chaves",
+      "Organize sua casa com estilo",
+      "Cabides organizadores",
+      "Objetos decoração minimalista",
+      "Jogo de Baralho anti-covid",
+      "Catálogo de MDF"
+    ],
+    "responsive_search_descriptions": [
+      "Decorativos e funcionais, objetos de design para encantar em seu ambiente.",
+      "Cuidadosamente pensados e desenvolvidos, os produtos vão levar personalidade ao ambiente.",
+      "Produtos exclusivos feitos à mão",
+      "Objetos em MDF com tecnologia anti-covid"
+    ]
+  },
+  {
+    "id": 578416269987,
+    "name": "Anúncio #1",
+    "type": "VIDEO_TRUEVIEW_IN_STREAM_AD",
+    "status": "PAUSED",
+    "final_urls": [
+      "https://www.youtube.com/watch?v=mNBaWB3V4-M"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/130049250422",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 578494660019,
+    "name": "Anúncio #1",
+    "type": "VIDEO_TRUEVIEW_IN_STREAM_AD",
+    "status": "PAUSED",
+    "final_urls": [
+      "https://youtu.be/LNHv43gtals"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/139512875904",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 603009484981,
+    "name": "",
+    "type": "RESPONSIVE_SEARCH_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "https://www.guararapes.com.br/produto/freijo"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/142807864252",
+    "responsive_search_headlines": [
+      "Tendência Marcante no Projeto",
+      "Painéis Guararapes",
+      "Guararapes MDF",
+      "Freijó - Produto Guararapes",
+      "Painéis de MDF",
+      "Freijó - Guararapes Painéis",
+      "Facilidade nas combinações",
+      "Madeiras mais Nobres do Brasil",
+      "Conheça nossa Linha Completa",
+      "Guararapes | MDF - Freijó",
+      "Linha Madeiras Brasil",
+      "Freijó - Padrão Guararapes",
+      "Conheça nossos Produtos",
+      "MDF- Lâmina natural de Madeira",
+      "Acabamento com Textura Syncro"
+    ],
+    "responsive_search_descriptions": [
+      "Padrão com tonalidade que é tendência marcante na decoração.Atemporalidade e Personalidade",
+      "Linha Madeiras do Brasil. Inspirado nas madeiras mais nobres do Brasil. Clique e Conheça.",
+      "Evidenciamos a naturalidade das cores, a realidade dos desenhos e o toque perfeito.Confira",
+      "MDF com exclusiva aplicação da tecnologia NanoxClean®. Conheça nossa linha completa agora!"
+    ]
+  },
+  {
+    "id": 603011012596,
+    "name": "",
+    "type": "RESPONSIVE_SEARCH_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "https://www.guararapes.com.br/produto/areia"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/137920977095",
+    "responsive_search_headlines": [
+      "Areia | MDF Neutro",
+      "Painéis Guararapes",
+      "Guararapes MDF",
+      "Areia - Produto Guararapes",
+      "Painéis de MDF",
+      "Inúmeras combinações",
+      "Superfosca com toque aveludado",
+      "Textura Matt",
+      "Linha Colors | Guararapes",
+      "Guararapes | MDF - Areia",
+      "Versatilidade e Autenticidade",
+      "Areia - Guararapes Painéis",
+      "MDF - Linha Colors",
+      "Conheça nossa Linha Completa",
+      "Areia - Linha Colors"
+    ],
+    "responsive_search_descriptions": [
+      "Aplicação da exclusiva textura Matt. Superfosca com toque aveludado. Conheça a Guararapes",
+      "Linha Colors inspiradas para estimular a sensação de aconchego. Conheça a Linha Completa!",
+      "Padrões que combinam versatilidade e autenticidade em uma paleta de cores diferenciada.",
+      "MDF com exclusiva aplicação da tecnologia NanoxClean®. Conheça nossa linha completa agora!"
+    ]
+  },
+  {
+    "id": 603065032313,
+    "name": "",
+    "type": "RESPONSIVE_SEARCH_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "https://www.guararapes.com.br/"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/137191770363",
+    "responsive_search_headlines": [
+      "Guararapes",
+      "Guararapes Painéis",
+      "MDF antivírus e bactérias",
+      "Madeiras MDF",
+      "Conheça a Linha Perspectivas",
+      "Indústria de MDF - Guararapes",
+      "Proteção Exclusiva NanoxClean®",
+      "MDF versátil e sofisticado",
+      "Conheça os nossos produtos"
+    ],
+    "responsive_search_descriptions": [
+      "Conheça Guararapes. Uma das maiores produtoras de painéis de MDF do Brasil.",
+      "Padrões com acabamentos que acompanham tendências de design de móveis e arquitetura.",
+      "Inspire-se em nossas texturas e padrões. Inovadores, versáteis e sofisticados. Conheça!",
+      "Guararapes: MDF Decorativos que trazem novas sensações e transformam qualquer projeto."
+    ]
+  },
+  {
+    "id": 603066389744,
+    "name": "",
+    "type": "RESPONSIVE_SEARCH_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "https://www.guararapes.com.br/"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/137587838797",
+    "responsive_search_headlines": [
+      "Guararapes",
+      "Tecnologia NanoxClean®",
+      "MDF de Alta Qualidade",
+      "Chapas de MDF Guararapes",
+      "MDF Coloridos e MDF Amadeirado",
+      "Painéis Renováveis de Madeira",
+      "Versatilidade no seu projeto",
+      "Movidos pela força da natureza",
+      "Placas de MDF"
+    ],
+    "responsive_search_descriptions": [
+      "Seu projeto merece MDF Guararapes. Proteção Exclusiva NanoxClean®. Clique Aqui e Conheça!",
+      "MDF Amadeirado e MDF Coloridos. Conheça uma das Maiores produtoras de MDF do Brasil.",
+      "Painel de MDF com grande versatilidade. Clique e conheça a Guararapes!"
+    ]
+  },
+  {
+    "id": 604974485400,
+    "name": "",
+    "type": "RESPONSIVE_SEARCH_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "https://www.guararapes.com.br/produto/savana"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/137332983723",
+    "responsive_search_headlines": [
+      "Conheça nossa linha completa",
+      "Nogueira Italiana",
+      "Textura Sincronizada",
+      "Lâmina Natural de Madeira",
+      "Savana - Guararapes Painéis",
+      "Savana - Linha Dual Synco",
+      "Guararapes Painéis",
+      "Guararapes | MDF - Savana"
+    ],
+    "responsive_search_descriptions": [
+      "A beleza da nogueira italiana presente no Padrão Guararapes. Conheça a Linha Dual Syncro.",
+      "Textura Syncro, com efeito de lâmina natural de madeira. Exclusiva Tecnologia NanoxClean®.",
+      "MDF Decorativos. Todo o aspecto da nogueira é revelado em uma linha de padrões autênticos.",
+      "Textura sincronizada com o desenho da madeira nas duas faces do produto. Saiba Mais aqui!"
+    ]
+  },
+  {
+    "id": 605035334056,
+    "name": "",
+    "type": "RESPONSIVE_SEARCH_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "https://www.guararapes.com.br/produto/savana"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/137332983723",
+    "responsive_search_headlines": [
+      "Savana | MDF Guararapes",
+      "Painéis Guararapes",
+      "Guararapes MDF",
+      "Savana - Produto Guararapes",
+      "Painéis de MDF",
+      "Textura Syncro",
+      "Linha Dual Syncro | Guararapes",
+      "Conheça nossa linha completa",
+      "Nogueira Italiana",
+      "Textura Sincronizada",
+      "Lâmina Natural de Madeira",
+      "Savana - Guararapes Painéis",
+      "Savana - Linha Dual Synco",
+      "Guararapes Painéis",
+      "Guararapes | MDF - Savana"
+    ],
+    "responsive_search_descriptions": [
+      "A beleza da nogueira italiana presente no Padrão Guararapes. Conheça a Linha Dual Syncro.",
+      "Textura Syncro, com efeito de lâmina natural de madeira. Exclusiva Tecnologia NanoxClean®.",
+      "MDF Decorativos. Todo o aspecto da nogueira é revelado em uma linha de padrões autênticos.",
+      "Textura sincronizada com o desenho da madeira nas duas faces do produto. Saiba Mais aqui!"
+    ]
+  },
+  {
+    "id": 608803118620,
+    "name": "",
+    "type": "RESPONSIVE_DISPLAY_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "https://www.guararapes.com.br/onde-encontrar"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/137196968143",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 617805130452,
+    "name": "[GUARA] Lançamentos - 2022 | Áris #1",
+    "type": "VIDEO_TRUEVIEW_IN_STREAM_AD",
+    "status": "PAUSED",
+    "final_urls": [
+      "https://www.guararapes.com.br/aris"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/145612786732",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 617805378162,
+    "name": "[GUARA] Lançamentos - 2022 | Áris #1",
+    "type": "VIDEO_TRUEVIEW_IN_STREAM_AD",
+    "status": "REMOVED",
+    "final_urls": [
+      "https://www.guararapes.com.br/aris"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/139135160126",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 617873574604,
+    "name": "[GUARA] Lançamentos - 2022 | Perspectivas",
+    "type": "VIDEO_TRUEVIEW_IN_STREAM_AD",
+    "status": "PAUSED",
+    "final_urls": [
+      "https://www.guararapes.com.br/perspectivas"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/139135160126",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 626522733489,
+    "name": "",
+    "type": "RESPONSIVE_DISPLAY_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "https://www.guararapes.com.br/onde-encontrar"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/137196968143",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 626543864541,
+    "name": "Como aplicar a fita de borda de 1mm?",
+    "type": "IN_FEED_VIDEO_AD",
+    "status": "PAUSED",
+    "final_urls": [
+      "https://www.youtube.com/watch?v=LNHv43gtals"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/142507263255",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 626603146486,
+    "name": "Como aplicar a fita de borda de 1mm?",
+    "type": "IN_FEED_VIDEO_AD",
+    "status": "REMOVED",
+    "final_urls": [
+      "https://www.youtube.com/watch?v=LNHv43gtals"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/142507263255",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 626603146489,
+    "name": "Prateleira tamburato fitada com o próprio MDF",
+    "type": "IN_FEED_VIDEO_AD",
+    "status": "PAUSED",
+    "final_urls": [
+      "https://www.youtube.com/watch?v=NtKIzdvUPE4"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/142507263255",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 627707376158,
+    "name": "[GUARA] Obras da 3ª Linha de Produção de MDF Guararapes",
+    "type": "VIDEO_TRUEVIEW_IN_STREAM_AD",
+    "status": "PAUSED",
+    "final_urls": [
+      "https://www.guararapes.com.br/"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/140742622925",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 638824147363,
+    "name": "",
+    "type": "EXPANDED_DYNAMIC_SEARCH_AD",
+    "status": "ENABLED",
+    "final_urls": [],
+    "ad_group_resource": "customers/4378571170/adGroups/141377008022",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 638824651432,
+    "name": "",
+    "type": "EXPANDED_DYNAMIC_SEARCH_AD",
+    "status": "ENABLED",
+    "final_urls": [],
+    "ad_group_resource": "customers/4378571170/adGroups/144859621835",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 638895142262,
+    "name": "MDF Antivírus, fungos e bactérias da Guararapes",
+    "type": "VIDEO_TRUEVIEW_IN_STREAM_AD",
+    "status": "PAUSED",
+    "final_urls": [
+      "http://guararapes.com.br/"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/145200816898",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 638895142265,
+    "name": "Áris Guararapes: MDF com resistência a microrriscos e marcas de dedo",
+    "type": "VIDEO_TRUEVIEW_IN_STREAM_AD",
+    "status": "PAUSED",
+    "final_urls": [
+      "http://guararapes.com.br/"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/145200816938",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 758792455097,
+    "name": "[02] Lanzamientos MDF",
+    "type": "DEMAND_GEN_VIDEO_RESPONSIVE_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "http://www.youtube.com/@Guararapes-International/shorts"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/181650306472",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  },
+  {
+    "id": 758792455100,
+    "name": "[01] Nuevo canal para latinoamérica #2",
+    "type": "DEMAND_GEN_VIDEO_RESPONSIVE_AD",
+    "status": "ENABLED",
+    "final_urls": [
+      "http://www.youtube.com/@Guararapes-International/shorts"
+    ],
+    "ad_group_resource": "customers/4378571170/adGroups/181650306472",
+    "responsive_search_headlines": [],
+    "responsive_search_descriptions": []
+  }
+]

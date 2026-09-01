@@ -1,0 +1,11 @@
+[
+  {
+    "id": 4378571170,
+    "descriptive_name": "Guararapes Internacional",
+    "currency_code": "BRL",
+    "time_zone": "America/Sao_Paulo",
+    "manager": false,
+    "test_account": false,
+    "auto_tagging_enabled": true
+  }
+]

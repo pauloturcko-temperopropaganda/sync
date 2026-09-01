@@ -11,6 +11,19 @@ MIGRATIONS_DIR = os.path.join(
 
 
 def get_applied_migrations(cursor):
+    cursor.execute(
+        """
+        SELECT COUNT(*)
+        AS table_exists
+        FROM information_schema.tables
+        WHERE table_schema = DATABASE()
+          AND table_name = 'schema_migrations';
+        """
+    )
+
+    if cursor.fetchone()["table_exists"] == 0:
+        return set()
+
     cursor.execute("SELECT filename FROM schema_migrations;")
     return {row["filename"] for row in cursor.fetchall()}
 
