@@ -1,0 +1,649 @@
+[
+  {
+    "id": "120256489322260367",
+    "name": "004_Consultor Externo",
+    "adset_id": "120256489322270367",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1589326412870604",
+      "name": "Vaga Aberta! 2026-08-24-932661c5974a3e44fb288a91a11c1509",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330"
+      }
+    }
+  },
+  {
+    "id": "120255688344930367",
+    "name": "Auxiliar Administrativo",
+    "adset_id": "120255688344940367",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1030356496412610",
+      "name": "{{product.name}} 2026-07-22-512158f51492630fb57b95ee18840b6a",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330"
+      }
+    }
+  },
+  {
+    "id": "120256375643870367",
+    "name": "002_Compras",
+    "adset_id": "120256375643860367",
+    "status": "ACTIVE",
+    "effective_status": "ADSET_PAUSED",
+    "creative": {
+      "id": "2479772705868583",
+      "name": "Vaga Aberta na Aproest! 2026-08-19-669265b4c08c158b846626f7e8df51e7",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330"
+      }
+    }
+  },
+  {
+    "id": "120256201622800367",
+    "name": "002.17_Pague Dia 10 Setembro",
+    "adset_id": "120255042666860367",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "2309819976221316",
+      "name": "Contrate agora, pague dia 10/09! 2026-08-12-8d8347a1e4cd5e4daa0e598f4d86dc0b",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330",
+        "link_data": {
+          "link": "http://fb.me/",
+          "message": "Não espere o imprevisto acontecer! Contrate agora a proteção veicular da Aproest e pague sua primeira mensalidade somente no dia 10 de setembro.\n\nVocê garante proteção desde já e ainda tem mais tempo para organizar o seu primeiro pagamento.\n\n✅ Proteção completa\n✅ Assistência 24 horas\n✅ Cobertura contra terceiros\n✅ 100% da Tabela FIPE (conforme regulamento)",
+          "name": "Contrate agora, pague dia 10/09!",
+          "description": "Proteção completa",
+          "image_hash": "135bdd8222d91b1ac4ce9e3af58eb003",
+          "call_to_action": {
+            "type": "GET_QUOTE",
+            "value": {
+              "lead_gen_form_id": "1651889782584661"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "120255042666870367",
+    "name": "REEL_O_Badin_Avisou_PLACA",
+    "adset_id": "120255042666860367",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "1008273735021035",
+      "name": "O Badin avisou, se não fechou com a Aproest, é melhor ligar agora! 😅🚗 2026-06-23-e4cfe2c77223f6b02add76464d6a2e84",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120256349162700367",
+    "name": "002.24_Carros Rebaixados",
+    "adset_id": "120255042666860367",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "920546667185947",
+      "name": "Cote Sua Proteção Veicular! 2026-08-18-299eca6c6e053b524a78d86f8adbab5d",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330",
+        "link_data": {
+          "link": "http://fb.me/",
+          "message": "Rebaixou o carro? A proteção continua sendo essencial. 🚗⬇️ Na Aproest, carro rebaixado também pode contar com proteção veicular e diversos benefícios para você rodar com muito mais tranquilidade.\nEntre em contato, faça uma cotação e descubra como proteger seu carro sem complicação. 💜",
+          "name": "Cote Sua Proteção Veicular!",
+          "description": "Seu carro rebaixado protegido!",
+          "image_hash": "c9c57358c71836379eea8773f692638a",
+          "call_to_action": {
+            "type": "GET_QUOTE",
+            "value": {
+              "lead_gen_form_id": "1651889782584661"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "120256375856840367",
+    "name": "003_Regulagem",
+    "adset_id": "120256375856810367",
+    "status": "ACTIVE",
+    "effective_status": "ADSET_PAUSED",
+    "creative": {
+      "id": "1568939491392592",
+      "name": "Vaga Aberta na Aproest! 2026-08-19-32c3dd11cf2ac43309f806fdaf57c4ff",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330"
+      }
+    }
+  },
+  {
+    "id": "120256349556990367",
+    "name": "Reel_Adão_2",
+    "adset_id": "120255042666860367",
+    "status": "ACTIVE",
+    "effective_status": "CAMPAIGN_PAUSED",
+    "creative": {
+      "id": "2138792260328557",
+      "name": "🚛💜 Vem acompanhar um pouco da rotina de quem está sempre pronto para ajudar!\n\nNo vlog de hoje, most 2026-08-18-877069b26b688925802ef10b0599d1c3",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120256201192680367",
+    "name": "001.1_+1 Indenizado",
+    "adset_id": "120255042666860367",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "1644132687364323",
+      "name": "Aproest Proteção Veicular 2026-08-12-e0a85d8150ffc16148e9e52ffdffcf15",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330",
+        "link_data": {
+          "link": "http://fb.me/",
+          "message": "A cada dia cumprimos o nosso compromisso com quem confia na Aproest. 💜 Cada indenização representa agilidade, transparência e o cuidado que nossos associados merecem.",
+          "call_to_action": {
+            "type": "GET_QUOTE",
+            "value": {
+              "lead_gen_form_id": "1651889782584661"
+            }
+          },
+          "child_attachments": [
+            {
+              "link": "http://fb.me/",
+              "image_hash": "13418d5a3358bb4cf41097f0d8b2a644",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "1206f7aceced9306e43f134be8b61f65",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "7f958c4fed1e522758219732a7f9ceed",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "9d595eadb22504da310ae8468cecf695",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "db9750727817ead85669770891b6655b",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "f277d15e331b8ba7cda8b41988ef5f4a",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "9e4833012f0b04a0d8f007c5078512c4",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "3153b21fc83c0e8b23b7b5c3b8a36c3d",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "eb41b07fa49c6de27bbb3cc171935cdc",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "f62782fea3959818c1fff85d90ec9e01",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            }
+          ],
+          "multi_share_end_card": false,
+          "multi_share_optimized": false
+        }
+      }
+    }
+  },
+  {
+    "id": "120256002151230367",
+    "name": "Carrossel_Por Que Pagar",
+    "adset_id": "120255042666860367",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "1106114905580664",
+      "name": "Aproest Proteção Veicular 2026-08-05-565e28cce5eb06625b3e86695ad91e11",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330",
+        "link_data": {
+          "link": "http://fb.me/",
+          "message": "Por que pagar minha mensalidade se eu não vou usar?🤔\n\nEssa é uma das frases que mais ouvimos… até o dia em que acontece algo inesperado. 🚗💥\n\nProteção não é sobre usar todos os dias. É sobre ter com quem contar quando você realmente precisar.",
+          "description": "Proteção veicular completa",
+          "image_hash": "a73455cf4793f1e8233d461957d0f05f",
+          "call_to_action": {
+            "type": "GET_QUOTE",
+            "value": {
+              "lead_gen_form_id": "1651889782584661"
+            }
+          },
+          "child_attachments": [
+            {
+              "link": "http://fb.me/",
+              "image_hash": "a73455cf4793f1e8233d461957d0f05f",
+              "name": "Proteja-se de Imprevistos!",
+              "description": "Proteção veicular completa",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "5f1ed5fd47e677b02e63a46319ff0ba2",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "669fcca2206dd63a39366d7dd24a7f64",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "51c9a2020010cc16cad66e3861e42c4d",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "290b0e9e925a41b1b8364884d5d5e6b1",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "3e12c333a200986bb97d0ad942bad0e6",
+              "call_to_action": {
+                "type": "GET_QUOTE",
+                "value": {
+                  "lead_gen_form_id": "1651889782584661"
+                }
+              }
+            }
+          ],
+          "multi_share_end_card": false,
+          "multi_share_optimized": true
+        }
+      }
+    }
+  },
+  {
+    "id": "120256197701300367",
+    "name": "002.16_Nossos Números_Julho",
+    "adset_id": "120255042666860367",
+    "status": "ACTIVE",
+    "effective_status": "CAMPAIGN_PAUSED",
+    "creative": {
+      "id": "1418454383507857",
+      "name": "Foram 512 guinchos acionados, 102 vidros substituídos, 206 atendimentos por colisão, 2 perdas totai 2026-08-12-7b9cbca3f1ecffd79249d6eebd0404e6",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120256001884820367",
+    "name": "Reel_Clareou",
+    "adset_id": "120255042666860367",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "2572286003224182",
+      "name": "Clareou! 🙌🏻\n\nCom a Aproest é assim: quando menos esperar, clareou! Vem ser Aproest! 💜💚\n\n.\n.\n#aproes 2026-08-05-f25e932bb48b76e53e792a7fc5fdb447",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120256001950030367",
+    "name": "Reel_Diego 4",
+    "adset_id": "120255042666860367",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "1769667147370254",
+      "name": "Proteção Veicular Aproest! 2026-08-05-c2e740a630899e2bc4c2149b0c114926",
+      "object_type": "VIDEO",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330",
+        "video_data": {
+          "video_id": "1684146829340955",
+          "title": "Proteção Veicular Aproest!",
+          "message": "Nem tudo acontece exatamente como o planejado. E sabe de uma coisa? Isso faz parte.\n\nO que realmente importa é ter alguém que assume a responsabilidade e resolve.\n\nNeste caso, o veículo já havia sido entregue ao associado, mas apresentou um defeito e precisou retornar pela garantia. Bastou um contato e a equipe da Aproest entrou em ação novamente, sem burocracia e com toda a agilidade necessária.\n\nPorque proteger você não termina quando o carro é entregue. Nosso compromisso continua até que tudo esteja realmente resolvido.\n\nImprevistos podem acontecer. O que faz a diferença é quem está ao seu lado quando eles acontecem.💜\n\nAproest. Proteção de verdade é estar presente do começo ao fim.",
+          "link_description": "Proteja-se de Imprevistos!",
+          "call_to_action": {
+            "type": "GET_QUOTE",
+            "value": {
+              "lead_gen_form_id": "1651889782584661",
+              "link": "http://fb.me/"
+            }
+          },
+          "image_url": "https://www.facebook.com/ads/image/?d=AQIVhOWOXyXQfypir953N6oz3VHHWj6Kd5hcmGeqiIW6YjD0R6zcg3Lhf6vwUAR6emjcG8jY0nfgww_fuOPA45RE7YE-A1p03pylwx4U2nB3Mwod5rm7VbgMsNzQfT5LJCYEH8HJHBvM3r_rFqi03gxk",
+          "image_hash": "5b5dad9ff74819c12baa68efeec5ba39"
+        }
+      }
+    }
+  },
+  {
+    "id": "120255143959740367",
+    "name": "Reel_Badin Tipos de Pessoa Acidente",
+    "adset_id": "120255139829850367",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "994030910075006",
+      "name": "Faça a sua cotação! 2026-07-03-344c1852f3202edf1bce643e93638dc9",
+      "object_type": "VIDEO",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330",
+        "video_data": {
+          "video_id": "1427001062598781",
+          "title": "Faça a sua cotação!",
+          "message": "E já sabe, né: Proteção veicular é com a Aproest! 😁",
+          "link_description": "Cobertura nacional",
+          "call_to_action": {
+            "type": "GET_QUOTE",
+            "value": {
+              "link": "https://aproest.com.br/cotar/"
+            }
+          },
+          "image_url": "https://www.facebook.com/ads/image/?d=AQKlzUTaA0VEWQAgakBYEoVFh1uOvIMWe6RDlBTEBuPC0PQdvg0aXrf3fVdGhD7HYWn1tOwxS_ZhRGDzrO8YByBw8IH4XkqDTg6QUEok4AZVzmKEKgrLUpE8XJXbVcjcMlvJaqm3RKFOGqzR1q1AfeaV",
+          "image_hash": "9394c0b455947ef52f740c1322500ac9"
+        }
+      }
+    }
+  },
+  {
+    "id": "120256000828770367",
+    "name": "002.16_Nossos Números_Julho",
+    "adset_id": "120255139829850367",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "1057978466715384",
+      "name": "Aproest Associação de Benefícios 2026-08-05-691978804209dc4a5875225defba102c",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120256000976070367",
+    "name": "001.1_+1 Indenizado",
+    "adset_id": "120255139829850367",
+    "status": "ACTIVE",
+    "effective_status": "CAMPAIGN_PAUSED",
+    "creative": {
+      "id": "1555076726260539",
+      "name": "Aproest Proteção Veicular 2026-08-05-1c448504c8486645e76b665508c050bf",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330",
+        "link_data": {
+          "link": "https://aproest.com.br/cotar/",
+          "message": "A cada dia cumprimos o nosso compromisso com quem confia na Aproest. 💜 Cada indenização representa agilidade, transparência e o cuidado que nossos associados merecem.",
+          "description": "Indenização com agilidade",
+          "image_hash": "9254a111ad115c8266f2b09968cb2e57",
+          "call_to_action": {
+            "type": "GET_QUOTE"
+          },
+          "child_attachments": [
+            {
+              "link": "https://aproest.com.br/cotar/",
+              "image_hash": "9254a111ad115c8266f2b09968cb2e57",
+              "name": "Cote Sua Proteção Veicular!",
+              "description": "Indenização ágil",
+              "call_to_action": {
+                "type": "GET_QUOTE"
+              }
+            },
+            {
+              "link": "https://aproest.com.br/cotar/",
+              "image_hash": "7b29bd2189fdb5fb5af9a443f7d577ff",
+              "call_to_action": {
+                "type": "GET_QUOTE"
+              }
+            },
+            {
+              "link": "https://aproest.com.br/cotar/",
+              "image_hash": "85c2ce3b4e83d985abf36fff589bf975",
+              "call_to_action": {
+                "type": "GET_QUOTE"
+              }
+            },
+            {
+              "link": "https://aproest.com.br/cotar/",
+              "image_hash": "cd39aa3533f889b4854814d9cac18a89",
+              "call_to_action": {
+                "type": "GET_QUOTE"
+              }
+            },
+            {
+              "link": "https://aproest.com.br/cotar/",
+              "image_hash": "96ec6f2bbba97d5cfdbe881a288183cf",
+              "call_to_action": {
+                "type": "GET_QUOTE"
+              }
+            },
+            {
+              "link": "https://aproest.com.br/cotar/",
+              "image_hash": "ed58a245dc0cdbcb788204d1de178214",
+              "call_to_action": {
+                "type": "GET_QUOTE"
+              }
+            },
+            {
+              "link": "https://aproest.com.br/cotar/",
+              "image_hash": "883a548607c5c7a3d1264884a79fd0bc",
+              "call_to_action": {
+                "type": "GET_QUOTE"
+              }
+            },
+            {
+              "link": "https://aproest.com.br/cotar/",
+              "image_hash": "1d5cb6097f2715f37e1451f51031d770",
+              "call_to_action": {
+                "type": "GET_QUOTE"
+              }
+            },
+            {
+              "link": "https://aproest.com.br/cotar/",
+              "image_hash": "747c5263b86b058bdc546cb608221700",
+              "call_to_action": {
+                "type": "GET_QUOTE"
+              }
+            }
+          ],
+          "multi_share_end_card": true,
+          "multi_share_optimized": true
+        }
+      }
+    }
+  },
+  {
+    "id": "120256001678660367",
+    "name": "Carrossel_Vantagens Ser Associado",
+    "adset_id": "120254406604280367",
+    "status": "ACTIVE",
+    "effective_status": "CAMPAIGN_PAUSED",
+    "creative": {
+      "id": "1518192382954289",
+      "name": "Seja Associado Aproest! 2026-08-05-da115dafc9e02417464e9e6296c57b61",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330",
+        "link_data": {
+          "link": "http://fb.me/",
+          "message": "Essa é só a ponta do iceberg! 💚💜\n\nAssociado Aproest sempre ganha mais!\n\n✅ + benefícios\n✅ + cobertura \n✅ + tranquilidade\n✅ + descontos \n\nVem ser Aproest e descubra o porquê somos a sua melhor escolha quando o assunto é proteção!",
+          "name": "Seja Associado Aproest!",
+          "description": "Mais benefícios pra você!",
+          "image_hash": "c3c1458645b36602280ac2742268c075",
+          "call_to_action": {
+            "type": "GET_QUOTE",
+            "value": {
+              "lead_gen_form_id": "1651889782584661"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "120256001569140367",
+    "name": "Reel_Guincho Adão",
+    "adset_id": "120254406604280367",
+    "status": "ACTIVE",
+    "effective_status": "CAMPAIGN_PAUSED",
+    "creative": {
+      "id": "4311256689138036",
+      "name": "Vem acompanhar uma corrida de guincho com o Seu Adão! 🚛\n\nUm pouquinho da rotina de quem está sempre 2026-08-05-1477d115e616c0a6e70ceca2e44d8b53",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120256001418800367",
+    "name": "002.17_Pague Dia 10 Setembro",
+    "adset_id": "120254406604280367",
+    "status": "ACTIVE",
+    "effective_status": "CAMPAIGN_PAUSED",
+    "creative": {
+      "id": "1027969943176837",
+      "name": "Contrate agora, pague em setembro! 2026-08-05-2e4d89b531fa2900d963598f32df6220",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330",
+        "link_data": {
+          "link": "http://fb.me/",
+          "message": "🚗💜 Não espere o imprevisto acontecer!\n\nContrate agora a proteção veicular da Aproest e pague sua primeira mensalidade somente no dia 10 de setembro.\n\nVocê garante proteção desde já e ainda tem mais tempo para organizar o seu primeiro pagamento.\n\n✅ Proteção completa\n✅ Assistência 24 horas\n✅ Cobertura contra terceiros\n✅ 100% da Tabela FIPE (conforme regulamento)\n\n**Sua tranquilidade começa hoje. Fale com a Aproest e proteja seu veículo!** 💚",
+          "name": "Contrate agora, pague em setembro!",
+          "description": "Proteção veicular completa",
+          "image_hash": "135bdd8222d91b1ac4ce9e3af58eb003",
+          "call_to_action": {
+            "type": "GET_QUOTE",
+            "value": {
+              "lead_gen_form_id": "1651889782584661"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "120255352849550367",
+    "name": "POT_001_Pague Mês Que Vem",
+    "adset_id": "120254406604280367",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "1350400693927530",
+      "name": "{{product.name}} 2026-08-05-cdade5336b19c1aeefa80bb2ce8dba21",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "2137678089806676",
+        "instagram_user_id": "17841408577980330"
+      }
+    }
+  }
+]

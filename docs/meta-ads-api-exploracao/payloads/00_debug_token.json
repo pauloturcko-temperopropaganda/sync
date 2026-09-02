@@ -1,0 +1,8 @@
+{
+  "error": {
+    "message": "(#100) You must provide an app access token, or a user access token that is an owner or developer of the app",
+    "type": "OAuthException",
+    "code": 100,
+    "fbtrace_id": "ApzXd0nt24SS6OLcKdOQpTT"
+  }
+}

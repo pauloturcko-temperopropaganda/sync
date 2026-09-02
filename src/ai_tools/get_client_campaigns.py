@@ -1,7 +1,7 @@
 """Ferramenta autorizada: lista as campanhas de um cliente.
 
 Uso:
-python -m src.ai_tools.get_client_campaigns --client seed-alpha-imoveis
+python -m src.ai_tools.get_client_campaigns --client seed-cliente-teste
 
 A ferramenta aceita somente o slug exato do cliente.
 Não existe parâmetro para SQL arbitrário.
@@ -20,7 +20,7 @@ from src.ai_tools.db import fetch_all, get_connection
 
 
 def _json_default(value: Any) -> Any:
-    """Converte tipos do MariaDB para JSON."""
+    """Converte tipos do Postgres para JSON."""
     if isinstance(value, (datetime, date)):
         return value.isoformat()
 
@@ -38,7 +38,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--client",
         required=True,
-        help="Slug exato do cliente. Ex.: seed-alpha-imoveis",
+        help="Slug exato do cliente. Ex.: seed-cliente-teste",
     )
 
     return parser.parse_args()
@@ -63,13 +63,13 @@ def main() -> int:
     # Consulta fixa para validar a existência do cliente.
     query = """
         SELECT
-            c.id,
-            c.name,
-            c.slug,
-            c.industry,
-            c.status
-        FROM clients c
-        WHERE c.slug = %s
+            clients.id,
+            clients.name,
+            clients.slug,
+            clients.industry,
+            clients.status
+        FROM clients
+        WHERE clients.slug = %s
         LIMIT 1
     """
 
@@ -81,8 +81,6 @@ def main() -> int:
             campaigns.name,
             campaigns.objective,
             campaigns.status,
-            campaigns.budget_type,
-            campaigns.budget_amount,
             campaigns.start_date,
             campaigns.end_date,
 

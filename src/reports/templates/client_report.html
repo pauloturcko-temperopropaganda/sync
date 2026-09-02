@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Relatório — {{ client.name }}</title>
+<style>
+    @page {
+        size: A4;
+        margin: 18mm 16mm;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #1F2937;
+        font-size: 11pt;
+        margin: 0;
+    }
+
+    header.report-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-bottom: 3px solid #111111;
+        padding-bottom: 12px;
+        margin-bottom: 20px;
+    }
+
+    header.report-header .agency {
+        font-size: 10pt;
+        color: #6B7280;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    header.report-header h1 {
+        font-size: 20pt;
+        margin: 2px 0 0 0;
+        color: #111827;
+    }
+
+    header.report-header .period {
+        text-align: right;
+        font-size: 10pt;
+        color: #6B7280;
+    }
+
+    section {
+        margin-bottom: 22px;
+    }
+
+    h2 {
+        font-size: 12pt;
+        color: #111827;
+        border-left: 4px solid #111111;
+        padding-left: 8px;
+        margin: 0 0 10px 0;
+    }
+
+    .kpi-grid {
+        display: flex;
+        gap: 10px;
+    }
+
+    .kpi-card {
+        flex: 1;
+        background: #F9FAFB;
+        border: 1px solid #E5E7EB;
+        border-radius: 8px;
+        padding: 10px 12px;
+    }
+
+    .kpi-card .label {
+        font-size: 8.5pt;
+        color: #6B7280;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+
+    .kpi-card .value {
+        font-size: 15pt;
+        font-weight: 600;
+        color: #111827;
+        margin-top: 2px;
+    }
+
+    .chart-img {
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 9.5pt;
+    }
+
+    thead th {
+        text-align: left;
+        background: #F3F4F6;
+        color: #374151;
+        padding: 6px 8px;
+        font-weight: 600;
+        border-bottom: 1px solid #E5E7EB;
+    }
+
+    tbody td {
+        padding: 6px 8px;
+        border-bottom: 1px solid #F3F4F6;
+    }
+
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    td.num, th.num {
+        text-align: right;
+    }
+
+    .status-pill {
+        display: inline-block;
+        font-size: 8pt;
+        padding: 1px 7px;
+        border-radius: 10px;
+        background: #DCFCE7;
+        color: #166534;
+    }
+
+    .status-pill.inactive {
+        background: #F3F4F6;
+        color: #6B7280;
+    }
+
+    .actions-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .actions-grid .kpi-card {
+        flex: 0 0 auto;
+        min-width: 110px;
+    }
+
+    footer {
+        margin-top: 24px;
+        padding-top: 10px;
+        border-top: 1px solid #E5E7EB;
+        font-size: 8pt;
+        color: #9CA3AF;
+    }
+
+    .empty-note {
+        font-size: 9.5pt;
+        color: #9CA3AF;
+        font-style: italic;
+    }
+</style>
+</head>
+<body>
+
+<header class="report-header">
+    <div>
+        <div class="agency">Tempero Propaganda</div>
+        <h1>{{ client.name }}</h1>
+    </div>
+    <div class="period">
+        Relatório de performance<br>
+        {{ period.start.strftime('%d/%m/%Y') }} a {{ period.end.strftime('%d/%m/%Y') }}
+    </div>
+</header>
+
+<section>
+    <h2>Resumo do período</h2>
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="label">Investimento</div>
+            <div class="value">{{ "R$ %.2f"|format(summary.spend)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Impressões</div>
+            <div class="value">{{ "{:,}".format(summary.impressions)|replace(",", ".") }}</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Cliques</div>
+            <div class="value">{{ "{:,}".format(summary.clicks)|replace(",", ".") }}</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">CTR</div>
+            <div class="value">{{ "%.2f"|format(summary.ctr_percent) }}%</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">CPC médio</div>
+            <div class="value">{{ "R$ %.2f"|format(summary.cpc)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Investimento diário</h2>
+    {% if daily_trend %}
+        <img class="chart-img" src="{{ chart_data_uri }}" alt="Gráfico de investimento diário">
+    {% else %}
+        <p class="empty-note">Sem dado de investimento diário no período.</p>
+    {% endif %}
+</section>
+
+<section>
+    <h2>Ações no período</h2>
+    {% if actions %}
+        <div class="actions-grid">
+            {% for action in actions %}
+            <div class="kpi-card">
+                <div class="label">{{ action.label }}</div>
+                <div class="value">{{ "{:,.0f}".format(action.total_count)|replace(",", ".") }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="empty-note">Nenhuma ação registrada no período.</p>
+    {% endif %}
+</section>
+
+<section>
+    <h2>Campanhas com investimento no período</h2>
+    {% if top_campaigns %}
+    <table>
+        <thead>
+            <tr>
+                <th>Campanha</th>
+                <th>Status</th>
+                <th class="num">Impressões</th>
+                <th class="num">Cliques</th>
+                <th class="num">Investimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in top_campaigns %}
+            <tr>
+                <td>{{ c.name }}</td>
+                <td>
+                    <span class="status-pill {{ 'inactive' if c.status != 'ACTIVE' else '' }}">{{ c.status }}</span>
+                </td>
+                <td class="num">{{ "{:,}".format(c.impressions)|replace(",", ".") }}</td>
+                <td class="num">{{ "{:,}".format(c.clicks)|replace(",", ".") }}</td>
+                <td class="num">{{ "R$ %.2f"|format(c.spend)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p class="empty-note">Nenhuma campanha com investimento no período.</p>
+    {% endif %}
+</section>
+
+<footer>
+    Gerado automaticamente pelo Sync em {{ generated_at }}. Dados da Meta Ads.
+</footer>
+
+</body>
+</html>

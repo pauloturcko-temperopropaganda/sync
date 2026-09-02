@@ -67,7 +67,7 @@ Arquivos Markdown / Vault
 
 DADOS
     ↓
-MariaDB
+PostgreSQL
 
 PROCESSAMENTO
     ↓
@@ -116,7 +116,7 @@ Isso não autoriza o agente a fazer isso se o ambiente ou este guia proibir a a�
 
 ## 3.1 O agente não possui acesso direto ao banco
 
-O agente de IA **NÃO DEVE acessar o MariaDB diretamente**.
+O agente de IA **NÃO DEVE acessar o PostgreSQL diretamente**.
 
 Isso inclui:
 
@@ -159,7 +159,7 @@ Fluxo proibido:
 ```text
 Agente de IA
    ↓
-MariaDB diretamente
+PostgreSQL diretamente
 ```
 
 ---
@@ -237,13 +237,14 @@ Esses arquivos podem conter:
 
 O Obsidian é uma interface sobre esses arquivos. Ele não é considerado o banco de dados do projeto.
 
-## 6.2 MariaDB
+## 6.2 PostgreSQL
 
-O MariaDB contém dados estruturados.
+O PostgreSQL contém dados estruturados.
 
-O schema atual contempla entidades como:
+O schema atual (`src/migrations/0001_core_schema.sql`) contempla entidades como:
 
 ```text
+organizations
 clients
 platforms
 ad_accounts
@@ -251,13 +252,15 @@ campaigns
 ad_groups
 ads
 daily_metrics
-landing_pages
-leads
-conversions
+action_type_catalog
+daily_actions
+data_sync_runs
 schema_migrations
 ```
 
-As métricas diárias são armazenadas em `daily_metrics`, enquanto indicadores derivados como CTR, CPC e CPM podem ser calculados a partir dos dados-base.
+Não há tabelas de CRM (`leads`, `conversions`, `landing_pages`) — decisão do projeto de não duplicar dado pessoal de lead dentro do Sync.
+
+As métricas diárias são armazenadas em `daily_metrics` (impressões, cliques, investimento, alcance), enquanto ações de conversão (leads, compras, mensagens...) são armazenadas separadamente em `daily_actions`, segmentadas por `action_type` e classificadas em `action_type_catalog`. Indicadores derivados como CTR, CPC e CPM são calculados a partir dos dados-base, não armazenados.
 
 ---
 
@@ -574,7 +577,7 @@ Exemplo:
 Fonte provável:
 
 ```text
-MariaDB
+PostgreSQL
 ```
 
 Utilizar um script Python autorizado.
@@ -594,7 +597,7 @@ Fontes:
 ```text
 Vault
 +
-MariaDB
+PostgreSQL
 ```
 
 O agente deve consultar cada fonte pelo mecanismo autorizado e então realizar a análise.
@@ -775,7 +778,9 @@ Até estar documentado e testado:
 
 # 26. CATÁLOGO DE SCRIPTS AUTORIZADOS
 
-Esta seção contém as únicas ferramentas Python de consulta ao MariaDB atualmente autorizadas para uso pelo agente.
+Esta seção contém as únicas ferramentas Python de consulta ao PostgreSQL atualmente autorizadas para uso pelo agente.
+
+> Nota de revisão: este catálogo foi reescrito em 2026-09-01 junto com a migração de MariaDB para PostgreSQL e o pivô de prioridade para Meta Ads (ver `docs/meta-ads-api-exploracao.md`). As 6 ferramentas abaixo foram testadas de verdade contra o schema atual (`src/migrations/0001_core_schema.sql`) antes de receberem `VALIDADO` — não é uma suposição. Nenhuma delas tem dado real ainda: o banco só tem `seed_dev.sql` (dado fictício, prefixo `seed-`), até o pipeline de ingestão do Meta existir.
 
 Um script só pode ser considerado autorizado quando estiver documentado nesta seção, testado isoladamente e marcado como `VALIDADO`.
 
@@ -812,7 +817,7 @@ Status:
 **Exemplo:**
 
 ```text
-python -m src.ai_tools.get_client_info --client seed-alpha-imoveis
+python -m src.ai_tools.get_client_info --client seed-cliente-teste
 ```
 
 **Saída:**
@@ -825,13 +830,15 @@ Retorna informações básicas do cliente, incluindo:
 - segmento/industry;
 - status;
 - data de criação;
-- data de atualização.
+- data de atualização;
+- organização (id, slug, nome) — a holding/grupo dono do cliente.
 
 **Fonte:**
 
 ```text
-MariaDB
-└── clients
+PostgreSQL
+├── clients
+└── organizations
 ```
 
 **Somente leitura:** `SIM`
@@ -866,28 +873,28 @@ MariaDB
 **Exemplo:**
 
 ```text
-python -m src.ai_tools.get_client_campaigns --client seed-alpha-imoveis
+python -m src.ai_tools.get_client_campaigns --client seed-cliente-teste
 ```
 
 **Saída:**
 
 Retorna as campanhas do cliente, incluindo:
 
-- id;
-- identificador externo;
+- id (interno, usado como `--campaign` em `get_campaign_performance`);
+- identificador externo (`external_campaign_id`, o ID na plataforma);
 - nome;
 - objetivo;
 - status;
-- tipo de orçamento;
-- valor do orçamento;
-- datas;
-- conta de anúncios;
-- plataforma.
+- datas de início/fim;
+- conta de anúncios (id, identificador externo, nome, moeda, timezone);
+- plataforma (id, nome, slug).
+
+Não retorna orçamento — o schema atual não guarda orçamento no nível de campanha (o dado real de orçamento vem no nível de ad set/ad group, quando sincronizado).
 
 **Fonte:**
 
 ```text
-MariaDB
+PostgreSQL
 ├── clients
 ├── ad_accounts
 ├── platforms
@@ -928,34 +935,40 @@ MariaDB
 **Exemplo:**
 
 ```text
-python -m src.ai_tools.get_campaign_performance --client seed-alpha-imoveis --campaign 1001 --start 2026-07-01 --end 2026-07-31
+python -m src.ai_tools.get_campaign_performance --client seed-cliente-teste --campaign 2 --start 2026-08-01 --end 2026-08-05
 ```
+
+`--campaign` é o **id interno** da campanha (o campo `id` retornado por `get_client_campaigns`), não o `external_campaign_id` da plataforma.
 
 **Saída:**
 
 Retorna:
 
-- informações da campanha;
+- informações da campanha (id, nome, status, objetivo, plataforma);
 - período consultado;
-- impressões;
-- cliques;
-- investimento;
-- alcance;
-- visualizações de vídeo;
-- conversões da plataforma;
-- CTR;
-- CPC;
-- CPM.
+- métricas: impressões, cliques, investimento, `reach_daily_sum`, CTR, CPC, CPM;
+- ações canônicas por categoria de negócio (`actions`): `lead`, `purchase`, `message`, `checkout`, `pageview`, `video`, `engagement` — cada uma com contagem e valor.
+
+Duas particularidades importantes do formato de saída:
+
+- `reach_daily_sum` é a **soma do alcance diário**, não alcance único do período (alcance não é aditivo — o mesmo usuário pode ser contado em mais de um dia). O próprio JSON de retorno inclui uma nota explicando isso; não interpretar como alcance deduplicado.
+- `actions` só conta `action_type` marcados `is_canonical = true` em `action_type_catalog` — evita contar o mesmo evento (ex.: um lead) várias vezes sob nomes diferentes. Ver seção 6 e `docs/meta-ads-api-exploracao.md` para o porquê.
+
+Métricas e ações são agregadas apenas no grão "campanha inteira" (linhas de `daily_metrics`/`daily_actions` com `ad_group_id`, `ad_id`, `device` e `publisher_platform` nulos). Se existir dado mais granular (por device, por anúncio) para a mesma campanha/data, ele **não entra** nesta soma — evita contar a mesma métrica duas vezes quando o pipeline de ingestão gravar em mais de um grão.
+
+Campanha sem nenhuma métrica no período retorna `ok: true` com todos os valores zerados, não erro.
 
 **Fonte:**
 
 ```text
-MariaDB
+PostgreSQL
 ├── clients
+├── ad_accounts
+├── platforms
 ├── campaigns
-├── ad_groups
-├── ads
-└── daily_metrics
+├── daily_metrics
+├── daily_actions
+└── action_type_catalog
 ```
 
 **Somente leitura:** `SIM`
@@ -974,12 +987,14 @@ MariaDB
 
 ---
 
-## 26.4 `get_client_conversions`
+## 26.4 `get_client_actions`
 
-**Nome:** `get_client_conversions`  
-**Caminho:** `src/ai_tools/get_client_conversions.py`  
+**Nome:** `get_client_actions`  
+**Caminho:** `src/ai_tools/get_client_actions.py`  
 **Tipo:** `READ_ONLY`  
-**Finalidade:** Consultar as conversões registradas para um cliente em determinado período.
+**Finalidade:** Consultar ações canônicas (leads, compras, mensagens, etc.) de um cliente em determinado período, agregadas por categoria de negócio e por campanha.
+
+Substitui a antiga `get_client_conversions`. A tabela `conversions` não existe mais neste schema — decisão do projeto de não duplicar dado de lead/CRM dentro do Sync (esse dado já tem um pipeline próprio: webhook → Central de Leads → planilha/e-mail). Esta ferramenta retorna apenas contagens agregadas, nunca dado individual de lead (nome, telefone, e-mail).
 
 **Entrada:**
 
@@ -992,7 +1007,7 @@ MariaDB
 **Exemplo:**
 
 ```text
-python -m src.ai_tools.get_client_conversions --client seed-alpha-imoveis --start 2026-07-01 --end 2026-07-31
+python -m src.ai_tools.get_client_actions --client seed-cliente-teste --start 2026-08-01 --end 2026-08-05
 ```
 
 **Saída:**
@@ -1000,27 +1015,29 @@ python -m src.ai_tools.get_client_conversions --client seed-alpha-imoveis --star
 Retorna:
 
 - período consultado;
-- quantidade total de conversões;
-- valor total das conversões;
-- quantidade de conversões por tipo;
-- registros individuais de conversão;
-- campanha associada quando disponível.
+- `summary_by_category`: total (contagem + valor) por categoria canônica (`lead`, `purchase`, `message`, `checkout`, `pageview`, `video`, `engagement`) somando todas as campanhas do cliente — toda categoria aparece, mesmo com zero eventos;
+- `by_campaign`: mesmo detalhamento, mas quebrado por campanha (só campanhas com algum evento no período).
+
+Só conta `action_type` marcados `is_canonical = true` — mesma lógica e mesmo motivo de `get_campaign_performance`.
 
 **Fonte:**
 
 ```text
-MariaDB
+PostgreSQL
 ├── clients
-├── conversions
-└── campaigns
+├── ad_accounts
+├── campaigns
+├── daily_actions
+└── action_type_catalog
 ```
 
 **Somente leitura:** `SIM`
 
 **Limites:**
 
-- consulta somente conversões pertencentes ao cliente informado;
+- consulta somente ações pertencentes a campanhas do cliente informado;
 - exige período;
+- não retorna dado individual de lead (nome, telefone, e-mail, resposta de formulário);
 - não aceita SQL arbitrário;
 - não permite INSERT;
 - não permite UPDATE;
@@ -1031,9 +1048,112 @@ MariaDB
 
 ---
 
+## 26.5 `get_client_performance`
+
+**Nome:** `get_client_performance`  
+**Caminho:** `src/ai_tools/get_client_performance.py`  
+**Tipo:** `READ_ONLY`  
+**Finalidade:** Consultar o desempenho agregado de **todas** as campanhas de um cliente num período (visão de conta, não de uma campanha isolada).
+
+**Entrada:**
+
+```text
+--client <client_slug>
+--start <YYYY-MM-DD>
+--end <YYYY-MM-DD>
+```
+
+**Exemplo:**
+
+```text
+python -m src.ai_tools.get_client_performance --client seed-cliente-teste --start 2026-08-01 --end 2026-08-05
+```
+
+**Saída:**
+
+- `summary`: impressões, cliques, investimento, `reach_daily_sum` (com a mesma nota de não-dedup de `get_campaign_performance`), CTR, CPC, CPM — somados de todas as campanhas;
+- `by_campaign`: mesma quebra, uma linha por campanha, ordenada por investimento (maior primeiro); campanha sem métrica no período aparece com zero, não some da lista.
+
+Não inclui ações (leads/compras/mensagens) — para isso, usar `get_client_actions`. Mesma regra de grão das demais ferramentas de métrica: soma só linhas com `ad_group_id`/`ad_id`/`device`/`publisher_platform` nulos.
+
+**Fonte:**
+
+```text
+PostgreSQL
+├── clients
+├── ad_accounts
+├── campaigns
+└── daily_metrics
+```
+
+**Somente leitura:** `SIM`
+
+**Limites:**
+
+- exige cliente e período;
+- não aceita SQL arbitrário;
+- não permite INSERT/UPDATE/DELETE;
+- não executa migrations.
+
+**Status:** `VALIDADO`
+
+---
+
+## 26.6 `get_campaign_device_breakdown`
+
+**Nome:** `get_campaign_device_breakdown`  
+**Caminho:** `src/ai_tools/get_campaign_device_breakdown.py`  
+**Tipo:** `READ_ONLY`  
+**Finalidade:** Consultar o desempenho de uma campanha quebrado por dispositivo (`device`) e plataforma de publicação (`publisher_platform` — facebook, instagram, audience_network, threads; específico do Meta).
+
+**Entrada:**
+
+```text
+--client <client_slug>
+--campaign <campaign_id>
+--start <YYYY-MM-DD>
+--end <YYYY-MM-DD>
+```
+
+**Exemplo:**
+
+```text
+python -m src.ai_tools.get_campaign_device_breakdown --client seed-cliente-teste --campaign 2 --start 2026-08-01 --end 2026-08-05
+```
+
+**Saída:**
+
+Lista (`breakdown`) com uma linha por combinação de `device`/`publisher_platform` que teve dado no período, cada uma com impressões, cliques e investimento. Complementa `get_campaign_performance`, que deliberadamente ignora essas linhas segmentadas no seu agregado (para não contar a mesma métrica duas vezes) — esta é a ferramenta certa para consultar exatamente essas linhas.
+
+Campanha sem nenhuma segmentação de device/plataforma no período retorna `breakdown: []`, não erro.
+
+**Fonte:**
+
+```text
+PostgreSQL
+├── clients
+├── ad_accounts
+├── campaigns
+└── daily_metrics
+```
+
+**Somente leitura:** `SIM`
+
+**Limites:**
+
+- consulta uma campanha por execução;
+- exige cliente e período;
+- não aceita SQL arbitrário;
+- não permite INSERT/UPDATE/DELETE;
+- não executa migrations.
+
+**Status:** `VALIDADO`
+
+---
+
 ## Regra geral do catálogo
 
-Os scripts acima são as **únicas ferramentas Python de consulta ao MariaDB atualmente autorizadas para uso pelo agente**.
+Os scripts acima são as **únicas ferramentas Python de consulta ao PostgreSQL atualmente autorizadas para uso pelo agente**.
 
 O agente:
 
@@ -1055,7 +1175,7 @@ O agente deve informar que não possui atualmente uma ferramenta autorizada capa
 
 ---
 
-# 26.5 REGRA DE DECISÃO DE FERRAMENTAS
+# 26.7 REGRA DE DECISÃO DE FERRAMENTAS
 
 O agente deve mapear a intenção da pergunta para a ferramenta adequada.
 
@@ -1101,17 +1221,49 @@ Exemplo:
 
 ---
 
-### Perguntas sobre conversões de um cliente
+### Perguntas sobre desempenho geral de um cliente (todas as campanhas juntas)
 
 Utilizar:
 
 ```text
-get_client_conversions
+get_client_performance
 ```
 
 Exemplo:
 
-> "Quantas conversões a Alpha Imóveis teve em julho?"
+> "Quanto a Alpha Imóveis investiu no total em julho?"
+
+Diferente de `get_campaign_performance` (uma campanha específica), esta soma todas as campanhas do cliente e também lista o detalhamento por campanha.
+
+---
+
+### Perguntas sobre desempenho por dispositivo ou plataforma
+
+Utilizar:
+
+```text
+get_campaign_device_breakdown
+```
+
+Exemplo:
+
+> "Essa campanha performa melhor no Instagram ou no Facebook? E no celular ou no computador?"
+
+---
+
+### Perguntas sobre leads, compras, mensagens ou outras ações de um cliente
+
+Utilizar:
+
+```text
+get_client_actions
+```
+
+Exemplo:
+
+> "Quantos leads a Alpha Imóveis teve em julho?"
+
+Esta ferramenta retorna apenas contagens agregadas por categoria (lead, purchase, message, etc.), nunca dado individual de lead.
 
 ---
 

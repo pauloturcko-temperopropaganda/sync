@@ -13,28 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "clientes/hospital-de-olhos-videira/reunioes/15-07-2026.md",
+                "file": "clientes/hospital-de-olhos-videira/cliente.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "15-07-2026"
-            }
-          }
-        ]
-      },
-      {
-        "id": "31d72a8653acfc08",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "7387e91c015eddc4",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "cliente"
             }
           }
         ]
@@ -204,12 +188,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "7387e91c015eddc4",
+  "active": "917b424e5d47ce18",
   "lastOpenFiles": [
-    "clientes/vigor-studio/cliente.md",
-    "clientes/hospital-de-olhos-videira/reunioes/15-07-2026.md",
-    "clientes/cantina-toscana/cliente.md",
+    "clientes/hospital-de-olhos-videira/produtos.md",
+    "clientes/hospital-de-olhos-videira/gatilhos-mentais.md",
+    "clientes/hospital-de-olhos-videira/estilo-visual.md",
+    "clientes/hospital-de-olhos-videira/equipe-medica.md",
     "clientes/hospital-de-olhos-videira/cliente.md",
+    "clientes/hospital-de-olhos-videira/reunioes/15-07-2026.md",
+    "clientes/vigor-studio/cliente.md",
+    "clientes/cantina-toscana/cliente.md",
     "clientes/hospital-de-olhos-videira/reunioes/06-07-2026.md",
     "clientes/cardoso-empreendimentos/cliente.md",
     "clientes/hospital-de-olhos/reunioes/15-07-2026.md",

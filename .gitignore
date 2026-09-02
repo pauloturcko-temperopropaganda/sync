@@ -14,9 +14,15 @@ docker/data/
 docker/.env
 
 # Obsidian
-vault/.obsidian/workspace*.json
-vault/.obsidian/cache
+vault/**/.obsidian/workspace*.json
+vault/**/.obsidian/cache
 
 # SO
 .DS_Store
 Thumbs.db
+
+# Logs
+logs/
+
+# Relatórios gerados (saída, não é fonte)
+reports_output/

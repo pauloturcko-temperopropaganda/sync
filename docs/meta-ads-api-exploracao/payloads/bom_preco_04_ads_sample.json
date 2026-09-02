@@ -1,0 +1,242 @@
+[
+  {
+    "id": "120255571522430159",
+    "name": "001_Início de mês",
+    "adset_id": "120255571522420159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "2262815011152061",
+      "name": "Lojas Bom Preço 2026-09-01-0cf3f67c5d1a526ca9b19dab99583f60",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255571451340159",
+    "name": "024_Carrossel Feirão Videira e Rio das Antas",
+    "adset_id": "120255571451240159",
+    "status": "PAUSED",
+    "effective_status": "WITH_ISSUES",
+    "creative": {
+      "id": "1353726123502846",
+      "name": "Lojas Bom Preço 2026-09-01-35758e560d7a6bd862f4b6495917ac68",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255491110080159",
+    "name": "023_Reel Feirão Videira e Rio das Antas",
+    "adset_id": "120255491110070159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1954836735214054",
+      "name": "Está chegando o Super Feirão de estofados e colchões da Bom Preço. 🎆\n\n📆 De 03 a 05 de setembro, apr 2026-08-27-0a69c8b7ca01e624a6b43e08a9ae3f20",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120255473264990159",
+    "name": "022_Fecha Mês",
+    "adset_id": "120255473264980159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1580507987010692",
+      "name": "Lojas Bom Preço 2026-08-26-03f5039267d351a618c317a2667567fc",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255386527970159",
+    "name": "020_BBB Aniversário",
+    "adset_id": "120255386527980159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1930835944252671",
+      "name": "Lojas Bom Preço 2026-08-20-5c5c6b12d2e2253bf80e49a9ef2146f9",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255386497490159",
+    "name": "021_Trend_Acho chique - INSTA",
+    "adset_id": "120255386497480159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1707533450553635",
+      "name": "Lojas Bom Preço 2026-08-20-356eb558368183dcf1db73b79f5ebbb9",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255251761090159",
+    "name": "010_Muito mais espaço",
+    "adset_id": "120247652360330159",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "1052581820471469",
+      "name": "api.whatsapp.com 2026-08-14-b40a22abb3fd256b2be7452294db382b",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255251677250159",
+    "name": "009_Chaleira elétrica Polak",
+    "adset_id": "120247652360330159",
+    "status": "ACTIVE",
+    "effective_status": "ADSET_PAUSED",
+    "creative": {
+      "id": "2086777338594204",
+      "name": "api.whatsapp.com 2026-08-14-f132a29c7f12d9ef5030fd5d8752865f",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255042695370159",
+    "name": "002_Cômoda Notável",
+    "adset_id": "120247652360330159",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "1001358639547220",
+      "name": "api.whatsapp.com 2026-08-07-f68da56392301d9d1c6dd159ef39f68e",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255213144390159",
+    "name": "011_BBB [ATÉ 15-08]",
+    "adset_id": "120255213144380159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1716990626239016",
+      "name": "Lojas Bom Preço 2026-08-13-66d96921f49142415145dafc947e7aec",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255211815300159",
+    "name": "008_Reel_30 anos - INSTA",
+    "adset_id": "120255211815290159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "2527736417740110",
+      "name": "Escolher entre qualidade, preço baixo, conforto e variedade? Há 30 anos, as Lojas Bom Preço têm tud 2026-08-13-67766368bfec974913aed03e904b5644",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120255211741820159",
+    "name": "001.14_Vídeo Institucional - FB+IG",
+    "adset_id": "120255211741830159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "2088798455341159",
+      "name": "Há 30 anos nossa maior realização é ver você realizando os seus sonhos! 🥳🏠\n\nNossa história é feita  2026-08-13-e96b24c9609f7bb5f71b3040839beb54",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120255122571340159",
+    "name": "007_O conforto que transforma",
+    "adset_id": "120247652360330159",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "28542043235381105",
+      "name": "api.whatsapp.com 2026-08-10-b209b5f29d2fa692df252d42797a3c98",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255042666880159",
+    "name": "004_Cadeira Iguape",
+    "adset_id": "120247652360330159",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "3070597243125793",
+      "name": "api.whatsapp.com 2026-08-07-7ddcce95028821f697b9e28ad6f88446",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255042719480159",
+    "name": "005_Reel_Dia dos Pais",
+    "adset_id": "120255042719460159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1600852718310910",
+      "name": "Independentemente do estilo do seu pai, o presente perfeito para ele está nas Lojas Bom Preço! 😉 Mo 2026-08-07-838197d69a59afb17bc6b3433a342677",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120255042615230159",
+    "name": "018_ Reel Claudir 2 Ofertas",
+    "adset_id": "120255042615220159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1780472916726961",
+      "name": "🎉 A Oferta Relâmpago continua! 🎁\n\nÉ a sua oportunidade perfeita de transformar a sua casa com preço 2026-08-07-6efe8e824486035d1e51d05e22613dc7",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120254156982370159",
+    "name": "007_Churrasco com praticidade",
+    "adset_id": "120247652360330159",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "2325646584507985",
+      "name": "api.whatsapp.com 2026-07-10-5a77d4e96d06541b1d2abdf0de259643",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255016112240159",
+    "name": "016_Oferta Relâmpago - Aniversário - INSTA",
+    "adset_id": "120255016112230159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1094162339951874",
+      "name": "Lojas Bom Preço 2026-08-06-aae6a1f6552f76dd45ba7c09fa95c00b",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255016093030159",
+    "name": "016_Oferta Relâmpago - Aniversário",
+    "adset_id": "120254966612220159",
+    "status": "ACTIVE",
+    "effective_status": "ADSET_PAUSED",
+    "creative": {
+      "id": "1218787540389381",
+      "name": "Lojas Bom Preço 2026-08-06-dc854275ee7505904c7cb6a84cedb7a8",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120255016140740159",
+    "name": "016_Oferta Relâmpago - Aniversário - FACE",
+    "adset_id": "120255016140750159",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1762047761604091",
+      "name": "🎉 ANIVERSÁRIO RELÂMPAGO LOJAS BOM PREÇO 🎉\n\nPreparamos 2 dias de preços imbatíveis para você renovar 2026-08-06-f016ae8445f69727f0eb6a42f13ff92c",
+      "object_type": "STATUS"
+    }
+  }
+]

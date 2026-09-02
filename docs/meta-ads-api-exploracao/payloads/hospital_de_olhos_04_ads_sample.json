@@ -1,0 +1,334 @@
+[
+  {
+    "id": "120253325971960635",
+    "name": "008_Famosos e Cirurgia - INSTA",
+    "adset_id": "120253325971950635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1087560023924679",
+      "name": "👁️ A boa visão faz diferença para qualquer pessoa. Inclusive para quem vive sob os holofotes.\n\nAlgu 2026-08-26-3f465c698ad682a7761ec99e09dabd5f",
+      "object_type": "STATUS"
+    }
+  },
+  {
+    "id": "120253325934400635",
+    "name": "008_Famosos e Cirurgia - INSTA",
+    "adset_id": "120253325934410635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "926906266605619",
+      "name": "Hospital de Olhos Videira 2026-08-26-ec931b610b3c7228b79afee6a21f6729",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120253294979630635",
+    "name": "007_Reel_Contra Indicações - INSTA",
+    "adset_id": "120253294979640635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1410781671167908",
+      "name": "A cirurgia refrativa pode representar mais liberdade no dia a dia, mas nem todos os pacientes estão 2026-08-24-68e177009211fde55275b6e3c915924b",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120253294964020635",
+    "name": "007_Reel_Contra Indicações",
+    "adset_id": "120245794027560635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1055993450365854",
+      "name": "A cirurgia refrativa pode representar mais liberdade no dia a dia, mas nem todos os pacientes estão 2026-08-24-60208b95d0356abd65148641523080b1",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120252880244700635",
+    "name": "001_TransPRK Por Dentro",
+    "adset_id": "120245794027560635",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "4429642107276645",
+      "name": "Hospital de Olhos Videira 2026-08-05-8792b702e90679abfb681b32b8181621",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "858908200789679",
+        "instagram_user_id": "17841412251254905",
+        "link_data": {
+          "link": "http://fb.me/",
+          "message": "👁️ O que realmente acontece durante uma cirurgia TransPRK?\n\nA TransPRK SmartSurfACE utiliza tecnologia a laser para corrigir a córnea de forma planejada e personalizada, sem cortes e sem contato físico com o olho.\n\nCom o auxílio do laser Schwind Amaris 750E, cada etapa é realizada com precisão, buscando corrigir o grau e proporcionar mais liberdade e praticidade para a rotina. ✨\n\nMas será que esse procedimento é indicado para você?\n\nA resposta depende de uma avaliação oftalmológica completa e individualizada. Converse com nossa equipe e descubra quais são as possibilidades para o seu caso. 📲\n\n🩺 Dr. Mário Corrêa Neto\nMédico Oftalmologista | Diretor Técnico\nHospital de Olhos Videira\nCRM/SC 12670 | RQE 6605",
+          "call_to_action": {
+            "type": "BOOK_TRAVEL",
+            "value": {
+              "lead_gen_form_id": "827364690409491"
+            }
+          },
+          "child_attachments": [
+            {
+              "link": "http://fb.me/",
+              "image_hash": "6904d3bcfcd8296dc7027c8122d813b5",
+              "call_to_action": {
+                "type": "BOOK_TRAVEL",
+                "value": {
+                  "lead_gen_form_id": "827364690409491"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "24b3ab95fb003eebf065022188db7a3c",
+              "call_to_action": {
+                "type": "BOOK_TRAVEL",
+                "value": {
+                  "lead_gen_form_id": "827364690409491"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "5f2d6640b90eaf97683a696c2a10393a",
+              "call_to_action": {
+                "type": "BOOK_TRAVEL",
+                "value": {
+                  "lead_gen_form_id": "827364690409491"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "aeec245cd8912e3b05d374aa1c7f2c02",
+              "call_to_action": {
+                "type": "BOOK_TRAVEL",
+                "value": {
+                  "lead_gen_form_id": "827364690409491"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "03682645e8e4f90feb467bda281411be",
+              "call_to_action": {
+                "type": "BOOK_TRAVEL",
+                "value": {
+                  "lead_gen_form_id": "827364690409491"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "eb6299bcd2940cfa29917bf673163a0e",
+              "call_to_action": {
+                "type": "BOOK_TRAVEL",
+                "value": {
+                  "lead_gen_form_id": "827364690409491"
+                }
+              }
+            },
+            {
+              "link": "http://fb.me/",
+              "image_hash": "c7e1d6a82b3e24e221ca3c9640d279bc",
+              "call_to_action": {
+                "type": "BOOK_TRAVEL",
+                "value": {
+                  "lead_gen_form_id": "827364690409491"
+                }
+              }
+            }
+          ],
+          "multi_share_end_card": false,
+          "multi_share_optimized": true
+        }
+      }
+    }
+  },
+  {
+    "id": "120253201131870635",
+    "name": "006_Visão para Pilotos - FACE",
+    "adset_id": "120253201131860635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1014969781537352",
+      "name": "✈️ Pilotos de avião civis e militares podem fazer cirurgia refrativa? Sim.\n\nDurante muitos anos, ex 2026-08-18-ae191b7eb9f4a44ea8d0fbe0d24f4fb9",
+      "object_type": "PHOTO"
+    }
+  },
+  {
+    "id": "120253201086480635",
+    "name": "006_Visão para Pilotos - INSTA",
+    "adset_id": "120253201086470635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "2766058490528662",
+      "name": "Hospital de Olhos Videira 2026-08-18-7814dbe030ae6a66607e657a1c3c0d80",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120212562921110635",
+    "name": "POST_001_Procedimento seguro (FACE+INSTA)-whats",
+    "adset_id": "120212562921060635",
+    "status": "PAUSED",
+    "effective_status": "WITH_ISSUES",
+    "creative": {
+      "id": "120212562947270635",
+      "name": "Sim! A cirurgia refrativa, realizada com o laser da Carl Zeiss®, um dos mais confiáveis do mercado, 2024-09-05-8ab9d83fb3f38a37c516ccac824d584c",
+      "object_type": "PHOTO"
+    }
+  },
+  {
+    "id": "120212201828000635",
+    "name": "POST_004_O que você precisa saber (FACE+INSTA)-msg",
+    "adset_id": "120212201827860635",
+    "status": "PAUSED",
+    "effective_status": "WITH_ISSUES",
+    "creative": {
+      "id": "120212201836810635",
+      "name": "A cirurgia refrativa corrige miopia, hipermetropia e astigmatismo e é realizada em apenas 12 minuto 2024-08-21-528eb3a316ffbe3622e25b6c9838a7ad",
+      "object_type": "PHOTO"
+    }
+  },
+  {
+    "id": "120212144653140635",
+    "name": "POST_003_Quem pode fazer (FACE+INSTA)-whats",
+    "adset_id": "120212144652940635",
+    "status": "PAUSED",
+    "effective_status": "WITH_ISSUES",
+    "creative": {
+      "id": "120212144670680635",
+      "name": "Se você tem mais de 18 anos e seu grau de óculos está estável há pelo menos um ano, você pode ser u 2024-08-19-2fc62a23a673c41fa3e9ebc165c3ab7e",
+      "object_type": "PHOTO"
+    }
+  },
+  {
+    "id": "120253086597210635",
+    "name": "005_Reel_Orientações pós operatório - INSTA",
+    "adset_id": "120253086597200635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "2776403062759830",
+      "name": "A cirurgia foi apenas o primeiro passo. A recuperação também faz parte do resultado. 👁️✨\n\nNeste víd 2026-08-13-ab8ad0b42b4d368c408bae83961e4ad9",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120252943645150635",
+    "name": "003_Reel_A jornada do Paciente - INSTA",
+    "adset_id": "120252943645160635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "2538061883286637",
+      "name": "A decisão de cuidar da sua visão começa muito antes da cirurgia.\n\nEla passa pela avaliação detalhad 2026-08-07-59eb5188eae9bff896d45cd3a37868ff",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120252943604410635",
+    "name": "003_Reel_A jornada do Paciente",
+    "adset_id": "120245794027560635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1606669024372980",
+      "name": "A decisão de cuidar da sua visão começa muito antes da cirurgia.\n\nEla passa pela avaliação detalhad 2026-08-07-3f46e05e60e91cc9e72b4932bc9cdcc2",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120245969138810635",
+    "name": "008_Reel_Vista Cansada — Cópia",
+    "adset_id": "120245794027560635",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "958687660144543",
+      "name": "A presbiopia é uma condição natural após os 40 anos e pode reduzir sua autonomia no dia a dia.\n\nA t 2026-04-09-70f4d50055b2dc5baf8520a9e99fb2a8",
+      "object_type": "VIDEO"
+    }
+  },
+  {
+    "id": "120252913205000635",
+    "name": "002_Lente Fácica - FACE",
+    "adset_id": "120252913205010635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1070376815678925",
+      "name": "👁️ Você já ouviu falar de lente fácica?\n\nPara alguns pacientes, especialmente aqueles com graus ele 2026-08-06-a59c169dc397644591cf1564e1abf9e2",
+      "object_type": "STATUS"
+    }
+  },
+  {
+    "id": "120252913194250635",
+    "name": "002_Lente Fácica - INSTA",
+    "adset_id": "120252913194240635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "2104167100485363",
+      "name": "Hospital de Olhos Videira 2026-08-06-832a799c9ad3f515b9cc85afe2a468ad",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120252880222080635",
+    "name": "001_TransPRK Por Dentro - FACE",
+    "adset_id": "120252880222090635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1382460673990836",
+      "name": "👁️ O que realmente acontece durante uma cirurgia TransPRK?\n\nA TransPRK SmartSurfACE utiliza tecnolo 2026-08-05-9d8ea33065771cf3380972bf9e4e71c0",
+      "object_type": "STATUS"
+    }
+  },
+  {
+    "id": "120252880208990635",
+    "name": "001_TransPRK Por Dentro - INSTA",
+    "adset_id": "120252880209000635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1434154258603810",
+      "name": "Hospital de Olhos Videira 2026-08-05-f73749fad8b4d525b254847debb4bf8a",
+      "object_type": "SHARE"
+    }
+  },
+  {
+    "id": "120252685958680635",
+    "name": "008_Tecnologia Alemã",
+    "adset_id": "120245794027560635",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "creative": {
+      "id": "1971235746868506",
+      "name": "{{product.name}} 2026-07-28-ef77cf5d0d357506b54999add39bf680",
+      "object_type": "SHARE",
+      "object_story_spec": {
+        "page_id": "858908200789679",
+        "instagram_user_id": "17841412251254905"
+      }
+    }
+  },
+  {
+    "id": "120252686096940635",
+    "name": "008_Tecnologia Alemã - FACE",
+    "adset_id": "120252686096930635",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "creative": {
+      "id": "1040194498909123",
+      "name": "Imagine corrigir seu grau com uma cirurgia realizada 100% a laser, sem cortes e sem contato com o o 2026-07-28-cb10d904987eb3a5741b24912ee06a90",
+      "object_type": "PHOTO"
+    }
+  }
+]

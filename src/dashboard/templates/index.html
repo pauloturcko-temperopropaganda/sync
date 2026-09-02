@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Sync — Painel</title>
+<style>
+    :root {
+        --accent: #111111;
+        --bg: #F7F5F0;
+        --card: #FFFFFF;
+        --border: #E5E7EB;
+        --text: #111827;
+        --muted: #6B7280;
+        --success: #166534;
+        --success-bg: #DCFCE7;
+        --error: #991B1B;
+        --error-bg: #FEE2E2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        margin: 0;
+        padding: 28px 200px 60px;
+    }
+
+    /* Layout de duas colunas no topo: cards encostados na margem
+       esquerda, console encostado na margem direita — as duas larguras
+       são percentuais (40/60) pra sempre ocupar a div inteira, com o
+       gap entre elas descontado via calc() pra não estourar 100%. */
+    .top-layout {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 24px;
+        align-items: stretch;
+    }
+
+    .left-col {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: calc(40% - 10px);
+        flex-shrink: 0;
+    }
+
+    .right-col {
+        width: calc(60% - 10px);
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    .right-col h2 {
+        margin-bottom: 8px;
+    }
+
+    .right-col #console {
+        flex: 1;
+        height: auto;
+        min-height: 260px;
+    }
+
+    header {
+        margin: 0;
+    }
+
+    header .logo {
+        height: 34px;
+        width: auto;
+        display: block;
+    }
+
+    header .subtitle {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 10pt;
+    }
+
+    button#sync-btn {
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 20px;
+        font-size: 10.5pt;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button#sync-btn:disabled {
+        background: #9CA3AF;
+        cursor: not-allowed;
+    }
+
+    .cards-row {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 16px;
+    }
+
+    .card .label {
+        font-size: 8.5pt;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+
+    .card .value {
+        font-size: 16pt;
+        font-weight: 600;
+        margin-top: 3px;
+    }
+
+    section {
+        margin-bottom: 24px;
+    }
+
+    h2 {
+        font-size: 12pt;
+        margin: 0 0 10px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+        font-size: 9.5pt;
+    }
+
+    thead th {
+        text-align: left;
+        background: #F3F4F6;
+        padding: 8px 12px;
+        font-weight: 600;
+        color: var(--muted);
+    }
+
+    tbody td {
+        padding: 8px 12px;
+        border-top: 1px solid var(--border);
+    }
+
+    .pill {
+        display: inline-block;
+        font-size: 8pt;
+        padding: 2px 9px;
+        border-radius: 10px;
+        font-weight: 600;
+    }
+
+    .pill.success { background: var(--success-bg); color: var(--success); }
+    .pill.failed { background: var(--error-bg); color: var(--error); }
+    .pill.unknown { background: #F3F4F6; color: var(--muted); }
+
+    #console {
+        background: #0B1120;
+        color: #4ADE80;
+        font-family: 'Consolas', 'Courier New', monospace;
+        font-size: 9pt;
+        padding: 14px 16px;
+        border-radius: 8px;
+        height: 260px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+        line-height: 1.5;
+    }
+
+    #console .line-error { color: #FCA5A5; }
+    #console .placeholder { color: #4ADE80; }
+</style>
+</head>
+<body>
+
+<div class="top-layout">
+    <div class="left-col">
+        <header>
+            <img src="/branding/sync-logo-black.png" alt="Sync" class="logo">
+            <div class="subtitle">Status da sincronização com a Meta Ads</div>
+        </header>
+
+        <div class="cards-row" id="overview-cards">
+            <div class="card"><div class="label">Clientes com dado</div><div class="value">—</div></div>
+            <div class="card"><div class="label">Campanhas</div><div class="value">—</div></div>
+            <div class="card"><div class="label">Período coberto</div><div class="value">—</div></div>
+        </div>
+
+        <button id="sync-btn" onclick="triggerSync()">Atualizar agora</button>
+    </div>
+
+    <div class="right-col">
+        <h2>Console</h2>
+        <div id="console"><span class="placeholder">Aguardando... clique em "Atualizar agora" para rodar a sincronização.</span></div>
+    </div>
+</div>
+
+<section>
+    <h2>Status por cliente</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Última sincronização</th>
+                <th>Status</th>
+                <th>Registros</th>
+            </tr>
+        </thead>
+        <tbody id="clients-tbody">
+            <tr><td colspan="4">Carregando...</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<script>
+let polling = null;
+
+function fmtDate(iso) {
+    if (!iso) return "—";
+    const d = new Date(iso);
+    return d.toLocaleString('pt-BR');
+}
+
+function fmtDateShort(isoDate) {
+    // "2026-06-03" -> "03/06/26". Split manual (não usa Date) pra não
+    // correr risco de o fuso horário mudar o dia exibido.
+    if (!isoDate) return "—";
+    const [y, m, d] = isoDate.split('-');
+    return `${d}/${m}/${y.slice(2)}`;
+}
+
+function statusPill(status) {
+    if (status === 'success') return '<span class="pill success">sucesso</span>';
+    if (status === 'failed') return '<span class="pill failed">falhou</span>';
+    return '<span class="pill unknown">sem sincronização ainda</span>';
+}
+
+async function refreshStatus() {
+    const res = await fetch('/api/status');
+    const data = await res.json();
+
+    const ov = data.overview;
+    const cards = document.querySelectorAll('#overview-cards .value');
+    cards[0].textContent = data.clients.length;
+    cards[1].textContent = ov.total_campaigns ?? 0;
+    cards[2].textContent = ov.earliest_date && ov.latest_date
+        ? `${fmtDateShort(ov.earliest_date)} a ${fmtDateShort(ov.latest_date)}`
+        : "sem dado ainda";
+
+    const tbody = document.getElementById('clients-tbody');
+    if (data.clients.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4">Nenhum cliente configurado ainda.</td></tr>';
+    } else {
+        tbody.innerHTML = data.clients.map(c => `
+            <tr>
+                <td>${c.client_name}</td>
+                <td>${fmtDate(c.started_at)}</td>
+                <td>${statusPill(c.status)}</td>
+                <td>${c.records_processed ?? "—"}</td>
+            </tr>
+        `).join('');
+    }
+
+    renderConsole(data.sync_run);
+    updateButton(data.sync_run.running);
+}
+
+function renderConsole(run) {
+    const el = document.getElementById('console');
+    if (!run.lines || run.lines.length === 0) {
+        if (!run.running) return;
+        el.innerHTML = '<span class="placeholder">Iniciando...</span>';
+        return;
+    }
+    el.innerHTML = run.lines.map(l => {
+        const cls = /falhou|erro/i.test(l) ? 'line-error' : '';
+        return `<div class="${cls}">${escapeHtml(l)}</div>`;
+    }).join('');
+    el.scrollTop = el.scrollHeight;
+}
+
+function escapeHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function updateButton(running) {
+    const btn = document.getElementById('sync-btn');
+    btn.disabled = running;
+    btn.textContent = running ? 'Sincronizando...' : 'Atualizar agora';
+
+    if (running && !polling) {
+        polling = setInterval(refreshStatus, 1500);
+    } else if (!running && polling) {
+        clearInterval(polling);
+        polling = null;
+        refreshStatus();
+    }
+}
+
+async function triggerSync() {
+    const password = prompt('Senha para atualizar os dados:');
+    if (!password) return;
+
+    const res = await fetch('/api/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password }),
+    });
+
+    if (res.status === 403) {
+        alert('Senha incorreta.');
+        return;
+    }
+    if (res.status === 409) {
+        alert('Já existe uma sincronização em andamento.');
+        return;
+    }
+    if (!res.ok) {
+        alert('Erro ao iniciar a sincronização.');
+        return;
+    }
+
+    polling = setInterval(refreshStatus, 1500);
+    refreshStatus();
+}
+
+refreshStatus();
+setInterval(refreshStatus, 10000);
+</script>
+
+</body>
+</html>

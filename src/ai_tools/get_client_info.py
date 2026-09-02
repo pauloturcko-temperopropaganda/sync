@@ -1,7 +1,7 @@
 """Ferramenta autorizada: consulta informações básicas de um cliente.
 
 Uso:
-    python src/ai_tools/get_client_info.py --client seed-alpha-imoveis
+    python -m src.ai_tools.get_client_info --client seed-cliente-teste
 
 A ferramenta aceita somente o slug exato do cliente.
 Não existe parâmetro para SQL arbitrário.
@@ -33,7 +33,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--client",
         required=True,
-        help="Slug exato do cliente. Ex.: seed-alpha-imoveis",
+        help="Slug exato do cliente. Ex.: seed-cliente-teste",
     )
     return parser.parse_args()
 
@@ -41,7 +41,9 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
 
-    if not args.client.strip():
+    client_slug = args.client.strip()
+
+    if not client_slug:
         print(
             json.dumps(
                 {"ok": False, "error": "O slug do cliente não pode ser vazio."},
@@ -54,21 +56,30 @@ def main() -> int:
     # Não aceitar SQL vindo da linha de comando é uma decisão de segurança.
     query = """
         SELECT
-            id,
-            name,
-            slug,
-            industry,
-            status,
-            created_at,
-            updated_at
+            clients.id,
+            clients.name,
+            clients.slug,
+            clients.industry,
+            clients.status,
+            clients.created_at,
+            clients.updated_at,
+
+            organizations.id AS organization_id,
+            organizations.slug AS organization_slug,
+            organizations.name AS organization_name
+
         FROM clients
-        WHERE slug = %s
+
+        INNER JOIN organizations
+            ON organizations.id = clients.organization_id
+
+        WHERE clients.slug = %s
         LIMIT 1
     """
 
     try:
         with get_connection() as connection:
-            client = fetch_one(connection, query, (args.client.strip(),))
+            client = fetch_one(connection, query, (client_slug,))
     except Exception as exc:
         print(
             json.dumps(
@@ -88,7 +99,7 @@ def main() -> int:
                 {
                     "ok": False,
                     "error": "Cliente não encontrado.",
-                    "client_slug": args.client.strip(),
+                    "client_slug": client_slug,
                 },
                 ensure_ascii=False,
                 default=_json_default,

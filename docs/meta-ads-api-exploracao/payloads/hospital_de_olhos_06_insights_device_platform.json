@@ -1,0 +1,2062 @@
+[
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "575",
+    "clicks": "6",
+    "spend": "1.78",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "198"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "198"
+      },
+      {
+        "action_type": "video_view",
+        "value": "197"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "2",
+    "clicks": "0",
+    "spend": "0.01",
+    "actions": [
+      {
+        "action_type": "post_engagement",
+        "value": "2"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "2"
+      },
+      {
+        "action_type": "video_view",
+        "value": "2"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "24",
+    "clicks": "0",
+    "spend": "0.09",
+    "actions": [
+      {
+        "action_type": "post_engagement",
+        "value": "6"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "6"
+      },
+      {
+        "action_type": "video_view",
+        "value": "6"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "9985",
+    "clicks": "104",
+    "spend": "14.75",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "103"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "103"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "103"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels_overlay",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "7",
+    "clicks": "0",
+    "spend": "0.02",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels_overlay",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "167",
+    "clicks": "2",
+    "spend": "0.46",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "2"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "2"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "2"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels_overlay",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "48085",
+    "clicks": "1948",
+    "spend": "211.53",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "261"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "929"
+      },
+      {
+        "action_type": "landing_page_view",
+        "value": "1"
+      },
+      {
+        "action_type": "omni_landing_page_view",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.total_messaging_connection",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.post_unlike",
+        "value": "9"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "2774"
+      },
+      {
+        "action_type": "like",
+        "value": "3"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "952"
+      },
+      {
+        "action_type": "comment",
+        "value": "9"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "2777"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "961"
+      },
+      {
+        "action_type": "post",
+        "value": "12"
+      },
+      {
+        "action_type": "photo_view",
+        "value": "194"
+      },
+      {
+        "action_type": "onsite_conversion.post_save",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_comment",
+        "value": "9"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_save",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "920"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_conversation_started_7d",
+        "value": "1"
+      },
+      {
+        "action_type": "video_view",
+        "value": "1367"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "feed",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "90",
+    "clicks": "3",
+    "spend": "0.31",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "1"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "1"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "feed",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "150",
+    "clicks": "20",
+    "spend": "1.52",
+    "actions": [
+      {
+        "action_type": "post_reaction",
+        "value": "17"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "27"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "18"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "27"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "18"
+      },
+      {
+        "action_type": "post",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "17"
+      },
+      {
+        "action_type": "video_view",
+        "value": "9"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "feed",
+    "impression_device": "desktop"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "28",
+    "clicks": "1",
+    "spend": "0.11",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "feed",
+    "impression_device": "ipad"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "1952",
+    "clicks": "105",
+    "spend": "9",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "12"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "42"
+      },
+      {
+        "action_type": "landing_page_view",
+        "value": "2"
+      },
+      {
+        "action_type": "omni_landing_page_view",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_unlike",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "116"
+      },
+      {
+        "action_type": "like",
+        "value": "2"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "44"
+      },
+      {
+        "action_type": "comment",
+        "value": "2"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "118"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "45"
+      },
+      {
+        "action_type": "photo_view",
+        "value": "15"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_comment",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "41"
+      },
+      {
+        "action_type": "video_view",
+        "value": "45"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "feed",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "3",
+    "clicks": "0",
+    "spend": "0.01",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "feed",
+    "impression_device": "other"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "87",
+    "clicks": "4",
+    "spend": "0.93",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "2"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.post_unlike",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "61"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "1"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "61"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "0"
+      },
+      {
+        "action_type": "video_view",
+        "value": "58"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "instream_video",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "4",
+    "clicks": "0",
+    "spend": "0.06",
+    "actions": [
+      {
+        "action_type": "post_engagement",
+        "value": "3"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "3"
+      },
+      {
+        "action_type": "video_view",
+        "value": "3"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "instream_video",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "3",
+    "clicks": "0",
+    "spend": "0",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "search",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "38668",
+    "clicks": "241",
+    "spend": "263.77",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "207"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "924"
+      },
+      {
+        "action_type": "landing_page_view",
+        "value": "2"
+      },
+      {
+        "action_type": "omni_landing_page_view",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_unlike",
+        "value": "32"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "12906"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "952"
+      },
+      {
+        "action_type": "comment",
+        "value": "2"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "12906"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "987"
+      },
+      {
+        "action_type": "post",
+        "value": "3"
+      },
+      {
+        "action_type": "onsite_conversion.post_unsave",
+        "value": "3"
+      },
+      {
+        "action_type": "onsite_conversion.post_save",
+        "value": "23"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_comment",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_save",
+        "value": "20"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "892"
+      },
+      {
+        "action_type": "video_view",
+        "value": "11747"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "feed",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "115",
+    "clicks": "0",
+    "spend": "0.62",
+    "actions": [
+      {
+        "action_type": "post_engagement",
+        "value": "31"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "31"
+      },
+      {
+        "action_type": "video_view",
+        "value": "31"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "feed",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "121",
+    "clicks": "0",
+    "spend": "1.25",
+    "actions": [
+      {
+        "action_type": "post_reaction",
+        "value": "7"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "40"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "7"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "40"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "7"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "7"
+      },
+      {
+        "action_type": "video_view",
+        "value": "33"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "feed",
+    "impression_device": "desktop"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "9624",
+    "clicks": "89",
+    "spend": "110.45",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "81"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "441"
+      },
+      {
+        "action_type": "onsite_conversion.post_unlike",
+        "value": "12"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "2640"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "444"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "2640"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "456"
+      },
+      {
+        "action_type": "post",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.post_save",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_save",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "429"
+      },
+      {
+        "action_type": "video_view",
+        "value": "2115"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "feed",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "7889",
+    "clicks": "19",
+    "spend": "41.36",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "6"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "50"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "3456"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "52"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "3456"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "52"
+      },
+      {
+        "action_type": "post",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "50"
+      },
+      {
+        "action_type": "video_view",
+        "value": "3398"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_reels",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "45",
+    "clicks": "0",
+    "spend": "0.18",
+    "actions": [
+      {
+        "action_type": "post_engagement",
+        "value": "16"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "16"
+      },
+      {
+        "action_type": "video_view",
+        "value": "16"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_reels",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "110",
+    "clicks": "0",
+    "spend": "0.19",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_reels",
+    "impression_device": "desktop"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "934",
+    "clicks": "3",
+    "spend": "4.41",
+    "actions": [
+      {
+        "action_type": "post_reaction",
+        "value": "11"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "369"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "11"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "369"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "11"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "11"
+      },
+      {
+        "action_type": "video_view",
+        "value": "358"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_reels",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "382",
+    "clicks": "1",
+    "spend": "1.4",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "87"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "87"
+      },
+      {
+        "action_type": "video_view",
+        "value": "86"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_stories",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "2",
+    "clicks": "0",
+    "spend": "0",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_stories",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "1",
+    "clicks": "0",
+    "spend": "0",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_stories",
+    "impression_device": "desktop"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "94",
+    "clicks": "0",
+    "spend": "0.33",
+    "actions": [
+      {
+        "action_type": "post_engagement",
+        "value": "17"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "17"
+      },
+      {
+        "action_type": "video_view",
+        "value": "17"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_stories",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120244606451570635",
+    "campaign_name": "[ENGAJAMENTO] [FEED]",
+    "impressions": "0",
+    "clicks": "0",
+    "spend": "0",
+    "actions": [
+      {
+        "action_type": "post_engagement",
+        "value": "20"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "20"
+      },
+      {
+        "action_type": "video_view",
+        "value": "20"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "unknown",
+    "platform_position": "unknown",
+    "impression_device": "desktop"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "2728",
+    "clicks": "32",
+    "spend": "25.57036",
+    "actions": [
+      {
+        "action_type": "offsite_complete_registration_add_meta_leads",
+        "value": "3"
+      },
+      {
+        "action_type": "link_click",
+        "value": "8"
+      },
+      {
+        "action_type": "offsite_search_add_meta_leads",
+        "value": "3"
+      },
+      {
+        "action_type": "offsite_conversion.fb_pixel_custom",
+        "value": "1"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "5"
+      },
+      {
+        "action_type": "onsite_conversion.post_unlike",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "13"
+      },
+      {
+        "action_type": "like",
+        "value": "1"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "5"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "14"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "6"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "4"
+      },
+      {
+        "action_type": "lead",
+        "value": "3"
+      },
+      {
+        "action_type": "offsite_content_view_add_meta_leads",
+        "value": "3"
+      },
+      {
+        "action_type": "onsite_conversion.lead_grouped",
+        "value": "3"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "1",
+    "clicks": "0",
+    "spend": "0",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "3",
+    "clicks": "0",
+    "spend": "0.03",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels",
+    "impression_device": "ipad"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "450",
+    "clicks": "2",
+    "spend": "4.220059",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "1063",
+    "clicks": "14",
+    "spend": "6.580093",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "14"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "22"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "22"
+      },
+      {
+        "action_type": "video_view",
+        "value": "8"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels_overlay",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "1",
+    "clicks": "0",
+    "spend": "0",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels_overlay",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "119",
+    "clicks": "1",
+    "spend": "1.060015",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "1"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "1"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_reels_overlay",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "67164",
+    "clicks": "741",
+    "spend": "839.261812",
+    "actions": [
+      {
+        "action_type": "offsite_complete_registration_add_meta_leads",
+        "value": "45"
+      },
+      {
+        "action_type": "link_click",
+        "value": "624"
+      },
+      {
+        "action_type": "offsite_search_add_meta_leads",
+        "value": "45"
+      },
+      {
+        "action_type": "offsite_conversion.fb_pixel_custom",
+        "value": "46"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "1"
+      },
+      {
+        "action_type": "landing_page_view",
+        "value": "5"
+      },
+      {
+        "action_type": "omni_landing_page_view",
+        "value": "5"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "5991"
+      },
+      {
+        "action_type": "like",
+        "value": "9"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "1"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "6000"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "1"
+      },
+      {
+        "action_type": "lead",
+        "value": "45"
+      },
+      {
+        "action_type": "offsite_content_view_add_meta_leads",
+        "value": "45"
+      },
+      {
+        "action_type": "onsite_conversion.lead_grouped",
+        "value": "45"
+      },
+      {
+        "action_type": "video_view",
+        "value": "5366"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_stories",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "73",
+    "clicks": "0",
+    "spend": "1.42002",
+    "actions": [
+      {
+        "action_type": "post_engagement",
+        "value": "6"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "6"
+      },
+      {
+        "action_type": "video_view",
+        "value": "6"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_stories",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "30394",
+    "clicks": "281",
+    "spend": "394.045546",
+    "actions": [
+      {
+        "action_type": "offsite_complete_registration_add_meta_leads",
+        "value": "12"
+      },
+      {
+        "action_type": "link_click",
+        "value": "258"
+      },
+      {
+        "action_type": "offsite_search_add_meta_leads",
+        "value": "12"
+      },
+      {
+        "action_type": "offsite_conversion.fb_pixel_custom",
+        "value": "7"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "2599"
+      },
+      {
+        "action_type": "like",
+        "value": "1"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "1"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "2600"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "1"
+      },
+      {
+        "action_type": "lead",
+        "value": "12"
+      },
+      {
+        "action_type": "offsite_content_view_add_meta_leads",
+        "value": "12"
+      },
+      {
+        "action_type": "onsite_conversion.lead_grouped",
+        "value": "12"
+      },
+      {
+        "action_type": "video_view",
+        "value": "2340"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "facebook_stories",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "187692",
+    "clicks": "3683",
+    "spend": "1688.10376",
+    "actions": [
+      {
+        "action_type": "offsite_complete_registration_add_meta_leads",
+        "value": "128"
+      },
+      {
+        "action_type": "link_click",
+        "value": "1236"
+      },
+      {
+        "action_type": "offsite_search_add_meta_leads",
+        "value": "128"
+      },
+      {
+        "action_type": "offsite_conversion.fb_pixel_custom",
+        "value": "115"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "532"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+        "value": "1"
+      },
+      {
+        "action_type": "landing_page_view",
+        "value": "23"
+      },
+      {
+        "action_type": "omni_landing_page_view",
+        "value": "23"
+      },
+      {
+        "action_type": "onsite_conversion.total_messaging_connection",
+        "value": "3"
+      },
+      {
+        "action_type": "onsite_conversion.post_unlike",
+        "value": "23"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "28678"
+      },
+      {
+        "action_type": "like",
+        "value": "27"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "585"
+      },
+      {
+        "action_type": "comment",
+        "value": "49"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "28705"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "610"
+      },
+      {
+        "action_type": "post_uncomment",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_first_reply",
+        "value": "3"
+      },
+      {
+        "action_type": "onsite_conversion.post_save",
+        "value": "4"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_comment",
+        "value": "51"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_save",
+        "value": "4"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "509"
+      },
+      {
+        "action_type": "lead",
+        "value": "128"
+      },
+      {
+        "action_type": "offsite_content_view_add_meta_leads",
+        "value": "128"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_conversation_started_7d",
+        "value": "3"
+      },
+      {
+        "action_type": "onsite_conversion.lead_grouped",
+        "value": "128"
+      },
+      {
+        "action_type": "video_view",
+        "value": "26857"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "feed",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "157",
+    "clicks": "2",
+    "spend": "1.360019",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "27"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "27"
+      },
+      {
+        "action_type": "video_view",
+        "value": "26"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "feed",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "128",
+    "clicks": "4",
+    "spend": "0.800011",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "17"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "17"
+      },
+      {
+        "action_type": "video_view",
+        "value": "16"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "feed",
+    "impression_device": "ipad"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "43988",
+    "clicks": "761",
+    "spend": "366.155154",
+    "actions": [
+      {
+        "action_type": "offsite_complete_registration_add_meta_leads",
+        "value": "20"
+      },
+      {
+        "action_type": "link_click",
+        "value": "283"
+      },
+      {
+        "action_type": "offsite_search_add_meta_leads",
+        "value": "20"
+      },
+      {
+        "action_type": "offsite_conversion.fb_pixel_custom",
+        "value": "15"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "78"
+      },
+      {
+        "action_type": "landing_page_view",
+        "value": "2"
+      },
+      {
+        "action_type": "omni_landing_page_view",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.total_messaging_connection",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.post_unlike",
+        "value": "3"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "6133"
+      },
+      {
+        "action_type": "like",
+        "value": "7"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "84"
+      },
+      {
+        "action_type": "comment",
+        "value": "5"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "6140"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "87"
+      },
+      {
+        "action_type": "onsite_conversion.post_save",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_comment",
+        "value": "5"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_save",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "75"
+      },
+      {
+        "action_type": "lead",
+        "value": "20"
+      },
+      {
+        "action_type": "offsite_content_view_add_meta_leads",
+        "value": "20"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_conversation_started_7d",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.lead_grouped",
+        "value": "20"
+      },
+      {
+        "action_type": "video_view",
+        "value": "5766"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "feed",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "5",
+    "clicks": "0",
+    "spend": "0",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "instream_video",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "2",
+    "clicks": "0",
+    "spend": "0.180003",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "instream_video",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "7",
+    "clicks": "0",
+    "spend": "0.02",
+    "actions": [
+      {
+        "action_type": "post_engagement",
+        "value": "3"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "3"
+      },
+      {
+        "action_type": "video_view",
+        "value": "3"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "search",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "3",
+    "clicks": "0",
+    "spend": "0.01",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "facebook",
+    "platform_position": "search",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "2055",
+    "clicks": "14",
+    "spend": "35.220496",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "6"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "10"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "16"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "10"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "16"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "10"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "10"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "feed",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "6",
+    "clicks": "0",
+    "spend": "0.100001",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "feed",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "1113",
+    "clicks": "8",
+    "spend": "16.760236",
+    "actions": [
+      {
+        "action_type": "offsite_complete_registration_add_meta_leads",
+        "value": "2"
+      },
+      {
+        "action_type": "link_click",
+        "value": "3"
+      },
+      {
+        "action_type": "offsite_search_add_meta_leads",
+        "value": "2"
+      },
+      {
+        "action_type": "offsite_conversion.fb_pixel_custom",
+        "value": "1"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "4"
+      },
+      {
+        "action_type": "landing_page_view",
+        "value": "1"
+      },
+      {
+        "action_type": "omni_landing_page_view",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "7"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "4"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "7"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "4"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "4"
+      },
+      {
+        "action_type": "lead",
+        "value": "2"
+      },
+      {
+        "action_type": "offsite_content_view_add_meta_leads",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.lead_grouped",
+        "value": "2"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "feed",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "1172",
+    "clicks": "14",
+    "spend": "22.260313",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "11"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "6"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "17"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "6"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "17"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "6"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "6"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_reels",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "5",
+    "clicks": "0",
+    "spend": "0.090001",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_reels",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "690",
+    "clicks": "4",
+    "spend": "9.460133",
+    "actions": [
+      {
+        "action_type": "link_click",
+        "value": "3"
+      },
+      {
+        "action_type": "post_reaction",
+        "value": "4"
+      },
+      {
+        "action_type": "onsite_conversion.post_unlike",
+        "value": "2"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "7"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "4"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "7"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "6"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_like",
+        "value": "2"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_reels",
+    "impression_device": "iphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "7232",
+    "clicks": "46",
+    "spend": "89.481259",
+    "actions": [
+      {
+        "action_type": "offsite_complete_registration_add_meta_leads",
+        "value": "2"
+      },
+      {
+        "action_type": "link_click",
+        "value": "21"
+      },
+      {
+        "action_type": "offsite_search_add_meta_leads",
+        "value": "2"
+      },
+      {
+        "action_type": "offsite_conversion.fb_pixel_custom",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.total_messaging_connection",
+        "value": "2"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "22"
+      },
+      {
+        "action_type": "post_interaction_gross",
+        "value": "1"
+      },
+      {
+        "action_type": "comment",
+        "value": "1"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "22"
+      },
+      {
+        "action_type": "post_interaction_net",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_first_reply",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.post_net_comment",
+        "value": "1"
+      },
+      {
+        "action_type": "lead",
+        "value": "2"
+      },
+      {
+        "action_type": "offsite_content_view_add_meta_leads",
+        "value": "2"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_conversation_started_7d",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.lead_grouped",
+        "value": "2"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_stories",
+    "impression_device": "android_smartphone"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "24",
+    "clicks": "0",
+    "spend": "0.230003",
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_stories",
+    "impression_device": "android_tablet"
+  },
+  {
+    "campaign_id": "120245794027570635",
+    "campaign_name": "[LEADS] [2026] [FORMULÁRIO]",
+    "impressions": "4757",
+    "clicks": "29",
+    "spend": "50.020704",
+    "actions": [
+      {
+        "action_type": "offsite_complete_registration_add_meta_leads",
+        "value": "1"
+      },
+      {
+        "action_type": "link_click",
+        "value": "14"
+      },
+      {
+        "action_type": "offsite_search_add_meta_leads",
+        "value": "1"
+      },
+      {
+        "action_type": "offsite_conversion.fb_pixel_custom",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.total_messaging_connection",
+        "value": "1"
+      },
+      {
+        "action_type": "post_engagement",
+        "value": "14"
+      },
+      {
+        "action_type": "page_engagement",
+        "value": "14"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_first_reply",
+        "value": "1"
+      },
+      {
+        "action_type": "lead",
+        "value": "1"
+      },
+      {
+        "action_type": "offsite_content_view_add_meta_leads",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.messaging_conversation_started_7d",
+        "value": "1"
+      },
+      {
+        "action_type": "onsite_conversion.lead_grouped",
+        "value": "1"
+      }
+    ],
+    "date_start": "2026-06-03",
+    "date_stop": "2026-08-31",
+    "publisher_platform": "instagram",
+    "platform_position": "instagram_stories",
+    "impression_device": "iphone"
+  }
+]
