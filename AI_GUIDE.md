@@ -780,7 +780,7 @@ Até estar documentado e testado:
 
 Esta seção contém as únicas ferramentas Python de consulta ao PostgreSQL atualmente autorizadas para uso pelo agente.
 
-> Nota de revisão: este catálogo foi reescrito em 2026-09-01 junto com a migração de MariaDB para PostgreSQL e o pivô de prioridade para Meta Ads (ver `docs/meta-ads-api-exploracao.md`). As 6 ferramentas abaixo foram testadas de verdade contra o schema atual (`src/migrations/0001_core_schema.sql`) antes de receberem `VALIDADO` — não é uma suposição. Nenhuma delas tem dado real ainda: o banco só tem `seed_dev.sql` (dado fictício, prefixo `seed-`), até o pipeline de ingestão do Meta existir.
+> Nota de revisão: este catálogo foi reescrito em 2026-09-01 junto com a migração de MariaDB para PostgreSQL e o pivô de prioridade para Meta Ads (ver `docs/meta-ads-api-exploracao.md`). As ferramentas abaixo foram testadas de verdade contra o schema atual (`src/migrations/0001_core_schema.sql`) antes de receberem `VALIDADO` — não é uma suposição. Desde 2026-09-02 o banco tem dado real de 13 clientes reais sincronizados via Meta Ads (além de `seed_dev.sql`, dado fictício com prefixo `seed-`, usado só em teste isolado). `list_clients` (26.7) e `generate_client_report` (26.8) foram adicionadas em 2026-09-02, junto com o motor de relatório em PDF por blocos (`src/reports/`).
 
 Um script só pode ser considerado autorizado quando estiver documentado nesta seção, testado isoladamente e marcado como `VALIDADO`.
 
@@ -1151,6 +1151,127 @@ PostgreSQL
 
 ---
 
+## 26.7 `list_clients`
+
+**Nome:** `list_clients`  
+**Caminho:** `src/ai_tools/list_clients.py`  
+**Tipo:** `READ_ONLY`  
+**Finalidade:** Listar todos os clientes reais cadastrados (slug, nome, indústria) — resolve nome comercial → slug exato, que é o que toda outra ferramenta do catálogo exige como entrada.
+
+**Entrada:** nenhuma.
+
+**Exemplo:**
+
+```text
+python -m src.ai_tools.list_clients
+```
+
+**Saída:**
+
+`clients`: lista de `{slug, name, industry}` de todos os clientes reais (contas de teste/exploração com slug `seed-*` não aparecem).
+
+**Quando usar:** sempre que o usuário mencionar um cliente pelo nome comercial (ex.: "Zornitta", "Hospital de Olhos") em vez do slug técnico exato. O agente deve chamar esta ferramenta primeiro para resolver o slug correto, e só então chamar a ferramenta relevante (`get_client_info`, `generate_client_report` etc.) — nunca adivinhar o slug pelo nome, nem ler `src/integrations/meta_ads/accounts.py` diretamente (arquivo de configuração administrativa, fora do catálogo autorizado para o agente).
+
+**Fonte:**
+
+```text
+PostgreSQL
+└── clients
+```
+
+**Somente leitura:** `SIM`
+
+**Limites:**
+
+- não aceita parâmetros nem SQL arbitrário;
+- não inclui contas de teste (`seed-*`);
+- não permite INSERT/UPDATE/DELETE;
+- não executa migrations.
+
+**Status:** `VALIDADO`
+
+---
+
+## 26.8 `generate_client_report`
+
+**Nome:** `generate_client_report`  
+**Caminho:** `src/ai_tools/generate_client_report.py`  
+**Tipo:** `READ_ONLY` (gera um arquivo PDF local em `reports_output/`, não escreve no banco)  
+**Finalidade:** Gerar o relatório de performance em PDF de um cliente, no mesmo motor/template usado pelo dashboard (`src/reports/`), incluindo os blocos de resultado pedidos.
+
+**Entrada:**
+
+```text
+--client <client_slug>
+--start <YYYY-MM-DD>
+--end <YYYY-MM-DD>
+--blocks <lista separada por vírgula, entre: lead, whatsapp, trafego, engajamento, video, vendas> (opcional)
+--extra <lista separada por vírgula, entre: plataforma, campanhas> (opcional)
+--out <caminho de saída> (opcional)
+--force (opcional — ver abaixo)
+```
+
+**Exemplo:**
+
+```text
+python -m src.ai_tools.generate_client_report --client hospital-de-olhos-videira --start 2026-08-01 --end 2026-08-31 --blocks lead,whatsapp
+```
+
+**`--blocks` tem três formas de uso, conforme o pedido do usuário:**
+
+- **Omitido** (parâmetro nem passado): detecta sozinho todos os blocos com dado real no período e inclui todos — é o **fallback padrão** quando o usuário pede "o relatório" sem dizer quais informações quer (ex.: "manda o relatório da Zornitta desse mês"). Nunca sobra bloco vazio nesse modo.
+- **Lista explícita** (ex.: `lead,whatsapp`): usuário pediu métricas específicas — inclui só essas, descartando (com aviso, ver abaixo) as que não tiverem dado.
+- **Vazio** (`--blocks ""`, string vazia mesmo): usuário pediu explicitamente só o resumo geral de mídia paga, sem nenhum bloco de resultado.
+
+**Tradução do pedido em linguagem natural para `--blocks`:** quando o usuário pede métricas específicas, o agente mapeia a intenção pro vocabulário fixo de blocos (ex.: "leads e custo por lead" → `lead`; "conversas no whatsapp" → `whatsapp`; "tráfego"/"visualizações da página" → `trafego`; "engajamento"/"interações" → `engajamento`; "vídeo"/"reconhecimento"/"alcance da campanha de vídeo" → `video`; "vendas"/"compras"/"ROAS" → `vendas`). O agente **não** decide sozinho quais consultas SQL rodar para montar o relatório — só traduz a intenção para blocos e chama esta ferramenta, que sempre usa o mesmo motor de `src/reports/`. Se o pedido não mencionar nenhuma métrica específica, omitir `--blocks` (não inventar uma lista).
+
+**`--extra` segue exatamente a mesma lógica de três formas de uso que `--blocks`** (omitido = autodetecção; lista explícita = só essas, descartando as sem dado; vazio = nenhuma seção extra), mas para seções transversais ao cliente inteiro, que não são por objetivo de campanha: `plataforma` (resultado por Facebook/Instagram/etc.), `campanhas` (tabela das principais campanhas por investimento), `demografia` (faixa etária + gênero, com cliques e leads por faixa), `regiao` (alcance/leads por região/estado) e `anuncios` (principais anúncios individuais, com miniatura do criativo e métricas por anúncio — grão mais fino que campanhas). Mapeamento de linguagem natural: "por plataforma"/"Instagram x Facebook" → `plataforma`; "principais campanhas"/"top campanhas" → `campanhas`; "idade"/"faixa etária"/"gênero"/"homem x mulher" → `demografia`; "por região"/"por estado"/"onde tá alcançando mais" → `regiao`; "melhores anúncios"/"quais criativos"/"por anúncio" → `anuncios`. O único gráfico sempre presente no PDF é o de Investimento diário (junto do resumo de mídia paga) — as demais métricas do resumo (cliques, alcance, CTR, CPC etc.) aparecem como números nos cards, não como gráfico de tendência dedicado; isso não é controlado por `--extra`.
+
+**Comportamento importante — blocos/seções pedidos explicitamente sem dado real no período:**
+
+Quando `--blocks` e/ou `--extra` são passados explicitamente (não omitidos) e, sem `--force`, um item pedido não tiver dado real no período, ele é **descartado em silêncio do PDF** — não aparece como seção vazia "sem dado" (isso confundiria quem recebe o relatório, parecendo bug do Sync). A ferramenta devolve em `excluded_blocks`/`excluded_extra` o que foi descartado e por quê.
+
+**O agente deve, na resposta ao usuário, sempre mencionar os itens em `excluded_blocks`/`excluded_extra`** (ex.: "gerei o relatório com Leads e WhatsApp — não incluí Tráfego porque a [Cliente] não teve investimento nesse objetivo entre [período]"), em vez de simplesmente entregar o PDF sem comentário. Se o usuário confirmar que quer o item mesmo vazio, chamar de novo com `--force` (inclui tudo que foi pedido, mesmo sem dado, mostrando "sem dado" no PDF).
+
+**Saída:**
+
+JSON com:
+
+- `pdf_path` — caminho absoluto do PDF gerado;
+- `included_blocks` / `included_extra` — blocos e seções extras que entraram no PDF (chave + rótulo);
+- `excluded_blocks` / `excluded_extra` — itens pedidos mas descartados por falta de dado (vazio quando `--force` foi usado, ou quando não houve nada a descartar);
+- `note` — lembrete do comportamento acima, para reforçar a instrução mesmo se o agente não tiver lido esta seção.
+
+**Fonte:**
+
+```text
+PostgreSQL (via src.reports.data, mesmas credenciais sync_ai)
+├── clients
+├── ad_accounts
+├── campaigns
+├── ad_groups
+├── ads (nome + miniatura do criativo, usado por --extra anuncios)
+├── daily_metrics
+└── daily_actions
+```
+
+**Somente leitura:** `SIM` (o único efeito colateral é escrever o arquivo PDF em disco, não no banco)
+
+**Limites:**
+
+- gera um relatório por execução, de um cliente por vez;
+- exige período (`--start`/`--end`);
+- `--blocks`, quando passado, só aceita o vocabulário fixo definido em `src/reports/blocks.py` — bloco desconhecido retorna erro com a lista de blocos válidos, não falha silenciosamente;
+- `--extra`, quando passado, só aceita o vocabulário fixo definido em `src/reports/sections.py` — seção desconhecida retorna erro com a lista de seções válidas, não falha silenciosamente;
+- não aceita SQL arbitrário;
+- não permite INSERT/UPDATE/DELETE;
+- não executa migrations;
+- cabeçalho sempre no estilo decidido com o Paulo (preto + logo branca da Tempero) — não há parâmetro pra mudar isso.
+
+**Status:** `VALIDADO`
+
+---
+
 ## Regra geral do catálogo
 
 Os scripts acima são as **únicas ferramentas Python de consulta ao PostgreSQL atualmente autorizadas para uso pelo agente**.
@@ -1175,7 +1296,7 @@ O agente deve informar que não possui atualmente uma ferramenta autorizada capa
 
 ---
 
-# 26.7 REGRA DE DECISÃO DE FERRAMENTAS
+# 26.9 REGRA DE DECISÃO DE FERRAMENTAS
 
 O agente deve mapear a intenção da pergunta para a ferramenta adequada.
 
@@ -1264,6 +1385,22 @@ Exemplo:
 > "Quantos leads a Alpha Imóveis teve em julho?"
 
 Esta ferramenta retorna apenas contagens agregadas por categoria (lead, purchase, message, etc.), nunca dado individual de lead.
+
+---
+
+### Pedidos de relatório em PDF de um cliente
+
+Utilizar:
+
+```text
+generate_client_report
+```
+
+Exemplo:
+
+> "Gera um relatório da Alpha Imóveis dos últimos 30 dias com leads e tráfego."
+
+Se o usuário mencionar o cliente pelo nome comercial, resolver o slug primeiro com `list_clients` (seção 26.7) — não adivinhar. O agente traduz o pedido em linguagem natural para `--client`, `--start`/`--end` e `--blocks` (vocabulário fixo: `lead`, `whatsapp`, `trafego`, `engajamento`, `video`, `vendas` — ver seção 26.8). Se o pedido não especificar quais informações quer, omitir `--blocks` (autodetecção). Se a ferramenta devolver `excluded_blocks` não vazio, o agente **deve** informar ao usuário quais blocos pedidos não tinham dado no período e por quê, em vez de só entregar o PDF.
 
 ---
 

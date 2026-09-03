@@ -183,32 +183,42 @@ def sync_ad_groups(cursor, campaign_map: dict[str, int], external_account_id: st
     return ad_group_map
 
 
-def sync_ads(cursor, ad_group_map: dict[str, int], external_account_id: str) -> int:
-    count = 0
+def sync_ads(cursor, ad_group_map: dict[str, int], external_account_id: str) -> dict[str, int]:
+    ad_map: dict[str, int] = {}
 
     for item in get_all_pages(
         f"{external_account_id}/ads",
-        {"fields": "id,name,adset_id,effective_status,creative{object_type}", "limit": 100},
+        {
+            "fields": "id,name,adset_id,effective_status,creative{object_type,thumbnail_url}",
+            "limit": 100,
+        },
     ):
         ad_group_db_id = ad_group_map.get(item.get("adset_id"))
         if ad_group_db_id is None:
             continue
 
         name = item.get("name") or None
-        creative_type = (item.get("creative") or {}).get("object_type")
+        creative = item.get("creative") or {}
+        creative_type = creative.get("object_type")
+        thumbnail_url = creative.get("thumbnail_url")
 
         cursor.execute(
             """
-            INSERT INTO ads (ad_group_id, external_ad_id, name, creative_type, status)
-            VALUES (%s, %s, %s, %s, %s)
+            INSERT INTO ads (ad_group_id, external_ad_id, name, creative_type, creative_thumbnail_url, status)
+            VALUES (%s, %s, %s, %s, %s, %s)
             ON CONFLICT (ad_group_id, external_ad_id)
-            DO UPDATE SET name = EXCLUDED.name, creative_type = EXCLUDED.creative_type, status = EXCLUDED.status
+            DO UPDATE SET
+                name = EXCLUDED.name,
+                creative_type = EXCLUDED.creative_type,
+                creative_thumbnail_url = EXCLUDED.creative_thumbnail_url,
+                status = EXCLUDED.status
+            RETURNING id
             """,
-            (ad_group_db_id, item["id"], name, creative_type, item.get("effective_status")),
+            (ad_group_db_id, item["id"], name, creative_type, thumbnail_url, item.get("effective_status")),
         )
-        count += 1
+        ad_map[item["id"]] = cursor.fetchone()["id"]
 
-    return count
+    return ad_map
 
 
 # ============================================================
@@ -259,12 +269,16 @@ def sync_insights_and_actions(
     external_account_id: str,
     since: date,
     until: date,
+    client_slug: str,
 ) -> tuple[int, int]:
     metrics_rows = 0
     action_rows: list[tuple] = []
     seen_action_types: set[str] = set()
 
-    for chunk_since, chunk_until in _date_chunks(since, until):
+    chunks = list(_date_chunks(since, until))
+    for i, (chunk_since, chunk_until) in enumerate(chunks, start=1):
+        chunk_label = f" ({i}/{len(chunks)})" if len(chunks) > 1 else ""
+        print(f"[{client_slug}] buscando métricas e ações{chunk_label}: {chunk_since} a {chunk_until}...")
         for item in get_all_pages(
             f"{external_account_id}/insights",
             {
@@ -285,7 +299,7 @@ def sync_insights_and_actions(
                 """
                 INSERT INTO daily_metrics (campaign_id, metric_date, impressions, clicks, spend, reach, frequency)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (campaign_id, ad_group_id, ad_id, metric_date, device, publisher_platform)
+                ON CONFLICT ON CONSTRAINT daily_metrics_unique_grain
                 DO UPDATE SET
                     impressions = EXCLUDED.impressions,
                     clicks = EXCLUDED.clicks,
@@ -327,8 +341,107 @@ def sync_insights_and_actions(
             """
             INSERT INTO daily_actions (campaign_id, metric_date, action_type, count, value)
             VALUES (%s, %s, %s, %s, %s)
-            ON CONFLICT (campaign_id, ad_group_id, ad_id, metric_date, action_type)
+            ON CONFLICT ON CONSTRAINT daily_actions_unique_grain
             DO UPDATE SET count = EXCLUDED.count, value = EXCLUDED.value
+            """,
+            row,
+        )
+
+    return metrics_rows, len(action_rows)
+
+
+def sync_ad_insights_and_actions(
+    cursor,
+    campaign_map: dict[str, int],
+    ad_group_map: dict[str, int],
+    ad_map: dict[str, int],
+    external_account_id: str,
+    since: date,
+    until: date,
+    client_slug: str,
+) -> tuple[int, int]:
+    """Mesma ideia de sync_insights_and_actions, mas em level='ad' —
+    alimenta a seção "Principais Anúncios" do relatório (Fase 3), que
+    precisa de métrica por anúncio individual (campaign_id sozinho não
+    identifica o criativo). Grava com campaign_id + ad_group_id +
+    ad_id todos preenchidos — grão mais fino que o resto do sync, mas
+    o schema já suportava isso desde o início (colunas sempre
+    existiram, só nunca tinham sido populadas)."""
+
+    metrics_rows = 0
+    action_rows: list[tuple] = []
+    seen_action_types: set[str] = set()
+
+    chunks = list(_date_chunks(since, until))
+    for i, (chunk_since, chunk_until) in enumerate(chunks, start=1):
+        chunk_label = f" ({i}/{len(chunks)})" if len(chunks) > 1 else ""
+        print(f"[{client_slug}] buscando métricas por anúncio{chunk_label}: {chunk_since} a {chunk_until}...")
+        for item in get_all_pages(
+            f"{external_account_id}/insights",
+            {
+                "level": "ad",
+                "time_increment": 1,
+                "time_range": f'{{"since":"{chunk_since}","until":"{chunk_until}"}}',
+                "fields": "ad_id,adset_id,campaign_id,date_start,impressions,clicks,spend,reach,actions",
+                "limit": 200,
+            },
+        ):
+            campaign_db_id = campaign_map.get(item.get("campaign_id"))
+            ad_group_db_id = ad_group_map.get(item.get("adset_id"))
+            ad_db_id = ad_map.get(item.get("ad_id"))
+            if campaign_db_id is None or ad_group_db_id is None or ad_db_id is None:
+                continue
+
+            metric_date = item["date_start"]
+
+            cursor.execute(
+                """
+                INSERT INTO daily_metrics
+                    (campaign_id, ad_group_id, ad_id, metric_date, impressions, clicks, spend, reach)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT ON CONSTRAINT daily_metrics_unique_grain
+                DO UPDATE SET
+                    impressions = EXCLUDED.impressions,
+                    clicks = EXCLUDED.clicks,
+                    spend = EXCLUDED.spend,
+                    reach = EXCLUDED.reach
+                """,
+                (
+                    campaign_db_id,
+                    ad_group_db_id,
+                    ad_db_id,
+                    metric_date,
+                    int(item.get("impressions", 0) or 0),
+                    int(item.get("clicks", 0) or 0),
+                    float(item.get("spend", 0) or 0),
+                    int(item.get("reach", 0) or 0) or None,
+                ),
+            )
+            metrics_rows += 1
+
+            for action in item.get("actions", []):
+                action_type = action["action_type"]
+                seen_action_types.add(action_type)
+                action_rows.append(
+                    (
+                        campaign_db_id,
+                        ad_group_db_id,
+                        ad_db_id,
+                        metric_date,
+                        action_type,
+                        float(action.get("value") or 0),
+                    )
+                )
+
+    ensure_action_types(cursor, seen_action_types)
+
+    for row in action_rows:
+        cursor.execute(
+            """
+            INSERT INTO daily_actions (campaign_id, ad_group_id, ad_id, metric_date, action_type, count)
+            VALUES (%s, %s, %s, %s, %s, %s)
+            ON CONFLICT ON CONSTRAINT daily_actions_unique_grain
+            DO UPDATE SET count = EXCLUDED.count
             """,
             row,
         )
@@ -342,10 +455,14 @@ def sync_device_breakdown(
     external_account_id: str,
     since: date,
     until: date,
+    client_slug: str,
 ) -> int:
     rows = 0
 
-    for chunk_since, chunk_until in _date_chunks(since, until):
+    chunks = list(_date_chunks(since, until))
+    for i, (chunk_since, chunk_until) in enumerate(chunks, start=1):
+        chunk_label = f" ({i}/{len(chunks)})" if len(chunks) > 1 else ""
+        print(f"[{client_slug}] buscando dados por dispositivo/plataforma{chunk_label}: {chunk_since} a {chunk_until}...")
         for item in get_all_pages(
             f"{external_account_id}/insights",
             {
@@ -365,7 +482,7 @@ def sync_device_breakdown(
                 """
                 INSERT INTO daily_metrics (campaign_id, metric_date, device, publisher_platform, impressions, clicks, spend)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (campaign_id, ad_group_id, ad_id, metric_date, device, publisher_platform)
+                ON CONFLICT ON CONSTRAINT daily_metrics_unique_grain
                 DO UPDATE SET impressions = EXCLUDED.impressions, clicks = EXCLUDED.clicks, spend = EXCLUDED.spend
                 """,
                 (
@@ -381,6 +498,166 @@ def sync_device_breakdown(
             rows += 1
 
     return rows
+
+
+def _sync_extra_breakdown(
+    cursor,
+    campaign_map: dict[str, int],
+    external_account_id: str,
+    since: date,
+    until: date,
+    client_slug: str,
+    breakdowns: str,
+    dim_columns: list[str],
+    dim_api_keys: list[str],
+    label: str,
+) -> tuple[int, int]:
+    """Sincroniza um breakdown que, diferente de device/plataforma
+    (sync_device_breakdown), vem com `reach` e `actions` utilizáveis
+    da API — confirmado empiricamente pra age+gender e region (ver
+    migration 0002). Por isso, diferente do breakdown de device, esta
+    função também grava daily_actions, permitindo saber quantos leads
+    vieram de cada faixa etária/gênero/região.
+
+    `dim_columns`/`dim_api_keys` mapeiam 1:1 as colunas novas de
+    daily_metrics/daily_actions (ex.: ["age_range", "gender"]) pros
+    campos que a API devolve nessa ordem (ex.: ["age", "gender"]) —
+    usado tanto pra age+gender quanto pra region, únicas duas chamadas
+    desse tipo hoje."""
+
+    metrics_rows = 0
+    action_rows: list[tuple] = []
+    seen_action_types: set[str] = set()
+
+    dim_column_list = ", ".join(dim_columns)
+    dim_placeholders = ", ".join(["%s"] * len(dim_columns))
+
+    chunks = list(_date_chunks(since, until))
+    for i, (chunk_since, chunk_until) in enumerate(chunks, start=1):
+        chunk_label = f" ({i}/{len(chunks)})" if len(chunks) > 1 else ""
+        print(f"[{client_slug}] buscando dados por {label}{chunk_label}: {chunk_since} a {chunk_until}...")
+        for item in get_all_pages(
+            f"{external_account_id}/insights",
+            {
+                "level": "campaign",
+                "time_increment": 1,
+                "time_range": f'{{"since":"{chunk_since}","until":"{chunk_until}"}}',
+                "breakdowns": breakdowns,
+                "fields": "campaign_id,date_start,impressions,clicks,spend,reach,actions",
+                "limit": 200,
+            },
+        ):
+            campaign_db_id = campaign_map.get(item.get("campaign_id"))
+            if campaign_db_id is None:
+                continue
+
+            metric_date = item["date_start"]
+            dim_values = [item.get(key) for key in dim_api_keys]
+
+            cursor.execute(
+                f"""
+                INSERT INTO daily_metrics
+                    (campaign_id, metric_date, {dim_column_list}, impressions, clicks, spend, reach)
+                VALUES (%s, %s, {dim_placeholders}, %s, %s, %s, %s)
+                ON CONFLICT ON CONSTRAINT daily_metrics_unique_grain
+                DO UPDATE SET
+                    impressions = EXCLUDED.impressions,
+                    clicks = EXCLUDED.clicks,
+                    spend = EXCLUDED.spend,
+                    reach = EXCLUDED.reach
+                """,
+                (
+                    campaign_db_id,
+                    metric_date,
+                    *dim_values,
+                    int(item.get("impressions", 0) or 0),
+                    int(item.get("clicks", 0) or 0),
+                    float(item.get("spend", 0) or 0),
+                    int(item.get("reach", 0) or 0) or None,
+                ),
+            )
+            metrics_rows += 1
+
+            for action in item.get("actions", []):
+                action_type = action["action_type"]
+                seen_action_types.add(action_type)
+                action_rows.append(
+                    (campaign_db_id, metric_date, action_type, *dim_values, float(action.get("value") or 0))
+                )
+
+    ensure_action_types(cursor, seen_action_types)
+
+    for row in action_rows:
+        cursor.execute(
+            f"""
+            INSERT INTO daily_actions (campaign_id, metric_date, action_type, {dim_column_list}, count)
+            VALUES (%s, %s, %s, {dim_placeholders}, %s)
+            ON CONFLICT ON CONSTRAINT daily_actions_unique_grain
+            DO UPDATE SET count = EXCLUDED.count
+            """,
+            row,
+        )
+
+    return metrics_rows, len(action_rows)
+
+
+def sync_demographics_breakdown(
+    cursor,
+    campaign_map: dict[str, int],
+    external_account_id: str,
+    since: date,
+    until: date,
+    client_slug: str,
+) -> tuple[int, int]:
+    return _sync_extra_breakdown(
+        cursor, campaign_map, external_account_id, since, until, client_slug,
+        breakdowns="age,gender",
+        dim_columns=["age_range", "gender"],
+        dim_api_keys=["age", "gender"],
+        label="faixa etária/gênero",
+    )
+
+
+def sync_region_breakdown(
+    cursor,
+    campaign_map: dict[str, int],
+    external_account_id: str,
+    since: date,
+    until: date,
+    client_slug: str,
+) -> tuple[int, int]:
+    return _sync_extra_breakdown(
+        cursor, campaign_map, external_account_id, since, until, client_slug,
+        breakdowns="region",
+        dim_columns=["region"],
+        dim_api_keys=["region"],
+        label="região",
+    )
+
+
+def sync_platform_conversions_breakdown(
+    cursor,
+    campaign_map: dict[str, int],
+    external_account_id: str,
+    since: date,
+    until: date,
+    client_slug: str,
+) -> tuple[int, int]:
+    """Breakdown só de publisher_platform (sem combinar com device) —
+    diferente de sync_device_breakdown (usado pelo AI tool
+    get_campaign_device_breakdown, que precisa da granularidade por
+    device e por isso continua existindo). Confirmado empiricamente
+    que, sozinho, esse breakdown devolve reach e actions normalmente
+    (migration 0004) — o que abre a porta pra leads por plataforma,
+    que sync_device_breakdown nunca conseguiu dar."""
+
+    return _sync_extra_breakdown(
+        cursor, campaign_map, external_account_id, since, until, client_slug,
+        breakdowns="publisher_platform",
+        dim_columns=["publisher_platform"],
+        dim_api_keys=["publisher_platform"],
+        label="cadastros por plataforma",
+    )
 
 
 # ============================================================
@@ -399,18 +676,39 @@ def sync_account(account: AccountConfig, since: date, until: date) -> dict[str, 
 
             campaign_map = sync_campaigns(cursor, ids["ad_account_id"], external_account_id)
             ad_group_map = sync_ad_groups(cursor, campaign_map, external_account_id)
-            ads_count = sync_ads(cursor, ad_group_map, external_account_id)
+            ad_map = sync_ads(cursor, ad_group_map, external_account_id)
+
+            print(
+                f"[{account.client_slug}] estrutura sincronizada: {len(campaign_map)} campanhas, "
+                f"{len(ad_group_map)} conjuntos de anúncios, {len(ad_map)} anúncios. Buscando métricas..."
+            )
 
             metrics_rows, action_rows = sync_insights_and_actions(
-                cursor, campaign_map, external_account_id, since, until
+                cursor, campaign_map, external_account_id, since, until, account.client_slug
             )
             device_rows = sync_device_breakdown(
-                cursor, campaign_map, external_account_id, since, until
+                cursor, campaign_map, external_account_id, since, until, account.client_slug
+            )
+            demo_metric_rows, demo_action_rows = sync_demographics_breakdown(
+                cursor, campaign_map, external_account_id, since, until, account.client_slug
+            )
+            region_metric_rows, region_action_rows = sync_region_breakdown(
+                cursor, campaign_map, external_account_id, since, until, account.client_slug
+            )
+            platform_conv_metric_rows, platform_conv_action_rows = sync_platform_conversions_breakdown(
+                cursor, campaign_map, external_account_id, since, until, account.client_slug
+            )
+            ad_metric_rows, ad_action_rows = sync_ad_insights_and_actions(
+                cursor, campaign_map, ad_group_map, ad_map, external_account_id, since, until, account.client_slug
             )
 
             total_records = (
-                len(campaign_map) + len(ad_group_map) + ads_count
+                len(campaign_map) + len(ad_group_map) + len(ad_map)
                 + metrics_rows + action_rows + device_rows
+                + demo_metric_rows + demo_action_rows
+                + region_metric_rows + region_action_rows
+                + platform_conv_metric_rows + platform_conv_action_rows
+                + ad_metric_rows + ad_action_rows
             )
 
             cursor.execute(
@@ -425,8 +723,12 @@ def sync_account(account: AccountConfig, since: date, until: date) -> dict[str, 
 
             print(
                 f"[{account.client_slug}] OK — {len(campaign_map)} campanhas, "
-                f"{len(ad_group_map)} ad sets, {ads_count} ads, {metrics_rows} linhas de métrica, "
-                f"{action_rows} linhas de ação, {device_rows} linhas de device/plataforma."
+                f"{len(ad_group_map)} ad sets, {len(ad_map)} ads, {metrics_rows} linhas de métrica, "
+                f"{action_rows} linhas de ação, {device_rows} linhas de device/plataforma, "
+                f"{demo_metric_rows} linhas de faixa etária/gênero ({demo_action_rows} ações), "
+                f"{region_metric_rows} linhas de região ({region_action_rows} ações), "
+                f"{platform_conv_metric_rows} linhas de plataforma p/ cadastros ({platform_conv_action_rows} ações), "
+                f"{ad_metric_rows} linhas por anúncio ({ad_action_rows} ações)."
             )
 
             return {"ok": True, "client_slug": account.client_slug, "records_processed": total_records}

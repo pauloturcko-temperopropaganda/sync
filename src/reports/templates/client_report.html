@@ -2,47 +2,128 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<meta name="color-scheme" content="light">
 <title>Relatório — {{ client.name }}</title>
 <style>
+    :root {
+        color-scheme: light;
+        --brand-orange: #E8A33D;
+    }
+
+    @font-face {
+        font-family: 'Public Sans';
+        src: url({{ font_medium_uri }}) format('truetype');
+        font-weight: 500;
+    }
+
+    @font-face {
+        font-family: 'Public Sans';
+        src: url({{ font_extrabold_uri }}) format('truetype');
+        font-weight: 800;
+    }
+
     @page {
         size: A4;
-        margin: 18mm 16mm;
+        margin: 0;
+    }
+
+    main {
+        padding: 0 16mm 6mm 16mm;
     }
 
     * { box-sizing: border-box; }
 
+    /* Largura travada em 210mm (largura real do A4) — sem isso, o
+       PDF (o Playwright imprime exatamente a 210mm) e a prévia do
+       dashboard (HTML solto num <iframe>, largura variável conforme
+       a janela) reflowam esse mesmo HTML de formas diferentes,
+       principalmente os layouts flex/% — o motivo de o preview e o
+       PDF final terem ficado diferentes. Travando os dois no mesmo
+       valor, o preview vira um espelho fiel do PDF. */
     body {
-        font-family: 'Segoe UI', Arial, sans-serif;
+        font-family: 'Public Sans', 'Segoe UI', Arial, sans-serif;
+        font-weight: 500;
         color: #1F2937;
         font-size: 11pt;
-        margin: 0;
+        margin: 0 auto;
+        width: 210mm;
+        background: #FFFFFF;
+    }
+
+    /* Quebra de página no PDF (Chromium/Playwright respeita essas
+       propriedades no modo impressão) — evita cortar um card, uma
+       linha de tabela, um gráfico ou uma miniatura ao meio entre
+       duas páginas. Tabelas longas continuam quebrando entre linhas
+       normalmente (só a linha em si não é partida), com o cabeçalho
+       se repetindo em cada página. */
+    .kpi-card,
+    .chart-img,
+    .chart-pie,
+    tr,
+    .ad-cell {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    h2 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    thead {
+        display: table-header-group;
     }
 
     header.report-header {
+        background: #111111;
+        border-bottom: 3px solid var(--brand-orange);
+        padding: 5mm 16mm;
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
-        border-bottom: 3px solid #111111;
-        padding-bottom: 12px;
-        margin-bottom: 20px;
+        align-items: center;
     }
 
-    header.report-header .agency {
-        font-size: 10pt;
-        color: #6B7280;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
+    header.report-header .logo {
+        height: 78px;
+        width: auto;
+        display: block;
     }
 
-    header.report-header h1 {
-        font-size: 20pt;
-        margin: 2px 0 0 0;
+    header.report-header .tagline {
+        display: flex;
+        gap: 22px;
+        font-family: 'Public Sans', 'Segoe UI', Arial, sans-serif;
+        font-weight: 800;
+        font-size: 14pt;
+        color: #FFFFFF;
+        text-transform: lowercase;
+    }
+
+    header.report-header .tagline .accent {
+        color: var(--brand-orange);
+    }
+
+    .report-subheader {
+        background: #F3F4F6;
+        border-bottom: 1px solid #E5E7EB;
+        padding: 8px 16mm;
+        margin-bottom: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .report-subheader h1 {
+        font-family: 'Public Sans', 'Segoe UI', Arial, sans-serif;
+        font-weight: 800;
+        font-size: 12pt;
+        margin: 0;
         color: #111827;
     }
 
-    header.report-header .period {
+    .report-subheader .period {
         text-align: right;
-        font-size: 10pt;
+        font-size: 9.5pt;
         color: #6B7280;
     }
 
@@ -60,11 +141,15 @@
 
     .kpi-grid {
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
     }
 
+    .kpi-grid .kpi-card {
+        flex: 0 0 calc(25% - 8px);
+    }
+
     .kpi-card {
-        flex: 1;
         background: #F9FAFB;
         border: 1px solid #E5E7EB;
         border-radius: 8px;
@@ -79,14 +164,21 @@
     }
 
     .kpi-card .value {
+        font-family: 'Public Sans', 'Segoe UI', Arial, sans-serif;
         font-size: 15pt;
-        font-weight: 600;
+        font-weight: 800;
         color: #111827;
         margin-top: 2px;
     }
 
     .chart-img {
         width: 100%;
+    }
+
+    .chart-pie {
+        display: block;
+        width: 340px;
+        margin: 0 auto 12px auto;
     }
 
     table {
@@ -115,6 +207,7 @@
 
     td.num, th.num {
         text-align: right;
+        white-space: nowrap;
     }
 
     .status-pill {
@@ -131,6 +224,25 @@
         color: #6B7280;
     }
 
+    .ad-cell {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .ad-cell .ad-thumb {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        object-fit: cover;
+        flex-shrink: 0;
+        background: #F3F4F6;
+    }
+
+    .ad-cell .ad-name {
+        max-width: 220px;
+    }
+
     .actions-grid {
         display: flex;
         flex-wrap: wrap;
@@ -142,12 +254,42 @@
         min-width: 110px;
     }
 
+    .kpi-card .sub-metrics {
+        display: flex;
+        gap: 12px;
+        margin-top: 6px;
+    }
+
+    .kpi-card .sub-metrics div {
+        font-size: 8.5pt;
+        color: #6B7280;
+    }
+
+    .kpi-card .sub-metrics .sub-value {
+        font-weight: 600;
+        color: #374151;
+    }
+
     footer {
         margin-top: 24px;
         padding-top: 10px;
         border-top: 1px solid #E5E7EB;
         font-size: 8pt;
         color: #9CA3AF;
+        text-align: center;
+    }
+
+    footer .address {
+        font-weight: 600;
+        color: #6B7280;
+        margin-bottom: 3px;
+    }
+
+    footer .sync-watermark {
+        height: 14px;
+        width: auto;
+        opacity: 0.25;
+        margin-top: 10px;
     }
 
     .empty-note {
@@ -155,23 +297,32 @@
         color: #9CA3AF;
         font-style: italic;
     }
+
 </style>
 </head>
 <body>
 
 <header class="report-header">
-    <div>
-        <div class="agency">Tempero Propaganda</div>
-        <h1>{{ client.name }}</h1>
+    <img src="{{ logo_data_uri }}" alt="Tempero Propaganda" class="logo">
+    <div class="tagline">
+        <span>brief</span>
+        <span>flow</span>
+        <span>maker<span class="accent">.</span></span>
     </div>
+</header>
+
+<div class="report-subheader">
+    <h1>{{ client.name }}</h1>
     <div class="period">
         Relatório de performance<br>
         {{ period.start.strftime('%d/%m/%Y') }} a {{ period.end.strftime('%d/%m/%Y') }}
     </div>
-</header>
+</div>
+
+<main>
 
 <section>
-    <h2>Resumo do período</h2>
+    <h2>Resumo do período — mídia paga</h2>
     <div class="kpi-grid">
         <div class="kpi-card">
             <div class="label">Investimento</div>
@@ -182,15 +333,27 @@
             <div class="value">{{ "{:,}".format(summary.impressions)|replace(",", ".") }}</div>
         </div>
         <div class="kpi-card">
-            <div class="label">Cliques</div>
+            <div class="label">Alcance</div>
+            <div class="value">{{ "{:,}".format(summary.reach)|replace(",", ".") }}</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Frequência</div>
+            <div class="value">{{ "%.2f"|format(summary.frequency) }}</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">CPM</div>
+            <div class="value">{{ "R$ %.2f"|format(summary.cpm)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Cliques (todos)</div>
             <div class="value">{{ "{:,}".format(summary.clicks)|replace(",", ".") }}</div>
         </div>
         <div class="kpi-card">
-            <div class="label">CTR</div>
+            <div class="label">CTR (todos)</div>
             <div class="value">{{ "%.2f"|format(summary.ctr_percent) }}%</div>
         </div>
         <div class="kpi-card">
-            <div class="label">CPC médio</div>
+            <div class="label">CPC (todos)</div>
             <div class="value">{{ "R$ %.2f"|format(summary.cpc)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</div>
         </div>
     </div>
@@ -199,63 +362,270 @@
 <section>
     <h2>Investimento diário</h2>
     {% if daily_trend %}
-        <img class="chart-img" src="{{ chart_data_uri }}" alt="Gráfico de investimento diário">
+        <img class="chart-img" src="{{ chart_spend_uri }}" alt="Gráfico de investimento diário">
     {% else %}
         <p class="empty-note">Sem dado de investimento diário no período.</p>
     {% endif %}
 </section>
 
+{% for block in blocks %}
 <section>
-    <h2>Ações no período</h2>
-    {% if actions %}
+    <h2>Resultados — {{ block.label }}</h2>
+    {% if block.has_data %}
         <div class="actions-grid">
-            {% for action in actions %}
             <div class="kpi-card">
-                <div class="label">{{ action.label }}</div>
-                <div class="value">{{ "{:,.0f}".format(action.total_count)|replace(",", ".") }}</div>
+                <div class="label">{{ block.count_label }}</div>
+                <div class="value">{{ "{:,.0f}".format(block.count)|replace(",", ".") }}</div>
+                {% if block.sub_metrics %}
+                <div class="sub-metrics">
+                    {% for sub in block.sub_metrics %}
+                    <div>{{ sub.label }}: <span class="sub-value">{{ "{:,.0f}".format(sub.count)|replace(",", ".") }}</span></div>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
-            {% endfor %}
+            <div class="kpi-card">
+                <div class="label">{{ block.cost_label }}</div>
+                <div class="value">{{ "R$ %.2f"|format(block.cost_per)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</div>
+            </div>
+            {% if block.show_reach_frequency %}
+            <div class="kpi-card">
+                <div class="label">Alcance</div>
+                <div class="value">{{ "{:,}".format(block.reach)|replace(",", ".") }}</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Frequência</div>
+                <div class="value">{{ "%.2f"|format(block.frequency) }}</div>
+            </div>
+            {% endif %}
+            {% if block.show_value_and_roas %}
+            <div class="kpi-card">
+                <div class="label">Valor de conversão</div>
+                <div class="value">{{ "R$ %.2f"|format(block.value)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">ROAS</div>
+                <div class="value">{{ "%.2f"|format(block.roas) }}x</div>
+            </div>
+            {% endif %}
         </div>
     {% else %}
-        <p class="empty-note">Nenhuma ação registrada no período.</p>
+        <p class="empty-note">Nenhuma campanha com esse objetivo teve resultado no período.</p>
     {% endif %}
 </section>
+{% endfor %}
 
+{% if show_platform %}
 <section>
-    <h2>Campanhas com investimento no período</h2>
+    <h2>Resultado por Plataforma</h2>
+    {% if platform_breakdown %}
+        <img class="chart-pie" src="{{ chart_platform_uri }}" alt="Investimento por plataforma">
+        <table>
+            <thead>
+                <tr>
+                    <th>Plataforma</th>
+                    <th class="num">Investimento</th>
+                    <th class="num">Impressões</th>
+                    <th class="num">Alcance</th>
+                    <th class="num">Frequência</th>
+                    <th class="num">Cliques</th>
+                    <th class="num">CPM</th>
+                    <th class="num">CPC</th>
+                    <th class="num">Leads</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in platform_breakdown %}
+                <tr>
+                    <td>{{ p.platform.replace("_", " ")|title }}</td>
+                    <td class="num">{{ "R$ %.2f"|format(p.spend)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "{:,}".format(p.impressions)|replace(",", ".") }}</td>
+                    <td class="num">{{ "{:,}".format(p.reach)|replace(",", ".") }}</td>
+                    <td class="num">{{ "%.2f"|format(p.frequency) }}</td>
+                    <td class="num">{{ "{:,}".format(p.clicks)|replace(",", ".") }}</td>
+                    <td class="num">{{ "R$ %.2f"|format(p.cpm)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "R$ %.2f"|format(p.cpc)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "{:,.0f}".format(p.leads)|replace(",", ".") }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="empty-note">Sem dado de plataforma no período.</p>
+    {% endif %}
+</section>
+{% endif %}
+
+{% if show_campaigns %}
+<section>
+    <h2>Principais Campanhas</h2>
     {% if top_campaigns %}
-    <table>
-        <thead>
-            <tr>
-                <th>Campanha</th>
-                <th>Status</th>
-                <th class="num">Impressões</th>
-                <th class="num">Cliques</th>
-                <th class="num">Investimento</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for c in top_campaigns %}
-            <tr>
-                <td>{{ c.name }}</td>
-                <td>
-                    <span class="status-pill {{ 'inactive' if c.status != 'ACTIVE' else '' }}">{{ c.status }}</span>
-                </td>
-                <td class="num">{{ "{:,}".format(c.impressions)|replace(",", ".") }}</td>
-                <td class="num">{{ "{:,}".format(c.clicks)|replace(",", ".") }}</td>
-                <td class="num">{{ "R$ %.2f"|format(c.spend)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Campanha</th>
+                    <th>Status</th>
+                    <th class="num">Investimento</th>
+                    <th class="num">Alcance</th>
+                    <th class="num">Frequência</th>
+                    <th class="num">Cliques</th>
+                    <th class="num">CPC</th>
+                    <th class="num">CPM</th>
+                    <th class="num">Leads</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in top_campaigns %}
+                <tr>
+                    <td>{{ c.name }}</td>
+                    <td>
+                        <span class="status-pill {{ 'inactive' if c.status != 'ACTIVE' else '' }}">{{ c.status }}</span>
+                    </td>
+                    <td class="num">{{ "R$ %.2f"|format(c.spend)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "{:,}".format(c.reach)|replace(",", ".") }}</td>
+                    <td class="num">{{ "%.2f"|format(c.frequency) }}</td>
+                    <td class="num">{{ "{:,}".format(c.clicks)|replace(",", ".") }}</td>
+                    <td class="num">{{ "R$ %.2f"|format(c.cpc)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "R$ %.2f"|format(c.cpm)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "{:,.0f}".format(c.leads)|replace(",", ".") }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     {% else %}
         <p class="empty-note">Nenhuma campanha com investimento no período.</p>
     {% endif %}
 </section>
+{% endif %}
+
+{% if show_demographics %}
+<section>
+    <h2>Faixa Etária e Gênero</h2>
+    {% if demographics.table %}
+        <img class="chart-img" src="{{ chart_age_uri }}" alt="Cliques e leads por faixa etária">
+        <img class="chart-pie" src="{{ chart_gender_uri }}" alt="Leads por gênero">
+        <table>
+            <thead>
+                <tr>
+                    <th>Faixa etária</th>
+                    <th>Gênero</th>
+                    <th class="num">Investimento</th>
+                    <th class="num">Alcance</th>
+                    <th class="num">Cliques</th>
+                    <th class="num">Leads</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in demographics.table %}
+                <tr>
+                    <td>{{ row.age_range }}</td>
+                    <td>{{ {"female": "Mulher", "male": "Homem", "unknown": "Desconhecido"}.get(row.gender, row.gender) }}</td>
+                    <td class="num">{{ "R$ %.2f"|format(row.spend)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "{:,}".format(row.reach)|replace(",", ".") }}</td>
+                    <td class="num">{{ "{:,}".format(row.clicks)|replace(",", ".") }}</td>
+                    <td class="num">{{ "{:,.0f}".format(row.leads)|replace(",", ".") }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="empty-note">Sem dado de faixa etária/gênero no período.</p>
+    {% endif %}
+</section>
+{% endif %}
+
+{% if show_region %}
+<section>
+    <h2>Regiões com Maior Alcance</h2>
+    {% if region_breakdown %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Região</th>
+                    <th class="num">Alcance</th>
+                    <th class="num">Impressões</th>
+                    <th class="num">Frequência</th>
+                    <th class="num">Investimento</th>
+                    <th class="num">CPM</th>
+                    <th class="num">Leads</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in region_breakdown %}
+                <tr>
+                    <td>{{ r.region }}</td>
+                    <td class="num">{{ "{:,}".format(r.reach)|replace(",", ".") }}</td>
+                    <td class="num">{{ "{:,}".format(r.impressions)|replace(",", ".") }}</td>
+                    <td class="num">{{ "%.2f"|format(r.frequency) }}</td>
+                    <td class="num">{{ "R$ %.2f"|format(r.spend)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "R$ %.2f"|format(r.cpm)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "{:,.0f}".format(r.leads)|replace(",", ".") }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="empty-note">Sem dado de região no período.</p>
+    {% endif %}
+</section>
+{% endif %}
+
+{% if show_ads %}
+<section>
+    <h2>Principais Anúncios</h2>
+    {% if top_ads %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Anúncio</th>
+                    <th>Status</th>
+                    <th class="num">Investimento</th>
+                    <th class="num">Alcance</th>
+                    <th class="num">Frequência</th>
+                    <th class="num">Cliques</th>
+                    <th class="num">CPC</th>
+                    <th class="num">CPM</th>
+                    <th class="num">Leads</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ad in top_ads %}
+                <tr>
+                    <td>
+                        <div class="ad-cell">
+                            {% if ad.thumbnail_url %}
+                            <img class="ad-thumb" src="{{ ad.thumbnail_url }}" alt="">
+                            {% endif %}
+                            <span class="ad-name">{{ ad.name }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="status-pill {{ 'inactive' if ad.status != 'ACTIVE' else '' }}">{{ ad.status }}</span>
+                    </td>
+                    <td class="num">{{ "R$ %.2f"|format(ad.spend)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "{:,}".format(ad.reach)|replace(",", ".") }}</td>
+                    <td class="num">{{ "%.2f"|format(ad.frequency) }}</td>
+                    <td class="num">{{ "{:,}".format(ad.clicks)|replace(",", ".") }}</td>
+                    <td class="num">{{ "R$ %.2f"|format(ad.cpc)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "R$ %.2f"|format(ad.cpm)|replace(",", "X")|replace(".", ",")|replace("X", ".") }}</td>
+                    <td class="num">{{ "{:,.0f}".format(ad.leads)|replace(",", ".") }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="empty-note">Nenhum anúncio com investimento no período.</p>
+    {% endif %}
+</section>
+{% endif %}
 
 <footer>
-    Gerado automaticamente pelo Sync em {{ generated_at }}. Dados da Meta Ads.
+    <div class="address">Rua Brasil, 370, Sala 403, Centro, Videira, SC, 89560-150, Fone 49 3533-2000</div>
+    <div>Gerado automaticamente pelo Sync em {{ generated_at }}. Dados da Meta Ads.</div>
+    <img class="sync-watermark" src="{{ sync_logo_data_uri }}" alt="Sync">
 </footer>
+
+</main>
 
 </body>
 </html>

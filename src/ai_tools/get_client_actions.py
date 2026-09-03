@@ -139,6 +139,9 @@ def main() -> int:
             ON daily_actions.action_type = action_type_catalog.action_type
             AND daily_actions.ad_group_id IS NULL
             AND daily_actions.ad_id IS NULL
+            AND daily_actions.age_range IS NULL
+            AND daily_actions.region IS NULL
+            AND daily_actions.publisher_platform IS NULL
             AND daily_actions.metric_date BETWEEN %s AND %s
             AND daily_actions.campaign_id IN (
                 SELECT campaigns.id
@@ -181,6 +184,9 @@ def main() -> int:
           AND action_type_catalog.is_canonical = true
           AND daily_actions.ad_group_id IS NULL
           AND daily_actions.ad_id IS NULL
+          AND daily_actions.age_range IS NULL
+          AND daily_actions.region IS NULL
+          AND daily_actions.publisher_platform IS NULL
           AND daily_actions.metric_date BETWEEN %s AND %s
 
         GROUP BY campaigns.id, campaigns.name, action_type_catalog.business_category

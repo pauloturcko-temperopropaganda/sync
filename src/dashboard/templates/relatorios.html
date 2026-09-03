@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Sync — Relatórios</title>
+<style>
+    :root {
+        --accent: #111111;
+        --bg: #F7F5F0;
+        --card: #FFFFFF;
+        --border: #E5E7EB;
+        --text: #111827;
+        --muted: #6B7280;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        margin: 0;
+        padding: 28px 200px 60px;
+    }
+
+    header {
+        margin-bottom: 24px;
+    }
+
+    header a.back-link {
+        display: inline-block;
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 10.5pt;
+        text-decoration: none;
+        margin-bottom: 24px;
+    }
+
+    header a.back-link:hover {
+        text-decoration: underline;
+    }
+
+    header .logo {
+        height: 34px;
+        width: auto;
+        display: block;
+    }
+
+    header .subtitle {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 10pt;
+    }
+
+    .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 18px 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .field label {
+        font-size: 8.5pt;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+
+    .field select, .field input {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 8px 10px;
+        font-size: 10pt;
+        font-family: inherit;
+    }
+
+    .field input.date-field {
+        width: 110px;
+    }
+
+    .blocks-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .block-option {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 6px 12px;
+        font-size: 9.5pt;
+        background: #F9FAFB;
+    }
+
+    .block-option.no-data {
+        color: var(--muted);
+        font-style: italic;
+    }
+
+    .actions {
+        display: flex;
+        gap: 10px;
+    }
+
+    button {
+        border: none;
+        border-radius: 6px;
+        padding: 10px 18px;
+        font-size: 10pt;
+        cursor: pointer;
+    }
+
+    button.primary {
+        background: var(--accent);
+        color: white;
+    }
+
+    button.secondary {
+        background: #F3F4F6;
+        color: var(--text);
+    }
+
+    button:disabled {
+        background: #9CA3AF;
+        cursor: not-allowed;
+    }
+
+    #preview-frame {
+        width: 100%;
+        height: 1100px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: white;
+    }
+
+    .empty-note {
+        color: var(--muted);
+        font-size: 9.5pt;
+        font-style: italic;
+    }
+
+    #status-message {
+        font-size: 9.5pt;
+        margin-top: 8px;
+    }
+
+    #status-message.error {
+        color: #991B1B;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <a class="back-link" href="/">&larr; Voltar ao painel</a>
+    <img src="/branding/sync-logo-black.png" alt="Sync" class="logo">
+    <div class="subtitle">Gerar relatório de performance por cliente</div>
+</header>
+
+<div class="card">
+    <div class="form-row">
+        <div class="field">
+            <label for="client-select">Cliente</label>
+            <select id="client-select"></select>
+        </div>
+        <div class="field">
+            <label for="start-date">De</label>
+            <input type="text" class="date-field" id="start-date" placeholder="DD/MM/AAAA" inputmode="numeric" maxlength="10">
+        </div>
+        <div class="field">
+            <label for="end-date">Até</label>
+            <input type="text" class="date-field" id="end-date" placeholder="DD/MM/AAAA" inputmode="numeric" maxlength="10">
+        </div>
+    </div>
+
+    <label style="font-size: 8.5pt; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em;">
+        Blocos de resultado
+    </label>
+    <div class="blocks-grid" id="blocks-grid">
+        <span class="empty-note">Escolha um cliente e o período pra ver os blocos disponíveis.</span>
+    </div>
+
+    <label style="font-size: 8.5pt; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; margin-top: 4px; display: block;">
+        Seções extras
+    </label>
+    <div class="blocks-grid" id="extra-grid">
+        <span class="empty-note">Escolha um cliente e o período pra ver as seções disponíveis.</span>
+    </div>
+
+    <div class="actions">
+        <button class="secondary" onclick="loadPreview()">Gerar prévia</button>
+        <button class="primary" onclick="downloadPdf()">Baixar PDF</button>
+    </div>
+    <div id="status-message"></div>
+</div>
+
+<div class="card">
+    <iframe id="preview-frame" srcdoc="<p style='font-family:sans-serif;color:#9CA3AF;padding:20px;'>A prévia aparece aqui depois de clicar em &quot;Gerar prévia&quot;.</p>"></iframe>
+</div>
+
+<script>
+function todayIso(offsetDays) {
+    const d = new Date();
+    d.setDate(d.getDate() + offsetDays);
+    return d.toISOString().slice(0, 10);
+}
+
+// Os campos de data são <input type="text"> mascarados pra DD/MM/AAAA
+// em vez de <input type="date"> nativo: o formato de exibição do
+// type="date" segue o idioma/região do navegador, não o `lang` do
+// elemento (testado, não muda) — só assim dá pra garantir o padrão
+// brasileiro pra qualquer usuário, em qualquer máquina.
+function isoToBr(iso) {
+    if (!iso) return '';
+    const [y, m, d] = iso.split('-');
+    return `${d}/${m}/${y}`;
+}
+
+function brToIso(br) {
+    const match = (br || '').match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+    return match ? `${match[3]}-${match[2]}-${match[1]}` : '';
+}
+
+function attachDateMask(input) {
+    input.addEventListener('input', () => {
+        let digits = input.value.replace(/\D/g, '').slice(0, 8);
+        let formatted = digits;
+        if (digits.length > 4) {
+            formatted = `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`;
+        } else if (digits.length > 2) {
+            formatted = `${digits.slice(0, 2)}/${digits.slice(2)}`;
+        }
+        input.value = formatted;
+    });
+}
+
+async function loadClients() {
+    const res = await fetch('/api/clients');
+    const clients = await res.json();
+    const select = document.getElementById('client-select');
+    select.innerHTML = clients.map(c => `<option value="${c.slug}">${c.name}</option>`).join('');
+}
+
+function getDateRange() {
+    return {
+        start: brToIso(document.getElementById('start-date').value),
+        end: brToIso(document.getElementById('end-date').value),
+    };
+}
+
+async function loadBlocks() {
+    const client = document.getElementById('client-select').value;
+    const { start, end } = getDateRange();
+    if (!client || !start || !end) return;
+
+    const res = await fetch(`/api/report/blocks?client=${client}&start=${start}&end=${end}`);
+    const data = await res.json();
+
+    const grid = document.getElementById('blocks-grid');
+    grid.innerHTML = data.blocks.map(b => `
+        <label class="block-option ${b.has_data ? '' : 'no-data'}">
+            <input type="checkbox" value="${b.key}" ${b.has_data ? 'checked' : ''}>
+            ${b.label}${b.has_data ? '' : ' (sem dado no período)'}
+        </label>
+    `).join('');
+
+    grid.querySelectorAll('input[type=checkbox]').forEach(el => {
+        el.addEventListener('change', loadPreview);
+    });
+}
+
+async function loadExtraSections() {
+    const client = document.getElementById('client-select').value;
+    const { start, end } = getDateRange();
+    if (!client || !start || !end) return;
+
+    const res = await fetch(`/api/report/extra-sections?client=${client}&start=${start}&end=${end}`);
+    const data = await res.json();
+
+    const grid = document.getElementById('extra-grid');
+    grid.innerHTML = data.sections.map(s => `
+        <label class="block-option ${s.has_data ? '' : 'no-data'}">
+            <input type="checkbox" value="${s.key}" ${s.has_data ? 'checked' : ''}>
+            ${s.label}${s.has_data ? '' : ' (sem dado no período)'}
+        </label>
+    `).join('');
+
+    grid.querySelectorAll('input[type=checkbox]').forEach(el => {
+        el.addEventListener('change', loadPreview);
+    });
+}
+
+// Mantém a prévia sempre coerente com cliente/período/blocos/seções
+// atuais — sem isso, trocar de cliente deixava a prévia velha na tela
+// até alguém clicar em "Gerar prévia" de novo.
+async function refreshForm() {
+    await Promise.all([loadBlocks(), loadExtraSections()]);
+    loadPreview();
+}
+
+function selectedBlocks() {
+    return Array.from(document.querySelectorAll('#blocks-grid input[type=checkbox]:checked'))
+        .map(el => el.value);
+}
+
+function selectedExtra() {
+    return Array.from(document.querySelectorAll('#extra-grid input[type=checkbox]:checked'))
+        .map(el => el.value);
+}
+
+function buildQuery() {
+    const client = document.getElementById('client-select').value;
+    const { start, end } = getDateRange();
+    const blocks = selectedBlocks().join(',');
+    const extra = selectedExtra().join(',');
+    return `client=${encodeURIComponent(client)}&start=${start}&end=${end}&blocks=${encodeURIComponent(blocks)}&extra=${encodeURIComponent(extra)}`;
+}
+
+function setStatus(message, isError) {
+    const el = document.getElementById('status-message');
+    el.textContent = message;
+    el.className = isError ? 'error' : '';
+}
+
+async function loadPreview() {
+    setStatus('Gerando prévia...', false);
+    try {
+        const res = await fetch(`/api/report/preview?${buildQuery()}`);
+        if (!res.ok) {
+            const detail = (await res.json()).detail || 'Erro ao gerar prévia.';
+            setStatus(detail, true);
+            return;
+        }
+        const html = await res.text();
+        document.getElementById('preview-frame').srcdoc = html;
+        setStatus('', false);
+    } catch (err) {
+        setStatus('Erro ao gerar prévia: ' + err, true);
+    }
+}
+
+function downloadPdf() {
+    setStatus('Gerando PDF...', false);
+    window.open(`/api/report/pdf?${buildQuery()}`, '_blank');
+    setStatus('', false);
+}
+
+document.getElementById('client-select').addEventListener('change', refreshForm);
+document.getElementById('start-date').addEventListener('change', refreshForm);
+document.getElementById('end-date').addEventListener('change', refreshForm);
+attachDateMask(document.getElementById('start-date'));
+attachDateMask(document.getElementById('end-date'));
+
+document.getElementById('end-date').value = isoToBr(todayIso(0));
+document.getElementById('start-date').value = isoToBr(todayIso(-30));
+
+loadClients().then(refreshForm);
+</script>
+
+</body>
+</html>
