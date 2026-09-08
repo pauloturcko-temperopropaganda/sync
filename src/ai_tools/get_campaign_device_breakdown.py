@@ -135,9 +135,11 @@ def main() -> int:
         LIMIT 1
     """
 
-    # Só linhas com pelo menos device ou publisher_platform
-    # preenchido, e só no grão campanha (ad_group_id/ad_id nulos) —
-    # não mistura com um possível detalhamento futuro por anúncio.
+    # Só linhas do breakdown combinado device+publisher_platform (a
+    # única fonte que preenche device), e só no grão campanha
+    # (ad_group_id/ad_id nulos) — não mistura com anúncio individual
+    # nem com os breakdowns de idade/gênero/região/plataforma
+    # sozinha (Fase 2/3), que nunca preenchem device.
     breakdown_query = """
         SELECT
             daily_metrics.device,
@@ -152,7 +154,7 @@ def main() -> int:
           AND daily_metrics.metric_date BETWEEN %s AND %s
           AND daily_metrics.ad_group_id IS NULL
           AND daily_metrics.ad_id IS NULL
-          AND (daily_metrics.device IS NOT NULL OR daily_metrics.publisher_platform IS NOT NULL)
+          AND daily_metrics.device IS NOT NULL
 
         GROUP BY daily_metrics.device, daily_metrics.publisher_platform
         ORDER BY spend DESC

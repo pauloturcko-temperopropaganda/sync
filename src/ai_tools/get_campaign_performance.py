@@ -176,6 +176,8 @@ def main() -> int:
             AND daily_metrics.ad_id IS NULL
             AND daily_metrics.device IS NULL
             AND daily_metrics.publisher_platform IS NULL
+            AND daily_metrics.age_range IS NULL
+            AND daily_metrics.region IS NULL
 
         WHERE campaigns.id = %s
     """
@@ -197,6 +199,9 @@ def main() -> int:
             AND daily_actions.metric_date BETWEEN %s AND %s
             AND daily_actions.ad_group_id IS NULL
             AND daily_actions.ad_id IS NULL
+            AND daily_actions.age_range IS NULL
+            AND daily_actions.region IS NULL
+            AND daily_actions.publisher_platform IS NULL
 
         WHERE action_type_catalog.is_canonical = true
 

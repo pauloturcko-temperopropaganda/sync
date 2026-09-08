@@ -60,8 +60,9 @@
 
     .right-col #console {
         flex: 1;
-        height: auto;
         min-height: 260px;
+        max-height: 480px;
+        overflow-y: auto;
     }
 
     header {
@@ -97,8 +98,8 @@
     }
 
     .cards-row {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 12px;
     }
 
@@ -107,6 +108,7 @@
         border: 1px solid var(--border);
         border-radius: 8px;
         padding: 14px 16px;
+        min-width: 0;
     }
 
     .card .label {
@@ -120,6 +122,65 @@
         font-size: 16pt;
         font-weight: 600;
         margin-top: 3px;
+        overflow-wrap: break-word;
+    }
+
+    .card .value.small {
+        font-size: 11.5pt;
+    }
+
+    .sync-form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .sync-form label {
+        font-size: 8.5pt;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        margin-bottom: 2px;
+        display: block;
+    }
+
+    .sync-form select,
+    .sync-form input.date-field {
+        width: 100%;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 8px 10px;
+        font-size: 10pt;
+        font-family: inherit;
+        background: var(--card);
+    }
+
+    .sync-form .date-row {
+        display: flex;
+        gap: 8px;
+    }
+
+    .sync-form .date-row > div {
+        flex: 1;
+        min-width: 0;
+    }
+
+    a.button-link {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        padding: 4px 0;
+        font-size: 10.5pt;
+        font-weight: 600;
+        color: var(--accent);
+        text-decoration: none;
+        letter-spacing: 0.01em;
+        transition: transform 0.15s ease;
+    }
+
+    a.button-link:hover {
+        text-decoration: underline;
+        transform: scale(1.03);
     }
 
     section {
@@ -193,12 +254,32 @@
         </header>
 
         <div class="cards-row" id="overview-cards">
-            <div class="card"><div class="label">Clientes com dado</div><div class="value">—</div></div>
+            <div class="card"><div class="label">Clientes com dados</div><div class="value">—</div></div>
+            <div class="card"><div class="label">Período coberto</div><div class="value small">—</div></div>
             <div class="card"><div class="label">Campanhas</div><div class="value">—</div></div>
-            <div class="card"><div class="label">Período coberto</div><div class="value">—</div></div>
+            <div class="card"><div class="label">Última atualização</div><div class="value small">—</div></div>
         </div>
 
-        <button id="sync-btn" onclick="triggerSync()">Atualizar agora</button>
+        <div class="sync-form">
+            <div>
+                <label for="sync-client-select">Selecionar cliente</label>
+                <select id="sync-client-select">
+                    <option value="">Todos os clientes</option>
+                </select>
+            </div>
+            <div class="date-row">
+                <div>
+                    <label for="sync-start-date">Data início</label>
+                    <input type="text" class="date-field" id="sync-start-date" placeholder="DD/MM/AAAA" inputmode="numeric" maxlength="10">
+                </div>
+                <div>
+                    <label for="sync-end-date">Data fim</label>
+                    <input type="text" class="date-field" id="sync-end-date" placeholder="DD/MM/AAAA" inputmode="numeric" maxlength="10">
+                </div>
+            </div>
+            <button id="sync-btn" onclick="triggerSync()">Atualizar agora</button>
+            <a class="button-link" href="/relatorios">Gerar relatório de cliente</a>
+        </div>
     </div>
 
     <div class="right-col">
@@ -254,10 +335,11 @@ async function refreshStatus() {
     const ov = data.overview;
     const cards = document.querySelectorAll('#overview-cards .value');
     cards[0].textContent = data.clients.length;
-    cards[1].textContent = ov.total_campaigns ?? 0;
-    cards[2].textContent = ov.earliest_date && ov.latest_date
+    cards[1].textContent = ov.earliest_date && ov.latest_date
         ? `${fmtDateShort(ov.earliest_date)} a ${fmtDateShort(ov.latest_date)}`
         : "sem dado ainda";
+    cards[2].textContent = ov.total_campaigns ?? 0;
+    cards[3].textContent = fmtDate(ov.last_sync_at);
 
     const tbody = document.getElementById('clients-tbody');
     if (data.clients.length === 0) {
@@ -277,17 +359,55 @@ async function refreshStatus() {
     updateButton(data.sync_run.running);
 }
 
+const SPINNER_FRAMES = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
+const SPINNER_LABEL = 'Sincronizando dados';
+let spinnerIndex = 0;
+let spinnerTimer = null;
+
+function startSpinner() {
+    if (spinnerTimer) return;
+    spinnerTimer = setInterval(() => {
+        spinnerIndex = (spinnerIndex + 1) % SPINNER_FRAMES.length;
+        const el = document.getElementById('console-spinner');
+        if (el) el.textContent = SPINNER_FRAMES[spinnerIndex];
+    }, 120);
+}
+
+function stopSpinner() {
+    clearInterval(spinnerTimer);
+    spinnerTimer = null;
+}
+
+function spinnerHtml() {
+    return `<span id="console-spinner">${SPINNER_FRAMES[spinnerIndex]}</span> ${SPINNER_LABEL}...`;
+}
+
 function renderConsole(run) {
     const el = document.getElementById('console');
+
     if (!run.lines || run.lines.length === 0) {
-        if (!run.running) return;
-        el.innerHTML = '<span class="placeholder">Iniciando...</span>';
+        if (!run.running) {
+            stopSpinner();
+            return;
+        }
+        el.innerHTML = `<span class="placeholder">${spinnerHtml()}</span>`;
+        startSpinner();
         return;
     }
-    el.innerHTML = run.lines.map(l => {
+
+    const lines = run.lines.map(l => {
         const cls = /falhou|erro/i.test(l) ? 'line-error' : '';
         return `<div class="${cls}">${escapeHtml(l)}</div>`;
     }).join('');
+
+    if (run.running) {
+        el.innerHTML = lines + `<div id="console-spinner-line">${spinnerHtml()}</div>`;
+        startSpinner();
+    } else {
+        el.innerHTML = lines;
+        stopSpinner();
+    }
+
     el.scrollTop = el.scrollHeight;
 }
 
@@ -309,14 +429,61 @@ function updateButton(running) {
     }
 }
 
+async function loadSyncClients() {
+    const res = await fetch('/api/clients');
+    const clients = await res.json();
+    const select = document.getElementById('sync-client-select');
+    select.innerHTML = '<option value="">Todos os clientes</option>' +
+        clients.map(c => `<option value="${c.slug}">${c.name}</option>`).join('');
+}
+
+function todayIso(offsetDays) {
+    const d = new Date();
+    d.setDate(d.getDate() + offsetDays);
+    return d.toISOString().slice(0, 10);
+}
+
+// Campos de data como <input type="text"> mascarados pra DD/MM/AAAA
+// em vez de <input type="date"> nativo: o formato de exibição do
+// type="date" segue o idioma/região do navegador, não o `lang` do
+// elemento (testado, não muda) — só assim dá pra garantir o padrão
+// brasileiro pra qualquer usuário, em qualquer máquina.
+function isoToBr(iso) {
+    if (!iso) return '';
+    const [y, m, d] = iso.split('-');
+    return `${d}/${m}/${y}`;
+}
+
+function brToIso(br) {
+    const match = (br || '').match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+    return match ? `${match[3]}-${match[2]}-${match[1]}` : '';
+}
+
+function attachDateMask(input) {
+    input.addEventListener('input', () => {
+        let digits = input.value.replace(/\D/g, '').slice(0, 8);
+        let formatted = digits;
+        if (digits.length > 4) {
+            formatted = `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`;
+        } else if (digits.length > 2) {
+            formatted = `${digits.slice(0, 2)}/${digits.slice(2)}`;
+        }
+        input.value = formatted;
+    });
+}
+
 async function triggerSync() {
     const password = prompt('Senha para atualizar os dados:');
     if (!password) return;
 
+    const client_slug = document.getElementById('sync-client-select').value || null;
+    const start = brToIso(document.getElementById('sync-start-date').value) || null;
+    const end = brToIso(document.getElementById('sync-end-date').value) || null;
+
     const res = await fetch('/api/sync', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ password, client_slug, start, end }),
     });
 
     if (res.status === 403) {
@@ -328,13 +495,20 @@ async function triggerSync() {
         return;
     }
     if (!res.ok) {
-        alert('Erro ao iniciar a sincronização.');
+        const detail = (await res.json().catch(() => ({}))).detail || 'Erro ao iniciar a sincronização.';
+        alert(detail);
         return;
     }
 
     polling = setInterval(refreshStatus, 1500);
     refreshStatus();
 }
+
+document.getElementById('sync-end-date').value = isoToBr(todayIso(0));
+document.getElementById('sync-start-date').value = isoToBr(todayIso(-7));
+attachDateMask(document.getElementById('sync-start-date'));
+attachDateMask(document.getElementById('sync-end-date'));
+loadSyncClients();
 
 refreshStatus();
 setInterval(refreshStatus, 10000);
